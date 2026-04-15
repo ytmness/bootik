@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-primary": "#ffb4a8",
+                    "secondary-fixed": "#d4e5ef",
+                    "on-tertiary-fixed-variant": "#0039b4",
+                    "surface-container-low": "#e7f6ff",
+                    "surface-variant": "#d4e5ef",
+                    "on-secondary": "#ffffff",
+                    "on-secondary-container": "#55656d",
+                    "outline": "#926e69",
+                    "surface-container-high": "#d9ebf5",
+                    "tertiary": "#003ec2",
+                    "on-primary-fixed-variant": "#930000",
+                    "on-error-container": "#93000a",
+                    "secondary": "#506169",
+                    "on-primary-fixed": "#410000",
+                    "on-surface": "#0d1e25",
+                    "surface-tint": "#c00000",
+                    "surface-container-highest": "#d4e5ef",
+                    "on-secondary-fixed": "#0d1e25",
+                    "surface-container": "#dff1fb",
+                    "on-background": "#0d1e25",
+                    "primary-fixed-dim": "#ffb4a8",
+                    "inverse-on-surface": "#e2f3fd",
+                    "secondary-fixed-dim": "#b8c9d3",
+                    "on-primary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "surface-dim": "#cbdde7",
+                    "surface": "#f4faff",
+                    "primary-container": "#cc0000",
+                    "error-container": "#ffdad6",
+                    "on-primary-container": "#ffdad4",
+                    "tertiary-container": "#0052f9",
+                    "on-tertiary-container": "#dce1ff",
+                    "surface-bright": "#f4faff",
+                    "background": "#f4faff",
+                    "inverse-surface": "#23333a",
+                    "tertiary-fixed-dim": "#b7c4ff",
+                    "primary": "#9e0000",
+                    "on-error": "#ffffff",
+                    "outline-variant": "#e8bdb6",
+                    "secondary-container": "#d1e2ec",
+                    "primary-fixed": "#ffdad4",
+                    "error": "#ba1a1a",
+                    "on-secondary-fixed-variant": "#394951",
+                    "on-tertiary-fixed": "#001551",
+                    "on-surface-variant": "#5e3f3a",
+                    "tertiary-fixed": "#dce1ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Plus Jakarta Sans"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .stamped-texture {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3Base-f6869a2d8e906c6f6c0d606138676d63%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.05;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<nav class="fixed top-0 w-full z-50 flex items-center px-4 md:px-8 py-3 max-w-full bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl shadow-sm dark:shadow-none">
+<a class="inline-flex items-center shrink-0" href="index.html">
+<img alt="BOOTIK" class="h-12 w-auto md:h-14" src="assets/1.png"/>
+</a>
+<div class="hidden lg:flex flex-1 items-center justify-center gap-12 xl:gap-16 px-16">
+<a class="text-red-700 dark:text-red-500 font-bold border-b-2 border-red-700 dark:border-red-500 pb-1 font-label" href="index.html" data-i18n="nav.home">Home</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-slate-900 dark:hover:text-white transition-colors font-label" href="servicios.html" data-i18n="nav.services">Services</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-slate-900 dark:hover:text-white transition-colors font-label" href="galeria.html" data-i18n="nav.gallery">Gallery</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-slate-900 dark:hover:text-white transition-colors font-label" href="tienda.html" data-i18n="nav.shop">Shop</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-slate-900 dark:hover:text-white transition-colors font-label" href="nosotros.html" data-i18n="nav.about">About</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-slate-900 dark:hover:text-white transition-colors font-label" href="contacto.html" data-i18n="nav.contact">Contact</a>
+</div>
+<div class="ml-12 xl:ml-20 flex items-center gap-4 md:gap-6 shrink-0 border-l border-slate-300/70 pl-8 md:pl-12">
+<button class="hidden md:inline-flex bg-primary-container text-on-primary-container px-5 py-2 font-bold rounded-none hover:bg-primary transition-all active:scale-95" data-i18n="nav.quote">
+            Cotizar
+        </button>
+<button class="border border-slate-400 dark:border-slate-500 bg-white/70 dark:bg-slate-800/70 px-3 py-1 text-xs font-bold text-slate-700 dark:text-slate-200" id="lang-toggle" type="button">EN</button>
+</div>
+</nav>
+<main class="relative">
+<div class="fixed inset-0 stamped-texture z-10"></div>
+<section class="relative h-screen flex items-center overflow-hidden bg-inverse-surface">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-60 mix-blend-luminosity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGq8UOTfQpsAm38ifvJr7pxYve10NpIJ7yrbjjPiE9qnmYQiG9zgwWxt2BUxAEJnRhdPdTgQLx_SRltzd3gZHaVjb4sHdS0uLHN7HXT0YkIsDqa9cNjJFXeUSo_jw5GP3rSeHojd5OTMhqh6BCFj1yH694ZZYw8TGGKFuz2hXAyMMF5PW6uJZGq-9vncy0op-sFdzWJ0GY-iLQohebC2Vq8rX3P9eY3STvfqig57uOJEk7ObVMlS1Gu8VRnDdplBn1yYH_021Llw"/>
+<div class="absolute inset-0 bg-gradient-to-r from-inverse-surface via-inverse-surface/80 to-transparent"></div>
+</div>
+<div class="relative z-20 px-8 md:px-24 max-w-4xl">
+<span class="inline-block px-3 py-1 bg-primary text-on-primary text-xs font-bold tracking-[0.2em] mb-6 rounded-none" data-i18n="home.badge">EXCELENCIA EN CONCRETO</span>
+<h1 class="text-5xl md:text-8xl font-headline font-extrabold text-white leading-[0.9] tracking-tighter mb-8">
+                    <span data-i18n="home.hero.titlePrefix">Transformamos espacios con</span> <span class="text-primary-container" data-i18n="home.hero.titleAccent">concreto estampado</span>
+</h1>
+<p class="text-xl text-surface-variant font-body max-w-xl mb-10 leading-relaxed" data-i18n="home.hero.desc">
+                    Arte industrial duradero para residencias y comercios de alta gama en Monterrey. Soluciones arquitectónicas que perduran.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-primary-container text-on-primary-container px-10 py-5 font-bold text-lg rounded-none hover:bg-primary transition-all hover:-translate-y-1 shadow-xl" data-i18n="home.hero.cta1">
+                        Solicitar cotización
+                    </button>
+<button class="border-2 border-white/30 text-white px-10 py-5 font-bold text-lg rounded-none hover:bg-white hover:text-inverse-surface transition-all" data-i18n="home.hero.cta2">
+                        Ver proyectos
+                    </button>
+</div>
+</div>
+</section>
+<section class="py-32 px-8 bg-surface">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+<div class="max-w-2xl">
+<h2 class="text-4xl md:text-6xl font-headline font-extrabold text-on-surface tracking-tighter mb-6 leading-none">
+                            <span data-i18n="home.impact.title1">El impacto de la</span> <br/><span class="text-secondary" data-i18n="home.impact.title2">renovación</span>
+</h2>
+<div class="h-1 w-24 bg-primary mb-6"></div>
+</div>
+<p class="text-secondary max-w-sm font-medium" data-i18n="home.impact.desc">Observa cómo una superficie desgastada se convierte en una pieza central de diseño arquitectónico con BOOTIK.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-outline-variant/20 group overflow-hidden">
+<div class="relative aspect-video overflow-hidden group-hover:opacity-90 transition-opacity">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDP8wh5pdbVTlE3FVz4M0o20gCR6r_p260T4GwcoTskSV0MnrORD_ped8LuxvkHBLeDegYQADCsvigOifRRQkoeG-b-9934bNvDcY0XlziPZ9bYnqwq4DMZ17u8UQKqfdpAe28k05iBp7e3tsAv5gm2iWWYJwrdxeAY8uQAnPCvUbzp7wAOeB6ux-sr24foj0RPeMg0oeB0hoJvUf4pBgeUXoVgHSsAsKcYluTAICH_4gT6sybPWDYSvq2fTa7kOMv-AuvgMePbyA"/>
+<div class="absolute top-6 left-6 bg-inverse-surface/90 text-white px-4 py-2 text-xs font-black tracking-widest backdrop-blur-md" data-i18n="home.before">ANTES</div>
+</div>
+<div class="relative aspect-video overflow-hidden">
+<img class="w-full h-full object-cover scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuByz_uEsj4XBLRIEj6xQStEWR1We4l9zlyYnH0LjmjO7M1k_uZQRGFd_fmZ0DtbMC_ABi-nKLWe616xAdZMEw7mfo4WY5v14BoT3OUgfjA1vfpIwv8oL1E9-qmXkKgRFd-jqymh994Jt_XRMNrhWuLFAGo92M3QfBMGRcdEFp-QsgpKUfZDuoYDGigkmYZHr_5X3A6v_e3-WMnkgHJjgkwkCVM3EwmDKjEvd__KZ9P9K1Qx6VhpuqP9NOpujfLptzp2ateKk7H0gA"/>
+<div class="absolute top-6 right-6 bg-primary text-white px-4 py-2 text-xs font-black tracking-widest" data-i18n="home.after">DESPUÉS</div>
+<div class="absolute inset-0 shadow-[inset_0_0_100px_rgba(0,0,0,0.2)]"></div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-8">
+<div class="text-center mb-16">
+<h2 class="text-4xl md:text-5xl font-headline font-extrabold text-on-surface tracking-tighter mb-4" data-i18n="home.testimonials.title">Lo que dicen nuestros clientes</h2>
+<p class="text-secondary font-medium" data-i18n="home.testimonials.subtitle">Confianza cimentada en resultados excepcionales.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-6 md:grid-rows-2 gap-4">
+<div class="md:col-span-3 md:row-span-2 bg-white p-12 flex flex-col justify-between shadow-sm relative overflow-hidden">
+<div><p class="text-2xl font-headline font-bold text-on-surface leading-tight mb-8" data-i18n="home.testimonials.t1">"El nivel de detalle en el estampado supero expectativas. Equipo profesional y puntual."</p></div>
+<div><p class="font-bold text-on-surface">Ricardo Garza</p><p class="text-secondary text-xs font-medium tracking-wider uppercase" data-i18n="home.testimonials.t1meta">Residencial San Pedro</p></div>
+</div>
+<div class="md:col-span-3 bg-inverse-surface text-white p-8"><p class="font-body italic text-surface-variant mb-6 leading-relaxed" data-i18n="home.testimonials.t2">"Excelente servicio para nuestro local comercial. Acabado premium."</p><p class="font-bold">Monica Villarreal</p></div>
+<div class="md:col-span-3 bg-secondary-container/50 p-8"><p class="font-body text-on-surface-variant mb-6 leading-relaxed" data-i18n="home.testimonials.t3">"La mejor inversion para el area de alberca. Antiderrapante y fresco."</p><p class="font-bold text-on-surface">Alejandro Trevino</p></div>
+</div>
+</div>
+</section>
+<section class="py-24 px-8 bg-primary">
+<div class="max-w-5xl mx-auto text-center">
+<h2 class="text-4xl md:text-6xl font-headline font-extrabold text-white mb-8 tracking-tighter" data-i18n="home.cta.title">¿Listo para elevar tu proyecto?</h2>
+<p class="text-on-primary-container text-xl mb-12 max-w-2xl mx-auto" data-i18n="home.cta.desc">Solicita una visita técnica sin compromiso y descubre las posibilidades infinitas del concreto arquitectónico.</p>
+<a class="bg-white text-primary px-12 py-5 font-black text-lg rounded-none hover:bg-on-primary-container transition-all inline-block" href="contacto.html" data-i18n="home.cta.button">Solicitar presupuesto GRATIS</a>
+</div>
+</section>
+</main>
+<footer class="w-full px-12 py-16 grid grid-cols-1 md:grid-cols-4 gap-12 bg-slate-900 dark:bg-black text-white font-body relative">
+<div class="col-span-1 md:col-span-1">
+<div class="text-xl font-black text-white font-headline mb-6 tracking-tighter">BOOTIK</div>
+<p class="text-slate-400 text-sm leading-relaxed mb-6" data-i18n="home.footer.desc">
+                Líderes en pavimentos arquitectónicos y concreto estampado de alta gama en el norte de México.
+            </p>
+</div>
+<div>
+<h5 class="text-sm font-black uppercase tracking-widest mb-6 font-headline text-primary-container" data-i18n="home.footer.services">Servicios</h5>
+<ul class="space-y-4">
+<li><a class="text-slate-400 hover:text-white transition-colors text-sm" href="servicios.html" data-i18n="home.footer.residential">Residencial</a></li>
+<li><a class="text-slate-400 hover:text-white transition-colors text-sm" href="servicios.html" data-i18n="home.footer.commercial">Comercial</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-sm font-black uppercase tracking-widest mb-6 font-headline text-primary-container" data-i18n="home.footer.company">Empresa</h5>
+<ul class="space-y-4">
+<li><a class="text-slate-400 hover:text-white transition-colors text-sm" href="nosotros.html" data-i18n="home.footer.about">Nosotros</a></li>
+<li><a class="text-slate-400 hover:text-white transition-colors text-sm" href="contacto.html" data-i18n="home.footer.contact">Contacto</a></li>
+</ul>
+</div>
+<div class="col-span-1 md:col-span-4 pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="text-slate-500 text-xs font-medium" data-i18n="home.footer.copy">© 2024 BOOTIK Monterrey. Stamped Concrete Excellence.</p>
+</div>
+</footer>
+<script src="assets/js/main.js" defer></script>
+</body></html>

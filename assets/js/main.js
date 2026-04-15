@@ -1,0 +1,309 @@
+const menuToggle = document.getElementById("menu-toggle");
+const mobileMenu = document.getElementById("mobile-menu");
+const yearEl = document.getElementById("year");
+const langToggle = document.getElementById("lang-toggle");
+
+const LANG_KEY = "bootik_lang";
+const labels = {
+  es: {
+    "nav.home": "Inicio",
+    "nav.services": "Servicios",
+    "nav.gallery": "Galeria",
+    "nav.shop": "Tienda",
+    "nav.about": "Nosotros",
+    "nav.contact": "Contacto",
+    "nav.quote": "Cotizar",
+    "home.badge": "EXCELENCIA EN CONCRETO",
+    "home.hero.titlePrefix": "Transformamos espacios con",
+    "home.hero.titleAccent": "concreto estampado",
+    "home.hero.desc": "Arte industrial duradero para residencias y comercios de alta gama en Monterrey. Soluciones arquitectonicas que perduran.",
+    "home.hero.cta1": "Solicitar cotizacion",
+    "home.hero.cta2": "Ver proyectos",
+    "home.impact.title1": "El impacto de la",
+    "home.impact.title2": "renovacion",
+    "home.impact.desc": "Observa como una superficie desgastada se convierte en una pieza central de diseno arquitectonico con BOOTIK.",
+    "home.before": "ANTES",
+    "home.after": "DESPUES",
+    "home.testimonials.title": "Lo que dicen nuestros clientes",
+    "home.testimonials.subtitle": "Confianza cimentada en resultados excepcionales.",
+    "home.testimonials.t1": "\"El nivel de detalle en el estampado supero expectativas. Equipo profesional y puntual.\"",
+    "home.testimonials.t1meta": "Residencial San Pedro",
+    "home.testimonials.t2": "\"Excelente servicio para nuestro local comercial. Acabado premium.\"",
+    "home.testimonials.t3": "\"La mejor inversion para el area de alberca. Antiderrapante y fresco.\"",
+    "home.cta.title": "Listo para elevar tu proyecto?",
+    "home.cta.desc": "Solicita una visita tecnica sin compromiso y descubre las posibilidades infinitas del concreto arquitectonico.",
+    "home.cta.button": "Solicitar presupuesto GRATIS",
+    "home.footer.desc": "Lideres en pavimentos arquitectonicos y concreto estampado de alta gama en el norte de Mexico.",
+    "home.footer.services": "Servicios",
+    "home.footer.residential": "Residencial",
+    "home.footer.commercial": "Comercial",
+    "home.footer.company": "Empresa",
+    "home.footer.about": "Nosotros",
+    "home.footer.contact": "Contacto",
+    "home.footer.copy": "© 2024 BOOTIK Monterrey. Stamped Concrete Excellence.",
+    "services.hero.desc": "Elevamos la infraestructura con acabados arquitectonicos que fusionan la durabilidad del concreto con la estetica del diseno contemporaneo.",
+    "services.card1.title": "Concreto Estampado Residencial",
+    "services.card1.desc": "Transformamos patios, cocheras y entradas en espacios de distincion con texturas premium.",
+    "services.card2.title": "Diseno Personalizado",
+    "services.card2.desc": "Patrones exclusivos, logotipos integrados y mezclas de colores personalizadas para proyectos de autor.",
+    "services.card3.title": "Concreto Estampado Comercial",
+    "services.card3.desc": "Soluciones de alta resistencia para centros comerciales y areas publicas.",
+    "services.card4.title": "Reparacion y Mantenimiento",
+    "services.card4.desc": "Sellado profesional, restauracion de color y reparacion estructural.",
+    "services.contact": "Contactar",
+    "services.cta.title": "LISTO PARA INICIAR TU PROYECTO?",
+    "services.cta.desc": "Agenda una visita tecnica en Monterrey y recibe una cotizacion personalizada.",
+    "services.cta.primary": "Solicitar Presupuesto",
+    "services.cta.secondary": "Ver Portafolio",
+    "gallery.badge": "Excelencia en concreto",
+    "gallery.title": "GALERIA",
+    "gallery.desc": "Explora nuestro portafolio de proyectos arquitectonicos de concreto.",
+    "gallery.filter": "Filtrar por",
+    "gallery.all": "Todos los proyectos",
+    "gallery.patios": "Patios",
+    "gallery.driveways": "Cocheras",
+    "gallery.commercial": "Comercial",
+    "gallery.overview.desc": "Vista general de nuestro portafolio completo: residencial, comercial e industrial.",
+    "gallery.overview.tag1": "Residencial",
+    "gallery.overview.tag2": "Comercial",
+    "gallery.overview.tag3": "Industrial",
+    "gallery.cta.title": "LISTO PARA DEJAR HUELLA?",
+    "gallery.cta.desc": "Agenda una visita y recibe una cotizacion personalizada para tu proyecto.",
+    "gallery.cta.primary": "Solicitar Cotizacion",
+    "gallery.cta.secondary": "Contactar Ventas",
+    "gallery.footer.desc": "Soluciones premium de concreto estampado en Monterrey.",
+    "gallery.footer.contactInfo": "Contacto",
+    "gallery.footer.navigation": "Navegacion",
+    "gallery.footer.copy": "© 2024 BOOTIK Monterrey.",
+    "contact.badge": "Permanencia en cada detalle",
+    "contact.title1": "Construyamos tu",
+    "contact.title2": "legado en concreto.",
+    "contact.hero.desc": "Desde Monterrey transformamos espacios industriales y residenciales de alto nivel.",
+    "contact.details.title": "Datos de contacto",
+    "contact.details.address": "Av. Constitucion, Monterrey, NL, Mexico",
+    "contact.form.name": "Nombre",
+    "contact.form.email": "Correo electronico",
+    "contact.form.message": "Describe tu proyecto...",
+    "contact.form.submit": "Enviar solicitud",
+    "contact.map.title": "Cobertura en el norte de Mexico",
+    "contact.map.subtitle": "Oficina principal: Monterrey, Nuevo Leon",
+    "contact.map.sideTitle": "Presencia local. Estandares industriales.",
+    "contact.map.sideDesc": "Desplegamos cuadrillas en toda el area metropolitana para proyectos residenciales y comerciales.",
+    "contact.footer.desc": "Especialistas en concreto estampado en Monterrey.",
+    "contact.footer.explore": "Explorar",
+    "contact.footer.residential": "Proyectos residenciales",
+    "contact.footer.flooring": "Pisos industriales",
+    "contact.footer.contactTitle": "Contacto",
+    "contact.footer.city": "Monterrey, NL",
+    "contact.footer.copy": "© 2024 BOOTIK Monterrey.",
+    "shop.title1": "MOLDES",
+    "shop.title2": "PROFESIONALES",
+    "shop.desc": "Herramientas de grado industrial para acabados arquitectonicos de alta precision.",
+    "shop.cta.title": "NECESITAS UN DISENO ESPECIAL?",
+    "shop.cta.desc": "Fabricamos moldes personalizados para proyectos comerciales y residenciales.",
+    "shop.cta.button": "Hablar con un experto",
+    "shop.footer.desc": "Expertos en moldes y herramientas para concreto estampado.",
+    "shop.footer.menu": "Menu",
+    "shop.footer.contact": "Contacto",
+    "shop.footer.address": "Av. Industrias 405, Monterrey, NL",
+    "shop.footer.copy": "© 2024 BOOTIK Monterrey.",
+    "about.badge": "Nuestra herencia",
+    "about.title1": "El arte del",
+    "about.title2": "lujo",
+    "about.title3": "permanente.",
+    "about.hero.desc": "En Monterrey, BOOTIK nace para unir resiliencia y elegancia en concreto arquitectonico.",
+    "about.durability.title": "La durabilidad es la estetica definitiva",
+    "about.durability.desc": "En BOOTIK creemos que la belleza real debe resistir el tiempo.",
+    "about.edge.title": "La ventaja BOOTIK",
+    "about.edge.speedTitle": "Precision y rapidez",
+    "about.edge.speedDesc": "Flujos optimizados para entregar mas rapido sin perder calidad.",
+    "about.edge.mastery": "Anos de maestria",
+    "about.edge.materialsTitle": "Materiales premium",
+    "about.edge.materialsDesc": "Selladores y pigmentos de alta resistencia.",
+    "about.team.title": "El equipo",
+    "about.team.desc": "Ingenieros, disenadores y maestros del acabado.",
+    "about.footer.copy": "© 2024 BOOTIK Monterrey.",
+    "about.footer.explore": "Explorar",
+    "about.footer.company": "Empresa",
+    "about.footer.contactInfo": "Informacion de contacto",
+    "about.footer.location": "Ubicacion: Monterrey",
+    "about.footer.whatsapp": "WhatsApp"
+  },
+  en: {
+    "nav.home": "Home",
+    "nav.services": "Services",
+    "nav.gallery": "Gallery",
+    "nav.shop": "Shop",
+    "nav.about": "About",
+    "nav.contact": "Contact",
+    "nav.quote": "Quote",
+    "home.badge": "CONCRETE EXCELLENCE",
+    "home.hero.titlePrefix": "We transform spaces with",
+    "home.hero.titleAccent": "stamped concrete",
+    "home.hero.desc": "Durable industrial art for high-end residential and commercial projects in Monterrey.",
+    "home.hero.cta1": "Request quote",
+    "home.hero.cta2": "View projects",
+    "home.impact.title1": "The impact of",
+    "home.impact.title2": "renovation",
+    "home.impact.desc": "See how a worn-out surface becomes an architectural centerpiece with BOOTIK.",
+    "home.before": "BEFORE",
+    "home.after": "AFTER",
+    "home.testimonials.title": "What our clients say",
+    "home.testimonials.subtitle": "Trust built on exceptional results.",
+    "home.testimonials.t1": "\"The level of detail exceeded expectations. Professional and punctual team.\"",
+    "home.testimonials.t1meta": "San Pedro Residential",
+    "home.testimonials.t2": "\"Excellent service for our commercial space. Premium finish.\"",
+    "home.testimonials.t3": "\"Best investment for our pool area. Slip-resistant and cool.\"",
+    "home.cta.title": "Ready to elevate your project?",
+    "home.cta.desc": "Book a technical visit and discover the endless possibilities of architectural concrete.",
+    "home.cta.button": "Request FREE quote",
+    "home.footer.desc": "Leaders in premium stamped concrete and architectural pavements in northern Mexico.",
+    "home.footer.services": "Services",
+    "home.footer.residential": "Residential",
+    "home.footer.commercial": "Commercial",
+    "home.footer.company": "Company",
+    "home.footer.about": "About",
+    "home.footer.contact": "Contact",
+    "home.footer.copy": "© 2024 BOOTIK Monterrey. Stamped Concrete Excellence.",
+    "services.hero.desc": "We elevate infrastructure with architectural finishes that merge durability and contemporary design.",
+    "services.card1.title": "Residential Stamped Concrete",
+    "services.card1.desc": "We transform patios, driveways and entrances with premium textures.",
+    "services.card2.title": "Custom Design",
+    "services.card2.desc": "Exclusive patterns, integrated logos and custom color blends.",
+    "services.card3.title": "Commercial Stamped Concrete",
+    "services.card3.desc": "High-resistance solutions for malls and public areas.",
+    "services.card4.title": "Repair & Maintenance",
+    "services.card4.desc": "Professional sealing, color restoration and structural repair.",
+    "services.contact": "Contact",
+    "services.cta.title": "READY TO START YOUR PROJECT?",
+    "services.cta.desc": "Book a technical visit in Monterrey and get a custom quote.",
+    "services.cta.primary": "Request Quote",
+    "services.cta.secondary": "View Portfolio",
+    "gallery.badge": "Excellence in concrete",
+    "gallery.title": "GALLERY",
+    "gallery.desc": "Explore our portfolio of architectural concrete projects.",
+    "gallery.filter": "Filter By",
+    "gallery.all": "All Projects",
+    "gallery.patios": "Patios",
+    "gallery.driveways": "Driveways",
+    "gallery.commercial": "Commercial",
+    "gallery.overview.desc": "General view of our full portfolio: residential, commercial, and industrial.",
+    "gallery.overview.tag1": "Residential",
+    "gallery.overview.tag2": "Commercial",
+    "gallery.overview.tag3": "Industrial",
+    "gallery.cta.title": "READY TO LEAVE YOUR MARK?",
+    "gallery.cta.desc": "Schedule a site visit and receive a custom quote for your project.",
+    "gallery.cta.primary": "Request Quote",
+    "gallery.cta.secondary": "Contact Sales",
+    "gallery.footer.desc": "Premium stamped concrete solutions in Monterrey.",
+    "gallery.footer.contactInfo": "Contact Info",
+    "gallery.footer.navigation": "Navigation",
+    "gallery.footer.copy": "© 2024 BOOTIK Monterrey.",
+    "contact.badge": "Crafting permanence",
+    "contact.title1": "Let's build your",
+    "contact.title2": "legacy in concrete.",
+    "contact.hero.desc": "From Monterrey, we transform industrial and high-end residential spaces.",
+    "contact.details.title": "Contact details",
+    "contact.details.address": "Constitucion Ave, Monterrey, NL, Mexico",
+    "contact.form.name": "Name",
+    "contact.form.email": "Email",
+    "contact.form.message": "Describe your project...",
+    "contact.form.submit": "Send inquiry",
+    "contact.map.title": "Coverage across northern Mexico",
+    "contact.map.subtitle": "Main office: Monterrey, Nuevo Leon",
+    "contact.map.sideTitle": "Local presence. Industrial standards.",
+    "contact.map.sideDesc": "We deploy crews across the metro area for residential and commercial projects.",
+    "contact.footer.desc": "Stamped concrete specialists in Monterrey.",
+    "contact.footer.explore": "Explore",
+    "contact.footer.residential": "Residential projects",
+    "contact.footer.flooring": "Industrial flooring",
+    "contact.footer.contactTitle": "Contact",
+    "contact.footer.city": "Monterrey, NL",
+    "contact.footer.copy": "© 2024 BOOTIK Monterrey.",
+    "shop.title1": "PROFESSIONAL",
+    "shop.title2": "MOLDS",
+    "shop.desc": "Industrial-grade tools for high-precision architectural finishes.",
+    "shop.cta.title": "NEED A CUSTOM DESIGN?",
+    "shop.cta.desc": "We manufacture custom molds for commercial and residential projects.",
+    "shop.cta.button": "Talk to an expert",
+    "shop.footer.desc": "Experts in stamped concrete molds and tools.",
+    "shop.footer.menu": "Menu",
+    "shop.footer.contact": "Contact",
+    "shop.footer.address": "405 Industrias Ave, Monterrey, NL",
+    "shop.footer.copy": "© 2024 BOOTIK Monterrey.",
+    "about.badge": "Our heritage",
+    "about.title1": "The art of",
+    "about.title2": "permanent",
+    "about.title3": "luxury.",
+    "about.hero.desc": "In Monterrey, BOOTIK was born to merge resilience and elegance in architectural concrete.",
+    "about.durability.title": "Durability is the ultimate aesthetic",
+    "about.durability.desc": "At BOOTIK, we believe true beauty must stand the test of time.",
+    "about.edge.title": "The BOOTIK edge",
+    "about.edge.speedTitle": "Precision speed",
+    "about.edge.speedDesc": "Optimized workflows to deliver faster without compromising quality.",
+    "about.edge.mastery": "Years of mastery",
+    "about.edge.materialsTitle": "Premium materials",
+    "about.edge.materialsDesc": "High-resistance sealers and pigments.",
+    "about.team.title": "The team",
+    "about.team.desc": "Engineers, designers and finishing masters.",
+    "about.footer.copy": "© 2024 BOOTIK Monterrey.",
+    "about.footer.explore": "Explore",
+    "about.footer.company": "Company",
+    "about.footer.contactInfo": "Contact info",
+    "about.footer.location": "Location: Monterrey",
+    "about.footer.whatsapp": "WhatsApp"
+  }
+};
+
+if (yearEl) {
+  yearEl.textContent = String(new Date().getFullYear());
+}
+
+if (menuToggle && mobileMenu) {
+  menuToggle.addEventListener("click", () => {
+    const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
+    menuToggle.setAttribute("aria-expanded", String(!isExpanded));
+    mobileMenu.classList.toggle("hidden");
+  });
+
+  mobileMenu.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      mobileMenu.classList.add("hidden");
+      menuToggle.setAttribute("aria-expanded", "false");
+    });
+  });
+}
+
+function applyLanguage(lang) {
+  const safeLang = lang === "en" ? "en" : "es";
+  document.documentElement.lang = safeLang;
+  document.querySelectorAll("[data-i18n]").forEach((el) => {
+    const key = el.getAttribute("data-i18n");
+    const text = labels[safeLang][key];
+    if (text) {
+      el.textContent = text;
+    }
+  });
+  document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
+    const key = el.getAttribute("data-i18n-placeholder");
+    const text = labels[safeLang][key];
+    if (text) {
+      el.setAttribute("placeholder", text);
+    }
+  });
+  if (langToggle) {
+    langToggle.textContent = safeLang === "es" ? "EN" : "ES";
+  }
+}
+
+const savedLanguage = localStorage.getItem(LANG_KEY) || "es";
+applyLanguage(savedLanguage);
+
+if (langToggle) {
+  langToggle.addEventListener("click", () => {
+    const current = document.documentElement.lang === "en" ? "en" : "es";
+    const next = current === "es" ? "en" : "es";
+    localStorage.setItem(LANG_KEY, next);
+    applyLanguage(next);
+  });
+}

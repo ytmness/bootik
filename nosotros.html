@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Us | BOOTIK Monterrey</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<script src="assets/js/tailwind.config.js"></script>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<nav class="fixed top-0 w-full z-50 flex items-center px-4 md:px-8 py-3 max-w-full bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl shadow-sm dark:shadow-none">
+<a class="inline-flex items-center shrink-0" href="index.html">
+<img alt="BOOTIK" class="h-12 w-auto md:h-14" src="assets/1.png"/>
+</a>
+<div class="hidden lg:flex flex-1 items-center justify-center gap-12 xl:gap-16 px-16">
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-slate-900 dark:hover:text-white transition-colors" href="index.html" data-i18n="nav.home">Home</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-slate-900 dark:hover:text-white transition-colors" href="servicios.html" data-i18n="nav.services">Services</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-slate-900 dark:hover:text-white transition-colors" href="galeria.html" data-i18n="nav.gallery">Gallery</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-slate-900 dark:hover:text-white transition-colors" href="tienda.html" data-i18n="nav.shop">Shop</a>
+<a class="text-red-700 dark:text-red-500 font-bold border-b-2 border-red-700 dark:border-red-500 pb-1" href="nosotros.html" data-i18n="nav.about">About</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-slate-900 dark:hover:text-white transition-colors" href="contacto.html" data-i18n="nav.contact">Contact</a>
+</div>
+<div class="ml-12 xl:ml-20 flex items-center gap-4 md:gap-6 shrink-0 border-l border-slate-300/70 pl-8 md:pl-12">
+<button class="hidden md:inline-flex bg-primary-container text-on-primary-container px-5 py-2 font-bold hover:bg-primary transition-all active:scale-95" data-i18n="nav.quote">Cotizar</button>
+<button class="border border-slate-400 dark:border-slate-500 bg-white/70 dark:bg-slate-800/70 px-3 py-1 text-xs font-bold text-slate-700 dark:text-slate-200" id="lang-toggle" type="button">EN</button>
+</div>
+</nav>
+<main class="pt-24">
+<section class="relative px-8 py-20 md:py-32 overflow-hidden">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 items-center gap-12">
+<div class="md:col-span-7 z-10">
+<span class="text-primary font-bold uppercase tracking-widest text-sm mb-4 block" data-i18n="about.badge">Our Heritage</span>
+<h1 class="font-headline text-5xl md:text-7xl font-extrabold text-on-surface leading-[1.1] mb-8"><span data-i18n="about.title1">The Art of</span> <br/> <span class="text-primary-container" data-i18n="about.title2">Permanent</span> <span data-i18n="about.title3">Luxury.</span></h1>
+<p class="font-body text-lg text-secondary max-w-xl leading-relaxed" data-i18n="about.hero.desc">In Monterrey, where the landscape demands resilience and the architecture demands elegance, BOOTIK was born.</p>
+</div>
+<div class="md:col-span-5 relative">
+<div class="aspect-[4/5] bg-surface-container-low overflow-hidden shadow-2xl">
+<img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnkLxfhNhfCIQYR65EX-AbLdgmPyJ3Sy1qiMRBUqieW4Fi558fmoECJTfqETLvY7E8NRrtHq8Ec8cuPlqunyvClli9mdCu2lYzPCwi845eexu3wfwFKwTHJKhtGGByrCxhyyVb4BHB5175gRHpvW3BSbddC0lF_os9FhXlbpdPAzE-dEQXmwY7DiT9yV__h2asQr2dzMGlf6uWHeqPaNSUeU4kz_ikqb2CIdpC9EbfNtV1-dlU8XXublvjQRyg_tVcg37KrURNAw"/>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-inverse-surface text-white py-24 relative">
+<div class="max-w-7xl mx-auto px-8 relative z-10">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+<div><h2 class="font-headline text-4xl font-bold mb-6" data-i18n="about.durability.title">Durability is the Ultimate Aesthetic</h2><p class="text-secondary-fixed-dim text-lg leading-relaxed mb-8" data-i18n="about.durability.desc">At BOOTIK, true beauty should not be fragile.</p></div>
+<div class="grid grid-cols-1 gap-4">
+<div class="bg-primary-container p-10 text-white"><h3 class="font-headline text-5xl font-black">10+</h3><p>Años de Maestría</p></div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 px-8 bg-surface">
+<div class="max-w-7xl mx-auto">
+<div class="mb-16">
+<h2 class="font-headline text-4xl font-extrabold text-on-surface" data-i18n="about.edge.title">The BOOTIK Edge</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="md:col-span-2 bg-surface-container-low p-10">
+<h3 class="font-headline text-3xl font-bold mb-4" data-i18n="about.edge.speedTitle">Precision Speed</h3>
+<p class="text-secondary max-w-md" data-i18n="about.edge.speedDesc">Flujos optimizados para entregar mas rapido sin perder calidad.</p>
+</div>
+<div class="bg-primary-container p-10 text-white"><h3 class="font-headline text-5xl font-black">10+</h3><p data-i18n="about.edge.mastery">Years of Mastery</p></div>
+<div class="bg-inverse-surface p-10 text-white md:col-span-1"><h3 class="font-headline text-2xl font-bold" data-i18n="about.edge.materialsTitle">Premium Materials</h3><p class="text-slate-400 text-sm" data-i18n="about.edge.materialsDesc">Selladores y pigmentos de alta resistencia.</p></div>
+<div class="md:col-span-2 relative overflow-hidden group">
+<img class="w-full h-full object-cover grayscale group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCr7GXya6ap9PVU4pD6t4sPbeFCR9vR-5mDO6LKbUu-2MeXnpTPxWBglWl0uAG0ROGPKYetVRFHZCJ6ctCUkE0EaJsJv1ySnOeSwnx2810xpjG4a5DPIOGvGk0MWTeuCzOIFI-p9MDJ2RJMVByyQ9-OYwpSXrcfygUXMZy8jFzOlxMSPBh9cIYXj_rFr8j9ThPdz1fP4hxFBgylW5aGC4T_7O8O_zJpw6V1ZFzog-qPOmCQwTHLPMzepX1x4WD6rdO1J7iP23thwg"/>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 px-8 bg-surface-container-lowest">
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+<div class="md:col-span-1"><h2 class="font-headline text-3xl font-extrabold mb-4" data-i18n="about.team.title">The Curators</h2><p class="text-secondary text-sm" data-i18n="about.team.desc">Equipo de ingenieros, disenadores y maestros finishers.</p></div>
+<div class="md:col-span-3 grid grid-cols-1 sm:grid-cols-3 gap-4">
+<div><img class="aspect-[3/4] w-full object-cover mb-3" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALMsFAVUqHZez770aySnngdVq2tyNzG2fb2S05YK6DH5JS_r1N18etZpUvNXI1d6O3tIRJYJ8-m67LqJfd-21wYPvWsTud5WyMCKI3M5kI8Rlr7wG036UouOiAJLijgnhsLaJq2PFU5CqY_vFtPCCBNQnJG2BEBuqNx0CnOK76iEYbdUbpjM5R9gLuvmbpL4__lYHc6cjL-w3AE6a0K8HH3e_llDPBSQVqx5STN36e1cT17bV-Xgfu6HBzbaDqu3cQqznZheAH9Q"/><h4 class="font-bold">Ricardo Garza</h4></div>
+<div><img class="aspect-[3/4] w-full object-cover mb-3" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXRjUVhYVT4n0iScDqhJ328ZsygFliMxGUOj4UEEA4li1uEgUBWgBpt8levD4yRBn2ly_nrrB0-JBtGTr9lcomOTEGmWyxjBUbsCTB-s7Yzac597RZqqgcdfvlO__NNWRxQnKzS29mJwyGXYefn9EsLJaCS4IRKxV0AeN4MCPA2hB2NbUC_t2SOOSNwsWdzwlA0WcV5yLeGBLkHX6OD6rZjmJEFHYdSh2RSR0WSFvJXuSctZb94WB-4TMFxxszoYLL5MpJ1dlqhw"/><h4 class="font-bold">Elena Rios</h4></div>
+<div><img class="aspect-[3/4] w-full object-cover mb-3" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDioQgbeNMf6BJ9wf0fFXRStUS5hjt2HfC1ydvUY6KjCiPPnmT9IirtcjDT2H9knD5mu_kOVEfv9gsISVfVT-mEEKoBsQ_ZBJ9dUSDGy191_w-fa-B1D7YXHoxV3oWD2vHE6Hgi1oLP96dxOBA_uxRpaNuPvPyTpA-BMl_jesI0lP07JFPqyREjdqnNsMWuT4Ac3z2YWs2jJcVPdT0Tdn42Ho0OfY5eqadDIVzW3izTusYEBmGr9rAl4dzSUWBGbq1OjVtincUpVQ"/><h4 class="font-bold">Marco Torres</h4></div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="w-full px-12 py-16 grid grid-cols-1 md:grid-cols-4 gap-12 bg-slate-900 text-white">
+<div class="md:col-span-1"><div class="text-xl font-black text-white mb-6">BOOTIK</div><p class="text-slate-400 text-sm leading-relaxed" data-i18n="about.footer.copy">© 2024 BOOTIK Monterrey.</p></div>
+<div><h5 class="font-headline font-bold mb-6 uppercase tracking-widest text-xs text-red-600" data-i18n="about.footer.explore">Explore</h5><ul class="space-y-4"><li><a class="text-slate-400 hover:text-white" href="servicios.html" data-i18n="nav.services">Services</a></li><li><a class="text-slate-400 hover:text-white" href="galeria.html" data-i18n="nav.gallery">Gallery</a></li></ul></div>
+<div><h5 class="font-headline font-bold mb-6 uppercase tracking-widest text-xs text-red-600" data-i18n="about.footer.company">Company</h5><ul class="space-y-4"><li><a class="text-slate-400 hover:text-white" href="contacto.html" data-i18n="about.footer.contactInfo">Contact Info</a></li><li><a class="text-slate-400 hover:text-white" href="nosotros.html" data-i18n="about.footer.location">Location: Monterrey</a></li></ul></div>
+<div class="relative"><a class="bg-green-600 text-white px-6 py-3 flex items-center gap-3 font-bold hover:bg-green-500 transition-colors" href="https://wa.me/528100000000" data-i18n="about.footer.whatsapp">WhatsApp</a></div>
+</footer>
+<script src="assets/js/main.js" defer></script>
+</body></html>
