@@ -26,10 +26,6 @@ const labels = {
     "home.after": "DESPUES",
     "home.testimonials.title": "Lo que dicen nuestros clientes",
     "home.testimonials.subtitle": "Confianza cimentada en resultados excepcionales.",
-    "home.testimonials.t1": "\"El nivel de detalle en el estampado supero expectativas. Equipo profesional y puntual.\"",
-    "home.testimonials.t1meta": "Residencial San Pedro",
-    "home.testimonials.t2": "\"Excelente servicio para nuestro local comercial. Acabado premium.\"",
-    "home.testimonials.t3": "\"La mejor inversion para el area de alberca. Antiderrapante y fresco.\"",
     "home.cta.title": "Listo para elevar tu proyecto?",
     "home.cta.desc": "Solicita una visita tecnica sin compromiso y descubre las posibilidades infinitas del concreto arquitectonico.",
     "home.cta.button": "Solicitar presupuesto GRATIS",
@@ -150,10 +146,6 @@ const labels = {
     "home.after": "AFTER",
     "home.testimonials.title": "What our clients say",
     "home.testimonials.subtitle": "Trust built on exceptional results.",
-    "home.testimonials.t1": "\"The level of detail exceeded expectations. Professional and punctual team.\"",
-    "home.testimonials.t1meta": "San Pedro Residential",
-    "home.testimonials.t2": "\"Excellent service for our commercial space. Premium finish.\"",
-    "home.testimonials.t3": "\"Best investment for our pool area. Slip-resistant and cool.\"",
     "home.cta.title": "Ready to elevate your project?",
     "home.cta.desc": "Book a technical visit and discover the endless possibilities of architectural concrete.",
     "home.cta.button": "Request FREE quote",
@@ -255,6 +247,278 @@ const labels = {
   }
 };
 
+const testimonialPools = {
+  es: {
+    featured: [
+      {
+        quote: "\"El nivel de detalle en el estampado supero expectativas. Equipo profesional y puntual.\"",
+        name: "Ricardo Garza",
+        meta: "Residencial San Pedro"
+      },
+      {
+        quote: "\"El patio quedo impecable. Coordinaron con el arquitecto y respetaron cada plazo.\"",
+        name: "Carmen Flores",
+        meta: "Fracc. Bosques del Valle"
+      },
+      {
+        quote: "\"Calidad de resort en nuestra cochera. El sellado ha aguantado lluvias fuertes sin problema.\"",
+        name: "Jorge Cantu",
+        meta: "Carretera Nacional"
+      },
+      {
+        quote: "\"Nos asesoraron en textura y color; el resultado supera renders y fotos de referencia.\"",
+        name: "Sofia Delgado",
+        meta: "Proyecto Citadel"
+      },
+      {
+        quote: "\"Equipo limpio, ordenado y cuidadoso con el jardin. Recomendamos BOOTIK sin dudar.\"",
+        name: "Mariana Ruiz",
+        meta: "Residencial Chipinque"
+      },
+      {
+        quote: "\"Piso antiderrapante en rampa de estacionamiento: cumplio norma y se ve de lujo.\"",
+        name: "Luis Ortega",
+        meta: "Edificio corporativo SPGG"
+      }
+    ],
+    dark: [
+      {
+        quote: "\"Excelente servicio para nuestro local comercial. Acabado premium.\"",
+        name: "Monica Villarreal",
+        meta: "Boutique Valle"
+      },
+      {
+        quote: "\"Renovamos bodega y zona de carga: resistencia y estetica al mismo tiempo.\"",
+        name: "Paola Jimenez",
+        meta: "Parque industrial"
+      },
+      {
+        quote: "\"Showroom listo para inauguracion en tiempo record.\"",
+        name: "Daniela N.",
+        meta: "Retail Forum"
+      },
+      {
+        quote: "\"Mantenimiento anual puntual; el color se ve como el primer dia.\"",
+        name: "Ernesto V.",
+        meta: "Cadena de cafeterias"
+      },
+      {
+        quote: "\"Logotipo en concreto fresco: precision milimetrica.\"",
+        name: "Ivan Mendoza",
+        meta: "Agencia creativa MTY"
+      }
+    ],
+    warm: [
+      {
+        quote: "\"La mejor inversion para el area de alberca. Antiderrapante y fresco.\"",
+        name: "Alejandro Trevino",
+        meta: "Residencial privado"
+      },
+      {
+        quote: "\"Alberca y deck integrados; textura comoda bajo el sol.\"",
+        name: "Familia Gutierrez",
+        meta: "Club residencial"
+      },
+      {
+        quote: "\"Cancelamos ceramica por estampado: menos juntas, mas higiene en bar.\"",
+        name: "Alberto F.",
+        meta: "Skybar zona Tec"
+      },
+      {
+        quote: "\"Escalones exteriores seguros para abuelos y ninos.\"",
+        name: "Lucia Paredes",
+        meta: "Jardines de la Loma"
+      },
+      {
+        quote: "\"Area asador con acabado que no se calienta igual que loseta.\"",
+        name: "Hector Gamez",
+        meta: "Quinta Allende"
+      }
+    ]
+  },
+  en: {
+    featured: [
+      {
+        quote: "\"The stamping detail exceeded expectations. Professional, punctual crew.\"",
+        name: "Ricardo Garza",
+        meta: "San Pedro Residential"
+      },
+      {
+        quote: "\"Our patio looks flawless. They coordinated with the architect and hit every deadline.\"",
+        name: "Carmen Flores",
+        meta: "Bosques del Valle"
+      },
+      {
+        quote: "\"Driveway quality like a resort. Sealing has held up through heavy rain.\"",
+        name: "Jorge Cantu",
+        meta: "Carretera Nacional"
+      },
+      {
+        quote: "\"They guided us on texture and color; the result beats renders and reference photos.\"",
+        name: "Sofia Delgado",
+        meta: "Citadel project"
+      },
+      {
+        quote: "\"Clean, tidy team that respected the garden. We recommend BOOTIK without hesitation.\"",
+        name: "Mariana Ruiz",
+        meta: "Chipinque residential"
+      },
+      {
+        quote: "\"Non-slip ramp in the parking garage: code-compliant and still looks premium.\"",
+        name: "Luis Ortega",
+        meta: "Corporate tower SPGG"
+      }
+    ],
+    dark: [
+      {
+        quote: "\"Excellent service for our retail space. Premium finish.\"",
+        name: "Monica Villarreal",
+        meta: "Valle boutique"
+      },
+      {
+        quote: "\"We refreshed the warehouse and loading zone: durability and aesthetics together.\"",
+        name: "Paola Jimenez",
+        meta: "Industrial park"
+      },
+      {
+        quote: "\"Showroom ready to open on a tight timeline.\"",
+        name: "Daniela N.",
+        meta: "Retail forum"
+      },
+      {
+        quote: "\"Annual maintenance on schedule; color still looks day-one fresh.\"",
+        name: "Ernesto V.",
+        meta: "Coffee chain"
+      },
+      {
+        quote: "\"Logo embedded in fresh concrete: millimeter precision.\"",
+        name: "Ivan Mendoza",
+        meta: "Creative agency MTY"
+      }
+    ],
+    warm: [
+      {
+        quote: "\"Best investment for our pool deck: slip-resistant and cool underfoot.\"",
+        name: "Alejandro Trevino",
+        meta: "Private residence"
+      },
+      {
+        quote: "\"Pool and deck feel integrated; comfortable texture in the sun.\"",
+        name: "Gutierrez family",
+        meta: "Country club residential"
+      },
+      {
+        quote: "\"We skipped tile for stamped concrete: fewer joints, easier bar hygiene.\"",
+        name: "Alberto F.",
+        meta: "Skybar Tec area"
+      },
+      {
+        quote: "\"Exterior steps feel safe for grandparents and kids.\"",
+        name: "Lucia Paredes",
+        meta: "Jardines de la Loma"
+      },
+      {
+        quote: "\"Outdoor grill area that does not heat up like pavers did.\"",
+        name: "Hector Gamez",
+        meta: "Quinta Allende"
+      }
+    ]
+  }
+};
+
+const testimonialRotatorCleanups = [];
+
+function shuffleIndices(length) {
+  const order = Array.from({ length }, (_, i) => i);
+  for (let i = order.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [order[i], order[j]] = [order[j], order[i]];
+  }
+  return order;
+}
+
+function nextRoundOrder(poolLength, lastPoolIndex) {
+  let order = shuffleIndices(poolLength);
+  if (poolLength > 1 && typeof lastPoolIndex === "number" && order[0] === lastPoolIndex) {
+    const swapIdx = order.findIndex((idx, i) => i > 0 && idx !== lastPoolIndex);
+    if (swapIdx > 0) {
+      [order[0], order[swapIdx]] = [order[swapIdx], order[0]];
+    }
+  }
+  return order;
+}
+
+function clearTestimonialRotators() {
+  testimonialRotatorCleanups.forEach((fn) => fn());
+  testimonialRotatorCleanups.length = 0;
+}
+
+function bindTestimonialRotator(slotEl, pool, periodMs, phaseMs) {
+  const anim = slotEl.querySelector("[data-testimonial-anim]");
+  const quoteEl = slotEl.querySelector("[data-testimonial-quote]");
+  const nameEl = slotEl.querySelector("[data-testimonial-name]");
+  const metaEl = slotEl.querySelector("[data-testimonial-meta]");
+  if (!anim || !quoteEl || !nameEl || !metaEl || !pool?.length) {
+    return;
+  }
+
+  let order = nextRoundOrder(pool.length);
+  let pos = 0;
+
+  function renderItem(poolIndex) {
+    const item = pool[poolIndex];
+    quoteEl.textContent = item.quote;
+    nameEl.textContent = item.name;
+    metaEl.textContent = item.meta || "";
+  }
+
+  function advance() {
+    anim.classList.add("is-exiting");
+    window.setTimeout(() => {
+      const lastPoolIndex = order[pos];
+      pos += 1;
+      if (pos >= order.length) {
+        order = nextRoundOrder(pool.length, lastPoolIndex);
+        pos = 0;
+      }
+      renderItem(order[pos]);
+      anim.classList.remove("is-exiting");
+    }, 450);
+  }
+
+  renderItem(order[pos]);
+
+  const phase = typeof phaseMs === "number" ? phaseMs : 0;
+  const firstTimer = window.setTimeout(() => {
+    advance();
+    const intervalId = window.setInterval(advance, periodMs);
+    testimonialRotatorCleanups.push(() => window.clearInterval(intervalId));
+  }, phase + periodMs);
+
+  testimonialRotatorCleanups.push(() => window.clearTimeout(firstTimer));
+}
+
+function initTestimonialRotators() {
+  clearTestimonialRotators();
+  const lang = document.documentElement.lang === "en" ? "en" : "es";
+  const pools = testimonialPools[lang];
+  if (!pools) {
+    return;
+  }
+  const featured = document.querySelector('[data-testimonial-slot="featured"]');
+  const dark = document.querySelector('[data-testimonial-slot="dark"]');
+  const warm = document.querySelector('[data-testimonial-slot="warm"]');
+  if (featured) {
+    bindTestimonialRotator(featured, pools.featured, 6800, 0);
+  }
+  if (dark) {
+    bindTestimonialRotator(dark, pools.dark, 7200, 2400);
+  }
+  if (warm) {
+    bindTestimonialRotator(warm, pools.warm, 7600, 4800);
+  }
+}
+
 if (yearEl) {
   yearEl.textContent = String(new Date().getFullYear());
 }
@@ -298,6 +562,7 @@ function applyLanguage(lang) {
 
 const savedLanguage = localStorage.getItem(LANG_KEY) || "es";
 applyLanguage(savedLanguage);
+initTestimonialRotators();
 
 if (langToggle) {
   langToggle.addEventListener("click", () => {
@@ -305,5 +570,6 @@ if (langToggle) {
     const next = current === "es" ? "en" : "es";
     localStorage.setItem(LANG_KEY, next);
     applyLanguage(next);
+    initTestimonialRotators();
   });
 }

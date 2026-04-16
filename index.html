@@ -161,12 +161,31 @@
 <p class="text-secondary font-medium" data-i18n="home.testimonials.subtitle">Confianza cimentada en resultados excepcionales.</p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-6 md:grid-rows-2 gap-4">
-<div class="md:col-span-3 md:row-span-2 bg-white p-12 flex flex-col justify-between shadow-sm relative overflow-hidden">
-<div><p class="text-2xl font-headline font-bold text-on-surface leading-tight mb-8" data-i18n="home.testimonials.t1">"El nivel de detalle en el estampado supero expectativas. Equipo profesional y puntual."</p></div>
-<div><p class="font-bold text-on-surface">Ricardo Garza</p><p class="text-secondary text-xs font-medium tracking-wider uppercase" data-i18n="home.testimonials.t1meta">Residencial San Pedro</p></div>
+<div class="testimonial-slot md:col-span-3 md:row-span-2 bg-white p-12 flex flex-col justify-between shadow-sm relative overflow-hidden min-h-[280px] md:min-h-[320px]" data-testimonial-slot="featured">
+<div class="testimonial-anim flex flex-col justify-between h-full flex-1" data-testimonial-anim>
+<div>
+<p class="text-2xl font-headline font-bold text-on-surface leading-tight mb-8" data-testimonial-quote></p>
 </div>
-<div class="md:col-span-3 bg-inverse-surface text-white p-8"><p class="font-body italic text-surface-variant mb-6 leading-relaxed" data-i18n="home.testimonials.t2">"Excelente servicio para nuestro local comercial. Acabado premium."</p><p class="font-bold">Monica Villarreal</p></div>
-<div class="md:col-span-3 bg-secondary-container/50 p-8"><p class="font-body text-on-surface-variant mb-6 leading-relaxed" data-i18n="home.testimonials.t3">"La mejor inversion para el area de alberca. Antiderrapante y fresco."</p><p class="font-bold text-on-surface">Alejandro Trevino</p></div>
+<div>
+<p class="font-bold text-on-surface" data-testimonial-name></p>
+<p class="text-secondary text-xs font-medium tracking-wider uppercase mt-1" data-testimonial-meta></p>
+</div>
+</div>
+</div>
+<div class="testimonial-slot md:col-span-3 bg-inverse-surface text-white p-8 min-h-[200px]" data-testimonial-slot="dark">
+<div class="testimonial-anim" data-testimonial-anim>
+<p class="font-body italic text-surface-variant mb-6 leading-relaxed" data-testimonial-quote></p>
+<p class="font-bold" data-testimonial-name></p>
+<p class="text-surface-variant/70 text-xs font-medium tracking-wider uppercase mt-2" data-testimonial-meta></p>
+</div>
+</div>
+<div class="testimonial-slot md:col-span-3 bg-secondary-container/50 p-8 min-h-[200px]" data-testimonial-slot="warm">
+<div class="testimonial-anim" data-testimonial-anim>
+<p class="font-body text-on-surface-variant mb-6 leading-relaxed" data-testimonial-quote></p>
+<p class="font-bold text-on-surface" data-testimonial-name></p>
+<p class="text-on-surface-variant/80 text-xs font-medium tracking-wider uppercase mt-2" data-testimonial-meta></p>
+</div>
+</div>
 </div>
 </div>
 </section>
