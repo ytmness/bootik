@@ -144,7 +144,7 @@ const meshy = [
 ];
 
 const out = {
-  products: [...base, ...meshy],
+  products: [...meshy],
   _meta: {
     note: "Fuente estatica. Con Supabase: mismo shape por fila (id, nameEs, nameEn, price, image, descriptionEs, descriptionEn, modelGlb, modelOrientation). modelGlb null = sin visor 3D en ficha."
   }
