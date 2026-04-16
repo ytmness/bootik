@@ -11,12 +11,14 @@ const notFoundEl = document.getElementById("product-not-found");
 const imageEl = document.getElementById("product-image");
 const titleEl = document.getElementById("product-title");
 const priceEl = document.getElementById("product-price");
+const whatsappBtn = document.getElementById("product-whatsapp-btn");
 const descEl = document.getElementById("product-desc");
 const section3d = document.getElementById("product-3d-section");
 const slot3d = document.getElementById("product-model-slot");
 const overlay3d = document.getElementById("product-model-overlay");
 const loadingText = document.getElementById("mv-i18n-loading");
 const errorText = document.getElementById("mv-i18n-error");
+const DEFAULT_WHATSAPP_REF_LINK = "https://wa.me/528100000000";
 
 function lang() {
   return document.documentElement.lang === "en" ? "en" : "es";
@@ -40,6 +42,18 @@ function hideOverlay() {
   overlay3d.classList.add("hidden", "pointer-events-none");
 }
 
+function buildWhatsAppLink(p) {
+  if (p?.whatsappLink) {
+    return p.whatsappLink;
+  }
+  const productName = lang() === "en" ? p?.nameEn : p?.nameEs;
+  const text =
+    lang() === "en"
+      ? `Hello, I want details about: ${productName || "product"}`
+      : `Hola, quiero informacion del producto: ${productName || "producto"}`;
+  return `${DEFAULT_WHATSAPP_REF_LINK}?text=${encodeURIComponent(text)}`;
+}
+
 let currentProduct = null;
 let viewerEl = null;
 
@@ -51,6 +65,9 @@ function fillText(p) {
   }
   if (titleEl) titleEl.textContent = lang() === "en" ? p.nameEn : p.nameEs;
   if (priceEl) priceEl.textContent = p.price;
+  if (whatsappBtn) {
+    whatsappBtn.href = buildWhatsAppLink(p);
+  }
   if (descEl) descEl.textContent = lang() === "en" ? p.descriptionEn : p.descriptionEs;
   document.title = `BOOTIK | ${lang() === "en" ? p.nameEn : p.nameEs}`;
 }

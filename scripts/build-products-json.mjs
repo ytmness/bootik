@@ -95,7 +95,8 @@ const meshy = [
     descriptionEs: "Render Meshy: bloque de piedra beige. Inspecciona el modelo 3D en la ficha.",
     descriptionEn: "Meshy render: beige stone block. Inspect the 3D model on the product page.",
     modelGlb: "assets/models/Meshy_AI_Beige_Stone_Block_Wal_0416004320_texture.glb",
-    modelOrientation: "0deg 0deg 0deg"
+    modelOrientation: "0deg 0deg 0deg",
+    whatsappLink: "https://wa.me/528100000000"
   },
   {
     id: "meshy-crimson-arc-tile",
@@ -106,7 +107,8 @@ const meshy = [
     descriptionEs: "Render Meshy: mosaico en arco tono carmesi.",
     descriptionEn: "Meshy render: crimson arc tile mosaic.",
     modelGlb: "assets/models/Meshy_AI_Crimson_Arc_Tile_Mosa_0416004434_texture.glb",
-    modelOrientation: "0deg 0deg 0deg"
+    modelOrientation: "0deg 0deg 0deg",
+    whatsappLink: "https://wa.me/528100000000"
   },
   {
     id: "meshy-stone-wall",
@@ -117,7 +119,8 @@ const meshy = [
     descriptionEs: "Render Meshy: muro de piedra.",
     descriptionEn: "Meshy render: stone wall mold.",
     modelGlb: "assets/models/Meshy_AI_stone_wall_mold_0416004348_texture.glb",
-    modelOrientation: "0deg 0deg 0deg"
+    modelOrientation: "0deg 0deg 0deg",
+    whatsappLink: "https://wa.me/528100000000"
   },
   {
     id: "meshy-yellow-mosaic",
@@ -128,7 +131,8 @@ const meshy = [
     descriptionEs: "Render Meshy: mosaico piedra amarilla.",
     descriptionEn: "Meshy render: yellow stone mosaic.",
     modelGlb: "assets/models/Meshy_AI_Yellow_Stone_Mosaic_0416004410_texture.glb",
-    modelOrientation: "0deg 0deg 0deg"
+    modelOrientation: "0deg 0deg 0deg",
+    whatsappLink: "https://wa.me/528100000000"
   },
   {
     id: "meshy-stone-flower",
@@ -139,7 +143,8 @@ const meshy = [
     descriptionEs: "Render Meshy: patron floral en piedra.",
     descriptionEn: "Meshy render: floral stone pattern.",
     modelGlb: "assets/models/Meshy_AI_Stone_Flower_0416011051_texture.glb",
-    modelOrientation: "0deg 0deg 0deg"
+    modelOrientation: "0deg 0deg 0deg",
+    whatsappLink: "https://wa.me/528100000000"
   }
 ];
 
