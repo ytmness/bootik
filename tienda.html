@@ -29,6 +29,33 @@
 <section class="mb-16 relative">
 <h1 class="font-headline text-5xl md:text-7xl font-extrabold tracking-tighter text-on-surface mb-4"><span data-i18n="shop.title1">MOLDES</span> <span class="text-primary" data-i18n="shop.title2">PROFESIONALES</span></h1>
 <p class="text-secondary text-lg max-w-2xl leading-relaxed" data-i18n="shop.desc">Herramientas de grado industrial para acabados arquitectónicos de alta precisión.</p>
+<a class="inline-flex mt-8 items-center gap-2 px-5 py-3 bg-primary text-white font-bold text-sm tracking-wide rounded-none hover:opacity-90 transition-opacity shadow-md" href="#section-moldes-3d" data-i18n="shop.models.heroLink">Ver renders 3D (Meshy)</a>
+</section>
+<section class="mb-20 scroll-mt-28" id="section-moldes-3d" aria-labelledby="moldes-3d-heading">
+<div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-6">
+<div>
+<h2 class="font-headline text-3xl md:text-4xl font-extrabold tracking-tighter text-on-surface" data-i18n="shop.models.title" id="moldes-3d-heading">Explora moldes en 3D</h2>
+<p class="text-secondary text-sm md:text-base mt-2 max-w-2xl leading-relaxed" data-i18n="shop.models.subtitle">Modelos GLB interactivos: arrastra para rotar; en movil puedes pellizcar para acercar o alejar.</p>
+</div>
+<div class="flex flex-wrap items-center gap-2 shrink-0">
+<button type="button" id="mold-model-prev" class="px-4 py-2.5 border border-slate-300 bg-white text-on-surface font-bold text-sm hover:bg-surface-container-low transition-colors rounded-none" data-i18n="shop.models.prev">Anterior</button>
+<button type="button" id="mold-model-next" class="px-4 py-2.5 bg-primary text-white font-bold text-sm hover:opacity-90 transition-opacity rounded-none" data-i18n="shop.models.next">Siguiente</button>
+</div>
+</div>
+<p class="sr-only" data-i18n="shop.models.loading" id="mv-i18n-loading">Cargando modelo...</p>
+<p class="sr-only" data-i18n="shop.models.error" id="mv-i18n-error">No se pudo cargar este modelo.</p>
+<div class="relative rounded-xl overflow-hidden bg-slate-100 border border-slate-200 shadow-lg aspect-[4/3] max-w-4xl mx-auto min-h-[280px] md:min-h-[360px]">
+<model-viewer id="mold-model-viewer" class="w-full h-full block bg-slate-100" style="min-height:280px" camera-controls touch-action="pan-y" auto-rotate auto-rotate-delay="4000" interaction-prompt="when-focused" shadow-intensity="1" exposure="1" environment-image="neutral" alt="BOOTIK mold 3D"></model-viewer>
+<div class="absolute bottom-0 left-0 right-0 pointer-events-none bg-gradient-to-t from-black/50 to-transparent pt-16 pb-4 px-4 md:px-6">
+<p id="mold-model-caption" class="font-headline font-bold text-white text-sm md:text-base drop-shadow-md"></p>
+</div>
+<div id="mold-model-overlay" class="absolute inset-0 z-10 hidden pointer-events-none flex items-center justify-center bg-slate-100/90 text-secondary text-sm font-medium" aria-live="polite"></div>
+</div>
+<div id="mold-model-dots" class="flex justify-center gap-2 mt-4 flex-wrap"></div>
+<div id="mold-model-chips" class="flex flex-wrap justify-center gap-2 mt-4 max-w-4xl mx-auto"></div>
+<p class="text-xs text-secondary mt-4 max-w-3xl mx-auto text-center leading-relaxed" data-i18n="shop.models.hint">Los modelos .glb se sirven desde assets/models/; la lista esta en assets/js/tienda-3d.js.</p>
+<p class="text-xs text-secondary mt-2 max-w-3xl mx-auto text-center leading-relaxed" data-i18n="shop.models.orientationTip">Si un modelo se ve acostado, en tienda-3d.js pon orientation por molde (ej. -90deg 0deg 0deg) hasta que quede de pie.</p>
+<p class="text-xs text-secondary mt-2 max-w-3xl mx-auto text-center leading-relaxed" data-i18n="shop.models.compressTip">Para cargas mas rapidas: reduce poligonos y tamaño de texturas antes de subir (Blender, gltf-transform, Meshy re-export).</p>
 </section>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
 <div class="group relative bg-surface-container-low flex flex-col"><div class="aspect-square overflow-hidden bg-white mb-6 relative"><img alt="Concrete Mold Ashlar Stone" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuByAMen0tmr-VDi2Kmm-C4pgYBfx3san5QlPLOYdTNiclanXKPi4TS2fTcx9bsjEntpkm5ejixD5JTXNhheV4z_ut_XCntJrpr9z5mTLUDi0E8xnaCXhGZ4iQhMh493zzQ9B5-5EfuudZ7LhgomQbDEunR0--0PRZb3Jy28P1uXehyfVx3TjmYMnhZJ0WEkeEGdXQItKBHZCDOExZvN5fwTLVldET_aF5LWkKOGWCYgkyownKGpqVyvYYX22y1m8Y010JQ2gk2fnw"/></div><div class="px-4 pb-8 flex-grow"><div class="flex justify-between items-start mb-2"><h3 class="font-headline text-xl font-bold tracking-tight text-on-surface">Ashlar Slate Pro</h3><span class="font-headline text-xl font-bold text-primary">$4,850</span></div></div></div>
@@ -56,4 +83,5 @@
 <a class="bg-[#25D366] text-white p-4 rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-90 transition-all" href="https://wa.me/528100000000"><span class="material-symbols-outlined text-2xl">chat</span></a>
 </div>
 <script src="assets/js/main.js" defer></script>
+<script type="module" src="assets/js/tienda-3d.js"></script>
 </body></html>
