@@ -29,42 +29,9 @@
 <section class="mb-16 relative">
 <h1 class="font-headline text-5xl md:text-7xl font-extrabold tracking-tighter text-on-surface mb-4"><span data-i18n="shop.title1">MOLDES</span> <span class="text-primary" data-i18n="shop.title2">PROFESIONALES</span></h1>
 <p class="text-secondary text-lg max-w-2xl leading-relaxed" data-i18n="shop.desc">Herramientas de grado industrial para acabados arquitectónicos de alta precisión.</p>
-<a class="inline-flex mt-8 items-center gap-2 px-5 py-3 bg-primary text-white font-bold text-sm tracking-wide rounded-none hover:opacity-90 transition-opacity shadow-md" href="#section-moldes-3d" data-i18n="shop.models.heroLink">Ver renders 3D (Meshy)</a>
+<p class="text-xs text-secondary mt-4 max-w-2xl" data-i18n="shop.catalogNote">El catalogo se carga desde assets/data/products.json (luego Supabase + panel admin).</p>
 </section>
-<section class="mb-20 scroll-mt-28" id="section-moldes-3d" aria-labelledby="moldes-3d-heading">
-<div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-6">
-<div>
-<h2 class="font-headline text-3xl md:text-4xl font-extrabold tracking-tighter text-on-surface" data-i18n="shop.models.title" id="moldes-3d-heading">Explora moldes en 3D</h2>
-<p class="text-secondary text-sm md:text-base mt-2 max-w-2xl leading-relaxed" data-i18n="shop.models.subtitle">Modelos GLB interactivos: arrastra para rotar; en movil puedes pellizcar para acercar o alejar.</p>
-</div>
-<div class="flex flex-wrap items-center gap-2 shrink-0">
-<button type="button" id="mold-model-prev" class="px-4 py-2.5 border border-slate-300 bg-white text-on-surface font-bold text-sm hover:bg-surface-container-low transition-colors rounded-none" data-i18n="shop.models.prev">Anterior</button>
-<button type="button" id="mold-model-next" class="px-4 py-2.5 bg-primary text-white font-bold text-sm hover:opacity-90 transition-opacity rounded-none" data-i18n="shop.models.next">Siguiente</button>
-</div>
-</div>
-<p class="sr-only" data-i18n="shop.models.loading" id="mv-i18n-loading">Cargando modelo...</p>
-<p class="sr-only" data-i18n="shop.models.error" id="mv-i18n-error">No se pudo cargar este modelo.</p>
-<div class="relative rounded-xl overflow-hidden bg-slate-100 border border-slate-200 shadow-lg aspect-[4/3] max-w-4xl mx-auto min-h-[280px] md:min-h-[360px]">
-<model-viewer id="mold-model-viewer" class="w-full h-full block bg-slate-100" style="min-height:280px" camera-controls touch-action="pan-y" auto-rotate auto-rotate-delay="4000" interaction-prompt="when-focused" shadow-intensity="1" exposure="1" environment-image="neutral" alt="BOOTIK mold 3D"></model-viewer>
-<div class="absolute bottom-0 left-0 right-0 pointer-events-none bg-gradient-to-t from-black/50 to-transparent pt-16 pb-4 px-4 md:px-6">
-<p id="mold-model-caption" class="font-headline font-bold text-white text-sm md:text-base drop-shadow-md"></p>
-</div>
-<div id="mold-model-overlay" class="absolute inset-0 z-10 hidden pointer-events-none flex items-center justify-center bg-slate-100/90 text-secondary text-sm font-medium" aria-live="polite"></div>
-</div>
-<div id="mold-model-dots" class="flex justify-center gap-2 mt-4 flex-wrap"></div>
-<div id="mold-model-chips" class="flex flex-wrap justify-center gap-2 mt-4 max-w-4xl mx-auto"></div>
-<p class="text-xs text-secondary mt-4 max-w-3xl mx-auto text-center leading-relaxed" data-i18n="shop.models.hint">Los modelos .glb se sirven desde assets/models/; la lista esta en assets/js/tienda-3d.js.</p>
-<p class="text-xs text-secondary mt-2 max-w-3xl mx-auto text-center leading-relaxed" data-i18n="shop.models.orientationTip">Si un modelo se ve acostado, en tienda-3d.js pon orientation por molde (ej. -90deg 0deg 0deg) hasta que quede de pie.</p>
-<p class="text-xs text-secondary mt-2 max-w-3xl mx-auto text-center leading-relaxed" data-i18n="shop.models.compressTip">Para cargas mas rapidas: reduce poligonos y tamaño de texturas antes de subir (Blender, gltf-transform, Meshy re-export).</p>
-</section>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-<div class="group relative bg-surface-container-low flex flex-col"><div class="aspect-square overflow-hidden bg-white mb-6 relative"><img alt="Concrete Mold Ashlar Stone" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuByAMen0tmr-VDi2Kmm-C4pgYBfx3san5QlPLOYdTNiclanXKPi4TS2fTcx9bsjEntpkm5ejixD5JTXNhheV4z_ut_XCntJrpr9z5mTLUDi0E8xnaCXhGZ4iQhMh493zzQ9B5-5EfuudZ7LhgomQbDEunR0--0PRZb3Jy28P1uXehyfVx3TjmYMnhZJ0WEkeEGdXQItKBHZCDOExZvN5fwTLVldET_aF5LWkKOGWCYgkyownKGpqVyvYYX22y1m8Y010JQ2gk2fnw"/></div><div class="px-4 pb-8 flex-grow"><div class="flex justify-between items-start mb-2"><h3 class="font-headline text-xl font-bold tracking-tight text-on-surface">Ashlar Slate Pro</h3><span class="font-headline text-xl font-bold text-primary">$4,850</span></div></div></div>
-<div class="group relative bg-surface-container-low flex flex-col"><div class="aspect-square overflow-hidden bg-white mb-6 relative"><img alt="Wooden Texture Concrete Mold" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZwK_GLhMdsqJiE8yEsCfBAhELLuO9htqxkx7WZJZfXs8ni8DXzPu3mZbco3J0Ihaxp8EnfEmq_6_ggUn9dH1CexpCsPl0gf7PQAw7P_3A67iSV_zwWtjSY3aaF05wHUTjVLB4pT07L5QFQBNaxN5MAJogb2i5xRgpc0nDZQFxnLoyr6ZiWrYTuSLCGTscE-c7aoz8uvzCp7gTkJRn5ZM_hiFYAJwqMTB5V1V-h0GawcdaiEpRpxNLzSCzDFxPu0p7Nuh8cDDlxQ"/></div><div class="px-4 pb-8 flex-grow"><div class="flex justify-between items-start mb-2"><h3 class="font-headline text-xl font-bold tracking-tight text-on-surface">Old Plank Timber</h3><span class="font-headline text-xl font-bold text-primary">$5,200</span></div></div></div>
-<div class="group relative bg-surface-container-low flex flex-col"><div class="aspect-square overflow-hidden bg-white mb-6 relative"><img alt="Circular Pattern Mold" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqj8PS-a0xqDN9U-Dp3TChBqcp6xtBoz5WtZdZj45zPPfac7NlmAes9av6UF4FO4Z07CBS3lEe4IZ_onjnQqFxW_XFcIKi0zGVaHdPxbNvrJNgTUu7xkIVjcL7CjivgoYkqJfRCp1s3MEW9xGrzE5ZPoMI1UdmC1LE5FvtvMoZR2ZDHusLDRf0wgEcedixEjo_p1HnpSYw6l8Vc2iq2DXtiFrUvF0C0sKrLSUFQP4vCv_r3NdJNMIyjpK00KEa-5afrDZyOdEa1Q"/></div><div class="px-4 pb-8 flex-grow"><div class="flex justify-between items-start mb-2"><h3 class="font-headline text-xl font-bold tracking-tight text-on-surface">European Fan</h3><span class="font-headline text-xl font-bold text-primary">$4,400</span></div></div></div>
-<div class="group relative bg-surface-container-low flex flex-col"><div class="aspect-square overflow-hidden bg-white mb-6 relative"><img alt="Roman Stone Mold" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJlu-PAPQM1lXZUJxjFiXnKh-qfHAx4ZEl3kB-AXl8aVRdRMXp1yjGLZv8clY8X0W82Q2_tj8K301eu2L4E6NNjVf0Sf_J356_0RK4uSdnxbpy3jbUNFDDNdNfkjmkB9nAgF5ZUkRvdUngqWGD9c3h2DwV8Yvnw5rzNaRLZRfoybnwzH_Y7bHnf4kDevutxBl6PnKXR2oC9zndJjSiIvOHC2ocowr7GOmU7DIseJsXhdGgXF5Nziv_f6m5wkHvnkQlKJbts6vT5g"/></div><div class="px-4 pb-8 flex-grow"><div class="flex justify-between items-start mb-2"><h3 class="font-headline text-xl font-bold tracking-tight text-on-surface">Roman Slate Set</h3><span class="font-headline text-xl font-bold text-primary">$4,950</span></div></div></div>
-<div class="group relative bg-surface-container-low flex flex-col"><div class="aspect-square overflow-hidden bg-white mb-6 relative"><img alt="Hexagonal Tile Mold" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7Ca23to9TQGVO08fRdEx2txF92xrPVEPkuipMu3f7Og7qkm3jknez-aSzVCr-GUiCdXvr6YbUNZEptGX_bT_JYGvowbV7mR6IrfeQnmFzLgDkXamCAYxyfId2Tkw1XETSJEZuOQ0R_uiy86WV30VfMqzrLHdvY6Z7axZumvvA2Ito88finqWPruLbpPJyHoXR3v-YDzFKNjUUydRsZfqkfqJeuIGQyJkiCNTR0p07O0w1UnV7304brrbkYQWdf1TJbUxO_G4x1g"/></div><div class="px-4 pb-8 flex-grow"><div class="flex justify-between items-start mb-2"><h3 class="font-headline text-xl font-bold tracking-tight text-on-surface">Geo Hex Urban</h3><span class="font-headline text-xl font-bold text-primary">$3,800</span></div></div></div>
-<div class="group relative bg-surface-container-low flex flex-col"><div class="aspect-square overflow-hidden bg-white mb-6 relative"><img alt="Border Mold" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDXkB7p4USPiP_ZhIvZrsgsuY6zZawptF5NujbHqDj592YKD8zqfY339ib_U17dFsX98ExEIVUb0mWzJNYEUQleWH7j8b5TIdjcDS74rZ9TsGGp3YVLrcw8XvOlZnwnrKtVBo6gvNExju2F9Ut48xVIiivUMX7L6Ym5TsbqR1fuNj2t4gbqq_oKYLq5z1d0m-HEuohncVNV6dX85pLFclaIezYAa1x1W-277qIOYduHWMjE8Pgk_3JYNdFVmw1lJniEL97FSFdtA"/></div><div class="px-4 pb-8 flex-grow"><div class="flex justify-between items-start mb-2"><h3 class="font-headline text-xl font-bold tracking-tight text-on-surface">Cenefa Classic</h3><span class="font-headline text-xl font-bold text-primary">$2,100</span></div></div></div>
-</div>
+<div id="shop-catalog-root" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12"></div>
 </main>
 <section class="bg-secondary-container py-24 relative overflow-hidden">
 <div class="max-w-7xl mx-auto px-8 relative z-10 flex flex-col items-center text-center">
@@ -83,5 +50,5 @@
 <a class="bg-[#25D366] text-white p-4 rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-90 transition-all" href="https://wa.me/528100000000"><span class="material-symbols-outlined text-2xl">chat</span></a>
 </div>
 <script src="assets/js/main.js" defer></script>
-<script type="module" src="assets/js/tienda-3d.js"></script>
+<script src="assets/js/tienda-catalog.js" defer></script>
 </body></html>
