@@ -1,20 +1,22 @@
 <!DOCTYPE html>
-<html class="light" lang="es"><head>
+<html class="light" lang="es">
+<head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Gallery | BOOTIK Monterrey</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>BOOTIK | Galeria</title>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script src="assets/js/tailwind.config.js"></script>
-<style>.material-symbols-outlined { font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24 }
-.text-stamped { letter-spacing: -0.02em }
-.backdrop-blur-xl { backdrop-filter: blur(24px) }</style>
+<style>
+.material-symbols-outlined { font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24 }
+#gallery-dialog::backdrop { background: rgba(15, 23, 42, 0.78); }
+</style>
 </head>
-<body class="bg-surface font-body text-on-surface">
-<nav class="fixed top-0 w-full z-50 flex items-center px-4 md:px-8 py-3 max-w-full bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl shadow-sm dark:shadow-none">
+<body class="bg-background text-on-background font-body selection:bg-primary selection:text-white">
+<nav class="fixed top-0 w-full z-50 flex items-center px-4 md:px-8 py-3 max-w-full bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl shadow-sm">
 <a class="inline-flex items-center shrink-0" href="index.html">
 <img alt="BOOTIK" class="h-12 w-auto md:h-14" src="assets/1.png"/>
 </a>
@@ -27,61 +29,128 @@
 <a class="text-slate-600 dark:text-slate-400 font-medium hover:text-slate-900 dark:hover:text-white transition-colors" href="contacto.html" data-i18n="nav.contact">Contact</a>
 </div>
 <div class="ml-12 xl:ml-20 flex items-center gap-4 md:gap-6 shrink-0 border-l border-slate-300/70 pl-8 md:pl-12">
-<button class="hidden md:inline-flex bg-primary-container text-white px-5 py-2 font-bold transition-transform active:scale-95 text-sm uppercase tracking-wider" data-i18n="nav.quote">Cotizar</button>
+<button class="hidden md:inline-flex bg-primary-container text-on-primary-container px-5 py-2 font-bold hover:bg-primary transition-all active:scale-95" data-i18n="nav.quote">Cotizar</button>
 <button class="border border-slate-400 dark:border-slate-500 bg-white/70 dark:bg-slate-800/70 px-3 py-1 text-xs font-bold text-slate-700 dark:text-slate-200" id="lang-toggle" type="button">EN</button>
 </div>
 </nav>
-<main class="pt-28 pb-20">
-<header class="px-8 md:px-16 mb-16 relative">
-<div class="max-w-4xl">
-<span class="text-primary font-bold uppercase tracking-widest text-xs mb-4 block" data-i18n="gallery.badge">Excellence in concrete</span>
-<h1 class="font-headline text-5xl md:text-7xl font-extrabold text-on-surface text-stamped leading-[0.95] mb-8">STAMPED <span class="text-primary" data-i18n="gallery.title">GALLERY</span></h1>
-<p class="text-secondary max-w-xl text-lg leading-relaxed" data-i18n="gallery.desc">Explore our portfolio of architectural concrete projects.</p>
-</div>
+
+<main class="pt-24 pb-20 px-6 md:px-10 max-w-7xl mx-auto">
+<header class="mb-10 md:mb-14">
+<span class="text-primary font-bold uppercase tracking-widest text-xs mb-3 block" data-i18n="gallery.badge">Excelencia en concreto</span>
+<h1 class="font-headline text-4xl md:text-6xl font-extrabold text-on-surface tracking-tighter leading-[0.95] mb-4">
+  <span data-i18n="gallery.title">GALERIA</span>
+</h1>
+<p class="text-secondary max-w-2xl text-base md:text-lg leading-relaxed" data-i18n="gallery.desc">Explora nuestro portafolio de proyectos arquitectonicos de concreto.</p>
 </header>
-<section class="px-8 md:px-16 mb-12">
-<div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center py-6 border-y border-outline/10">
-<p class="md:col-span-7 text-secondary text-sm md:text-base leading-relaxed" data-i18n="gallery.overview.desc">
-                    Vista general de nuestro portafolio completo: residencial, comercial e industrial.
-                </p>
-<div class="md:col-span-5 flex flex-wrap gap-3 md:justify-end">
-<span class="px-4 py-2 text-xs font-bold uppercase tracking-widest bg-secondary-container text-on-secondary-container" data-i18n="gallery.overview.tag1">Residencial</span>
-<span class="px-4 py-2 text-xs font-bold uppercase tracking-widest bg-surface-container-low text-on-surface" data-i18n="gallery.overview.tag2">Comercial</span>
-<span class="px-4 py-2 text-xs font-bold uppercase tracking-widest bg-inverse-surface text-white" data-i18n="gallery.overview.tag3">Industrial</span>
+
+<div class="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-3 mb-8 md:mb-10">
+<span class="text-xs font-bold uppercase tracking-widest text-secondary shrink-0" data-i18n="gallery.filter">Filtrar por</span>
+<div class="flex flex-wrap gap-2">
+<button type="button" data-gallery-filter="all" class="px-4 py-2 text-xs font-bold uppercase tracking-widest rounded-sm border transition-colors bg-primary text-white border-primary" data-i18n="gallery.all">Todos los proyectos</button>
+<button type="button" data-gallery-filter="residential" class="px-4 py-2 text-xs font-bold uppercase tracking-widest rounded-sm border border-slate-200 bg-white text-on-surface hover:border-primary/40" data-i18n="gallery.overview.tag1">Residencial</button>
+<button type="button" data-gallery-filter="patios" class="px-4 py-2 text-xs font-bold uppercase tracking-widest rounded-sm border border-slate-200 bg-white text-on-surface hover:border-primary/40" data-i18n="gallery.patios">Patios</button>
+<button type="button" data-gallery-filter="driveways" class="px-4 py-2 text-xs font-bold uppercase tracking-widest rounded-sm border border-slate-200 bg-white text-on-surface hover:border-primary/40" data-i18n="gallery.driveways">Cocheras</button>
+<button type="button" data-gallery-filter="commercial" class="px-4 py-2 text-xs font-bold uppercase tracking-widest rounded-sm border border-slate-200 bg-white text-on-surface hover:border-primary/40" data-i18n="gallery.commercial">Comercial</button>
 </div>
 </div>
-</section>
-<section class="px-8 md:px-16">
-<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
-<div class="md:col-span-8 group relative overflow-hidden bg-surface-container-low transition-all duration-500">
-<img alt="Modern Patio" class="w-full h-[500px] object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiYr0Tso5Giv87bqei5p_JwYellJGVT4tpd8xSayUlvwYBcyqvwJWox_xB3vLiHSTpc-plPUm1jgculHk7cSZiTHOTgmUSr7Rq8JJZP2oprSk3GOn_KyO3Mvc2mnAtpYqUxff-n5rIq9jJlVrPs0kH2h3zOM67pOtpdHAh832JrjA7dlDUQ-kIsRkfc2wfPbWUyoC9O4HGSJ2ScsUHSXQiCrA_FjTMNrSsKaRId2cWAf4j-szv0XZC6TXuus5aGvr_t5TvRCpbDQ"/>
+
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+
+<article class="gallery-item" data-category="patios">
+<button type="button" class="gallery-trigger group w-full text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-lg">
+<span class="block aspect-[4/5] overflow-hidden rounded-lg border border-slate-200/90 bg-surface-container-low shadow-sm transition duration-300 group-hover:shadow-md group-hover:border-slate-300">
+<img class="h-full w-full object-cover transition duration-500 ease-out group-hover:scale-[1.03]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiYr0Tso5Giv87bqei5p_JwYellJGVT4tpd8xSayUlvwYBcyqvwJWox_xB3vLiHSTpc-plPUm1jgculHk7cSZiTHOTgmUSr7Rq8JJZP2oprSk3GOn_KyO3Mvc2mnAtpYqUxff-n5rIq9jJlVrPs0kH2h3zOM67pOtpdHAh832JrjA7dlDUQ-kIsRkfc2wfPbWUyoC9O4HGSJ2ScsUHSXQiCrA_FjTMNrSsKaRId2cWAf4j-szv0XZC6TXuus5aGvr_t5TvRCpbDQ" alt="Patio concreto estampado"/>
+</span>
+<span class="mt-2 block text-sm font-semibold text-on-surface">Patio</span>
+<span class="block text-xs text-secondary">Concreto estampado</span>
+</button>
+</article>
+
+<article class="gallery-item" data-category="driveways">
+<button type="button" class="gallery-trigger group w-full text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-lg">
+<span class="block aspect-[4/5] overflow-hidden rounded-lg border border-slate-200/90 bg-surface-container-low shadow-sm transition duration-300 group-hover:shadow-md group-hover:border-slate-300">
+<img class="h-full w-full object-cover transition duration-500 ease-out group-hover:scale-[1.03]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvo9xBb6aumIvTA4o8rBo6mqvzG2Ru8citkeGf4QfvTsgpKoX_gbwf7x_cRAr7HbOeCv4jNiLmWvPZ3yvUnrH5FLORn4VKR7MSnPWLeHa14Y6RhkWT6BoegslbP72yM-hiSaohKCPmiHQMKuP-Yqna20YTsBOe17IB415kK4GcmXG7CqD-5wdbXOvwEmHtqtO399LyyiczMAeqR3N_gkP2AJPWqvskuctDfQKJh4AC67J0Ko-iQ0l4Vly1F3ROcZgAh6cPynLDcA" alt="Cochera estampada"/>
+</span>
+<span class="mt-2 block text-sm font-semibold text-on-surface">Cochera</span>
+<span class="block text-xs text-secondary">Textura piedra</span>
+</button>
+</article>
+
+<article class="gallery-item" data-category="commercial">
+<button type="button" class="gallery-trigger group w-full text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-lg">
+<span class="block aspect-[4/5] overflow-hidden rounded-lg border border-slate-200/90 bg-surface-container-low shadow-sm transition duration-300 group-hover:shadow-md group-hover:border-slate-300">
+<img class="h-full w-full object-cover transition duration-500 ease-out group-hover:scale-[1.03]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQx_fXc0z1suG5htppxlOGSNuGiHxmPPY4otGu0s57atUSCoB9_7HgpHpgq3TWXv9k9gc2P2Qi68QzN1JkEDSKkkS89sfi2gGdGPsCPzalxwbc4kx-8p4qTg5rOI9qnErqpRub0N0SxLhh9Aj41xy2QTWvjGaSMvN7NCnBrNy0mGDHPMe7Jqk9rKQxz_ZMr9rAjF4Zkha-btxDMKfaz-GeeaO_K2VGpbUYVLNgWqZBCKSdjTSOJNP7BmmAY3hhVY7gOW-IWs0Q5w" alt="Espacio comercial"/>
+</span>
+<span class="mt-2 block text-sm font-semibold text-on-surface">Comercial</span>
+<span class="block text-xs text-secondary">Gran formato</span>
+</button>
+</article>
+
+<article class="gallery-item" data-category="residential">
+<button type="button" class="gallery-trigger group w-full text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-lg">
+<span class="block aspect-[4/5] overflow-hidden rounded-lg border border-slate-200/90 bg-surface-container-low shadow-sm transition duration-300 group-hover:shadow-md group-hover:border-slate-300">
+<img class="h-full w-full object-cover object-top transition duration-500 ease-out group-hover:scale-[1.03]" src="assets/ejemplo 2.png" alt="Proyecto residencial BOOTIK"/>
+</span>
+<span class="mt-2 block text-sm font-semibold text-on-surface">Residencial</span>
+<span class="block text-xs text-secondary">Acabado texturizado</span>
+</button>
+</article>
+
+<article class="gallery-item" data-category="commercial">
+<button type="button" class="gallery-trigger group w-full text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-lg">
+<span class="block aspect-[4/5] overflow-hidden rounded-lg border border-slate-200/90 bg-surface-container-low shadow-sm transition duration-300 group-hover:shadow-md group-hover:border-slate-300">
+<img class="h-full w-full object-cover object-center transition duration-500 ease-out group-hover:scale-[1.03]" src="assets/ejemplo 1.png" alt="Diseño personalizado"/>
+</span>
+<span class="mt-2 block text-sm font-semibold text-on-surface">Diseño</span>
+<span class="block text-xs text-secondary">Patron a medida</span>
+</button>
+</article>
+
+<article class="gallery-item" data-category="residential">
+<button type="button" class="gallery-trigger group w-full text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-lg">
+<span class="block aspect-[4/5] overflow-hidden rounded-lg border border-slate-200/90 bg-surface-container-low shadow-sm transition duration-300 group-hover:shadow-md group-hover:border-slate-300">
+<img class="h-full w-full object-cover object-center transition duration-500 ease-out group-hover:scale-[1.03]" src="assets/485722715_1478659913197878_6115133834387971438_n.png" alt="Obra en sitio"/>
+</span>
+<span class="mt-2 block text-sm font-semibold text-on-surface">En obra</span>
+<span class="block text-xs text-secondary">Monterrey</span>
+</button>
+</article>
+
 </div>
-<div class="md:col-span-4 group relative overflow-hidden bg-surface-container-low">
-<img alt="Driveway" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvo9xBb6aumIvTA4o8rBo6mqvzG2Ru8citkeGf4QfvTsgpKoX_gbwf7x_cRAr7HbOeCv4jNiLmWvPZ3yvUnrH5FLORn4VKR7MSnPWLeHa14Y6RhkWT6BoegslbP72yM-hiSaohKCPmiHQMKuP-Yqna20YTsBOe17IB415kK4GcmXG7CqD-5wdbXOvwEmHtqtO399LyyiczMAeqR3N_gkP2AJPWqvskuctDfQKJh4AC67J0Ko-iQ0l4Vly1F3ROcZgAh6cPynLDcA"/>
+
+<section class="mt-16 md:mt-20">
+<div class="bg-inverse-surface px-8 py-12 md:px-14 md:py-16 flex flex-col md:flex-row md:items-center md:justify-between gap-10 rounded-sm border border-slate-700/30">
+<div class="max-w-xl">
+<h2 class="text-white font-headline text-3xl md:text-4xl font-extrabold mb-4 leading-tight tracking-tight" data-i18n="gallery.cta.title">LISTO PARA DEJAR HUELLA?</h2>
+<p class="text-slate-400 text-base leading-relaxed" data-i18n="gallery.cta.desc">Agenda una visita y recibe una cotizacion personalizada para tu proyecto.</p>
 </div>
-<div class="md:col-span-12 group relative overflow-hidden h-[300px]">
-<img alt="Commercial Space" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQx_fXc0z1suG5htppxlOGSNuGiHxmPPY4otGu0s57atUSCoB9_7HgpHpgq3TWXv9k9gc2P2Qi68QzN1JkEDSKkkS89sfi2gGdGPsCPzalxwbc4kx-8p4qTg5rOI9qnErqpRub0N0SxLhh9Aj41xy2QTWvjGaSMvN7NCnBrNy0mGDHPMe7Jqk9rKQxz_ZMr9rAjF4Zkha-btxDMKfaz-GeeaO_K2VGpbUYVLNgWqZBCKSdjTSOJNP7BmmAY3hhVY7gOW-IWs0Q5w"/>
-</div>
-</div>
-</section>
-<section class="mt-24 px-8 md:px-16">
-<div class="bg-inverse-surface p-12 md:p-24 flex flex-col md:flex-row items-center justify-between gap-12">
-<div class="max-w-2xl">
-<h2 class="text-white font-headline text-4xl md:text-5xl font-extrabold mb-6 leading-tight" data-i18n="gallery.cta.title">READY TO STAMP YOUR LEGACY?</h2>
-<p class="text-secondary-fixed-dim text-lg" data-i18n="gallery.cta.desc">Schedule a site visit and get a customized quote for your project.</p>
-</div>
-<div class="flex flex-col gap-4 w-full md:w-auto">
-<a class="bg-primary text-white px-10 py-5 font-bold uppercase tracking-widest hover:bg-primary-container transition-colors text-center" href="contacto.html" data-i18n="gallery.cta.primary">Request Quote</a>
-<a class="border border-outline-variant/30 text-white px-10 py-5 font-bold uppercase tracking-widest hover:bg-white hover:text-on-surface transition-all text-center" href="contacto.html" data-i18n="gallery.cta.secondary">Contact Sales</a>
+<div class="flex flex-col sm:flex-row gap-3 w-full md:w-auto shrink-0">
+<a class="inline-flex justify-center items-center px-8 py-4 bg-primary text-white font-bold text-sm uppercase tracking-widest hover:opacity-95 transition-opacity text-center" href="contacto.html" data-i18n="gallery.cta.primary">Solicitar Cotizacion</a>
+<a class="inline-flex justify-center items-center px-8 py-4 border border-white/30 text-white font-bold text-sm uppercase tracking-widest hover:bg-white hover:text-inverse-surface transition-colors text-center" href="contacto.html" data-i18n="gallery.cta.secondary">Contactar Ventas</a>
 </div>
 </div>
 </section>
 </main>
+
+<dialog id="gallery-dialog" class="max-w-[min(96vw,56rem)] w-full border-0 bg-transparent p-0 open:flex open:flex-col open:gap-3">
+<div class="flex justify-end">
+<button type="button" id="gallery-dialog-close" class="inline-flex items-center justify-center rounded-full bg-white/10 p-2 text-white hover:bg-white/20 transition-colors" aria-label="Cerrar">
+<span class="material-symbols-outlined text-2xl">close</span>
+</button>
+</div>
+<img id="gallery-dialog-img" class="w-full max-h-[min(85vh,720px)] rounded object-contain bg-black/20 shadow-2xl" src="" alt=""/>
+</dialog>
+
 <footer class="w-full px-12 py-16 grid grid-cols-1 md:grid-cols-4 gap-12 bg-slate-900 text-white">
-<div><div class="text-xl font-black mb-4 font-headline">BOOTIK</div><p class="text-slate-400 text-sm" data-i18n="gallery.footer.desc">Premium stamped concrete solutions in Monterrey.</p></div>
-<div><h4 class="font-headline font-bold mb-4 text-primary text-sm uppercase tracking-widest" data-i18n="gallery.footer.contactInfo">Contact Info</h4><ul class="space-y-2 text-sm text-slate-400"><li>ventas@bootik.mx</li><li>+52 (81) 1234-5678</li></ul></div>
-<div><h4 class="font-headline font-bold mb-4 text-primary text-sm uppercase tracking-widest" data-i18n="gallery.footer.navigation">Navigation</h4><ul class="space-y-2 text-sm"><li><a class="text-slate-400 hover:text-white" href="index.html" data-i18n="nav.home">Home</a></li><li><a class="text-white underline" href="galeria.html" data-i18n="nav.gallery">Gallery</a></li></ul></div>
+<div><div class="text-xl font-black mb-4 font-headline">BOOTIK</div><p class="text-slate-400 text-sm" data-i18n="gallery.footer.desc">Soluciones premium de concreto estampado en Monterrey.</p></div>
+<div><h4 class="font-headline font-bold mb-4 text-red-500 text-sm uppercase tracking-widest" data-i18n="gallery.footer.contactInfo">Contacto</h4><ul class="space-y-2 text-sm text-slate-400"><li>ventas@bootik.mx</li><li>+52 (81) 1234-5678</li></ul></div>
+<div><h4 class="font-headline font-bold mb-4 text-red-500 text-sm uppercase tracking-widest" data-i18n="gallery.footer.navigation">Navegacion</h4><ul class="space-y-2 text-sm"><li><a class="text-slate-400 hover:text-white" href="index.html" data-i18n="nav.home">Home</a></li><li><a class="text-white underline" href="galeria.html" data-i18n="nav.gallery">Gallery</a></li></ul></div>
 <div class="text-slate-500 text-xs md:col-span-1" data-i18n="gallery.footer.copy">© 2024 BOOTIK Monterrey.</div>
 </footer>
+<div class="fixed bottom-8 right-8 z-50">
+<a class="bg-[#25D366] text-white p-4 rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-90 transition-all" href="https://wa.me/528100000000" aria-label="WhatsApp"><span class="material-symbols-outlined text-2xl">chat</span></a>
+</div>
 <script src="assets/js/main.js" defer></script>
-</body></html>
+<script src="assets/js/galeria.js" defer></script>
+</body>
+</html>
