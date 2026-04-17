@@ -1,7 +1,7 @@
-(function () {
-  const root = document.getElementById("shop-catalog-root");
-  if (!root) return;
+import { loadPublishedCatalog } from "./catalog-source.js";
 
+const root = document.getElementById("shop-catalog-root");
+if (root) {
   let catalog = [];
 
   function lang() {
@@ -69,17 +69,14 @@
 
   async function load() {
     try {
-      const r = await fetch("assets/data/products.json");
-      if (!r.ok) throw new Error(String(r.status));
-      const data = await r.json();
-      catalog = data.products || [];
+      catalog = await loadPublishedCatalog();
       render();
-    } catch (e) {
+    } catch {
       root.innerHTML =
-        "<p class=\"text-red-700 col-span-full text-center\">No se pudo cargar el catalogo (products.json).</p>";
+        "<p class=\"text-red-700 col-span-full text-center\">No se pudo cargar el catalogo.</p>";
     }
   }
 
   document.addEventListener("bootik-lang", render);
   load();
-})();
+}

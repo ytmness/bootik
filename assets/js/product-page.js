@@ -1,4 +1,5 @@
 import "https://unpkg.com/@google/model-viewer@3.5.0/dist/model-viewer.min.js";
+import { loadPublishedProductById } from "./catalog-source.js";
 
 await customElements.whenDefined("model-viewer");
 
@@ -117,11 +118,7 @@ function renderProduct(p) {
 
 async function init() {
   try {
-    const r = await fetch("assets/data/products.json");
-    if (!r.ok) throw new Error(String(r.status));
-    const data = await r.json();
-    const products = data.products || [];
-    const p = products.find((x) => x.id === id);
+    const p = await loadPublishedProductById(id);
 
     if (!id || !p) {
       showState("404");
@@ -130,7 +127,7 @@ async function init() {
     }
 
     renderProduct(p);
-  } catch (e) {
+  } catch {
     showState("404");
   }
 }
