@@ -67,16 +67,20 @@ function rowToDbFields(p) {
 }
 
 let editingOriginalId = null;
+/** Evita filas duplicadas si varias peticiones a loadList se solapan (login + onAuthStateChange + getSession). */
+let listRequestGen = 0;
 
 async function loadList() {
+  const gen = ++listRequestGen;
   const tbody = el("product-rows");
   const empty = el("list-empty");
-  tbody.innerHTML = "";
   const { data, error } = await sb
     .from("products")
     .select("*")
     .order("sort_order", { ascending: true })
     .order("id", { ascending: true });
+  if (gen !== listRequestGen) return;
+  tbody.innerHTML = "";
   if (error) {
     empty.textContent = error.message;
     empty.classList.remove("hidden");
@@ -159,7 +163,7 @@ el("form-login").addEventListener("submit", async (e) => {
     showLoginError("Este usuario no es admin (app_metadata.role).");
     return;
   }
-  setAuthedUI(data.session);
+  // La UI la actualiza onAuthStateChange (evita doble loadList con setAuthedUI aqui).
 });
 
 el("btn-logout").addEventListener("click", async () => {
@@ -244,11 +248,12 @@ sb.auth.onAuthStateChange((_event, session) => {
   setAuthedUI(session);
 });
 
-const { data: { session } } = await sb.auth.getSession();
-if (session?.user && !isAdminUser(session.user)) {
+const { data: { session: initialSession } } = await sb.auth.getSession();
+if (initialSession?.user && !isAdminUser(initialSession.user)) {
   await sb.auth.signOut();
   showLoginError("Este usuario no es admin.");
   setAuthedUI(null);
 } else {
-  setAuthedUI(session);
+  setAuthedUI(initialSession);
 }
+// Puede coincidir con onAuthStateChange; listRequestGen evita filas duplicadas en la tabla.
