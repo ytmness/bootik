@@ -14,7 +14,7 @@ const imgs = [
   "https://lh3.googleusercontent.com/aida-public/AB6AXuCDXkB7p4USPiP_ZhIvZrsgsuY6zZawptF5NujbHqDj592YKD8zqfY339ib_U17dFsX98ExEIVUb0mWzJNYEUQleWH7j8b5TIdjcDS74rZ9TsGGp3YVLrcw8XvOlZnwnrKtVBo6gvNExju2F9Ut48xVIiivUMX7L6Ym5TsbqR1fuNj2t4gbqq_oKYLq5z1d0m-HEuohncVNV6dX85pLFclaIezYAa1x1W-277qIOYduHWMjE8Pgk_3JYNdFVmw1lJniEL97FSFdtA"
 ];
 
-const ph = "assets/1.png";
+const ph = "assets/Concretos Estampados (1).pdf (1).png";
 
 const base = [
   {
