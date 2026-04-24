@@ -34,6 +34,10 @@ function setAuthedUI(session) {
   el("panel-app").classList.toggle("hidden", !inApp);
   el("btn-logout").classList.toggle("hidden", !inApp);
   el("auth-email").classList.toggle("hidden", !inApp);
+  const linkG = el("link-gallery");
+  if (linkG) {
+    linkG.classList.toggle("hidden", !inApp);
+  }
   if (session?.user?.email) {
     el("auth-email").textContent = session.user.email;
   }
