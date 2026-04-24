@@ -1,20 +1,27 @@
 <!DOCTYPE html>
-<html class="light" lang="es">
+<html lang="es">
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>BOOTIK | Admin catalogo</title>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
   <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  <link href="../assets/css/theme-dark.css" rel="stylesheet"/>
+  <script src="../assets/js/theme.js"></script>
 </head>
 <body class="bg-slate-50 text-slate-900 font-sans min-h-screen">
-  <header class="border-b border-slate-200 bg-white px-6 py-4 flex flex-wrap items-center justify-between gap-4">
+  <header class="border-b border-slate-200 bg-white admin-header-bar px-6 py-4 flex flex-wrap items-center justify-between gap-4">
     <a href="../index.html" class="inline-flex items-center shrink-0 no-underline" title="Ir al sitio">
       <img alt="BOOTIK" class="h-12 w-auto md:h-14" src="../assets/Concretos Estampados (1).pdf (1).png"/>
     </a>
     <div id="auth-bar" class="flex items-center gap-3 text-sm">
       <span id="auth-email" class="text-slate-600 hidden"></span>
-      <button type="button" id="btn-logout" class="hidden px-3 py-1.5 border border-slate-300 rounded font-semibold hover:bg-slate-50">Cerrar sesion</button>
+      <button type="button" id="theme-toggle" class="inline-flex items-center justify-center border border-slate-400 bg-white/90 w-9 h-9 text-slate-700 theme-toggle-btn rounded" aria-label="Cambiar tema">
+        <span class="material-symbols-outlined text-[20px] t-icon-moon" aria-hidden="true">dark_mode</span>
+        <span class="material-symbols-outlined text-[20px] t-icon-sun" aria-hidden="true">light_mode</span>
+      </button>
+      <button type="button" id="btn-logout" class="hidden px-3 py-1.5 border border-slate-300 rounded font-semibold hover:bg-slate-50 text-slate-800">Cerrar sesion</button>
     </div>
   </header>
 

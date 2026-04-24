@@ -1,0 +1,123 @@
+/* Complementa Tailwind: cuando html tiene .dark, re-mapea tokens M3 y superficies comunes. */
+html.dark {
+  color-scheme: dark;
+}
+
+html.dark .bg-surface,
+html.dark .bg-background,
+html.dark .bg-surface-bright {
+  background-color: #0c1520 !important;
+}
+
+html.dark .bg-surface-dim {
+  background-color: #0f1a25 !important;
+}
+
+html.dark .bg-surface-container,
+html.dark .bg-surface-container-high,
+html.dark .bg-surface-container-highest,
+html.dark .bg-surface-variant {
+  background-color: #1a2734 !important;
+}
+
+html.dark .bg-surface-container-low,
+html.dark .bg-secondary-container {
+  background-color: #1e2d3d !important;
+}
+
+html.dark .bg-surface-container-lowest,
+html.dark .bg-white {
+  background-color: #15212e !important;
+}
+
+html.dark .text-on-surface,
+html.dark .text-on-background,
+html.dark .font-headline.text-on-surface,
+html.dark .text-on-surface-variant {
+  color: #e8eef3 !important;
+}
+
+html.dark .text-secondary,
+html.dark .text-slate-600 {
+  color: #94a3b8 !important;
+}
+
+html.dark .border-slate-200,
+html.dark .border-slate-200\/90,
+html.dark .border-outline\/10 {
+  border-color: rgba(51, 65, 85, 0.6) !important;
+}
+
+html.dark .bg-inverse-surface {
+  background-color: #111c24 !important;
+}
+
+html.dark .text-surface-variant {
+  color: #cbd5e1 !important;
+}
+
+html.dark a.text-slate-600 {
+  color: #cbd5e1 !important;
+}
+
+html.dark a.text-slate-600:hover {
+  color: #f8fafc !important;
+}
+
+/* Panel admin (slate) y utilidades comunes */
+html.dark .bg-slate-50 {
+  background-color: #0c1520 !important;
+}
+
+html.dark .text-slate-900 {
+  color: #e8eef3 !important;
+}
+
+html.dark .text-slate-500 {
+  color: #94a3b8 !important;
+}
+
+html.dark .border-slate-300,
+html.dark .border-slate-200 {
+  border-color: #334155 !important;
+}
+
+html.dark .bg-slate-100,
+html.dark .bg-slate-200 {
+  background-color: #1e293b !important;
+  color: #e2e8f0 !important;
+}
+
+/* Iconos del boton tema: sin depender de Tailwind dark: (panel admin) */
+#theme-toggle .t-icon-sun {
+  display: none;
+}
+#theme-toggle .t-icon-moon {
+  display: inline-block;
+}
+html.dark #theme-toggle .t-icon-moon {
+  display: none;
+}
+html.dark #theme-toggle .t-icon-sun {
+  display: inline-block;
+}
+
+html.dark .admin-header-bar {
+  background-color: #0f172a !important;
+  border-color: #334155 !important;
+}
+html.dark .theme-toggle-btn {
+  background-color: rgba(30, 41, 59, 0.95) !important;
+  border-color: #475569 !important;
+  color: #fde68a !important;
+}
+html.dark #auth-email {
+  color: #cbd5e1 !important;
+}
+html.dark #btn-logout {
+  border-color: #475569 !important;
+  color: #e2e8f0 !important;
+}
+html.dark #btn-logout:hover {
+  background-color: #1e293b !important;
+}
