@@ -3,8 +3,8 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>BOOTIK | Producto</title>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Big+Shoulders+Display:wght@600;700;800;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script src="assets/js/tailwind.config.js"></script>
 <link href="assets/css/main.css" rel="stylesheet"/>
@@ -12,63 +12,81 @@
 <script src="assets/js/theme.js"></script>
 </head>
 <body class="bg-background text-on-background font-body selection:bg-primary selection:text-white">
-<nav class="fixed top-0 w-full z-50 flex items-center px-4 md:px-8 py-3 max-w-full bg-white/85 dark:bg-slate-900/85 backdrop-blur-md border-b border-slate-200/60 dark:border-slate-700/60">
-<a class="inline-flex items-center shrink-0" href="index.html">
-<img alt="BOOTIK" class="h-12 w-auto md:h-14" src="assets/Concretos Estampados (1).pdf (1).png"/>
-</a>
-<div class="hidden lg:flex flex-1 items-center justify-center gap-12 xl:gap-16 px-16">
-<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-slate-900 dark:hover:text-white link-hover" href="index.html" data-i18n="nav.home">Home</a>
-<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-slate-900 dark:hover:text-white link-hover" href="servicios.html" data-i18n="nav.services">Services</a>
-<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-slate-900 dark:hover:text-white link-hover" href="galeria.html" data-i18n="nav.gallery">Gallery</a>
-<a class="nav-link-active link-hover" href="tienda.html" data-i18n="nav.shop">Shop</a>
-<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-slate-900 dark:hover:text-white link-hover" href="nosotros.html" data-i18n="nav.about">About</a>
-<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-slate-900 dark:hover:text-white link-hover" href="contacto.html" data-i18n="nav.contact">Contact</a>
+<header class="site-header">
+<nav class="site-nav">
+<a class="inline-flex items-center shrink-0" href="index.html"><img alt="BOOTIK" class="h-11 w-auto md:h-12" src="assets/Concretos Estampados (1).pdf (1).png"/></a>
+<button type="button" id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú"><span class="material-symbols-outlined text-[22px]">menu</span></button>
+<div class="site-nav-links">
+<a class="site-nav-link" href="index.html" data-i18n="nav.home">Inicio</a>
+<a class="site-nav-link" href="servicios.html" data-i18n="nav.services">Servicios</a>
+<a class="site-nav-link" href="galeria.html" data-i18n="nav.gallery">Galería</a>
+<a class="site-nav-link nav-link-active" href="tienda.html" data-i18n="nav.shop">Tienda</a>
+<a class="site-nav-link" href="nosotros.html" data-i18n="nav.about">Nosotros</a>
+<a class="site-nav-link" href="contacto.html" data-i18n="nav.contact">Contacto</a>
 </div>
-<div class="ml-12 xl:ml-20 flex items-center gap-4 md:gap-6 shrink-0 border-l border-slate-300/70 dark:border-slate-600/70 pl-8 md:pl-12">
-<button class="hidden md:inline-flex btn-primary nav-quote px-5 py-2 font-bold rounded-sm" data-i18n="nav.quote">Cotizar</button>
-<button type="button" id="theme-toggle" class="inline-flex items-center justify-center border border-slate-400 dark:border-slate-500 bg-white/70 dark:bg-slate-800/70 w-9 h-9 text-slate-700 dark:text-amber-100 shrink-0" aria-label="Cambiar tema">
-<span class="material-symbols-outlined text-[20px] t-icon-moon" aria-hidden="true">dark_mode</span>
-<span class="material-symbols-outlined text-[20px] t-icon-sun" aria-hidden="true">light_mode</span>
-</button>
-<button class="border border-slate-400 dark:border-slate-500 bg-white/70 dark:bg-slate-800/70 px-3 py-1 text-xs font-bold text-slate-700 dark:text-slate-200" id="lang-toggle" type="button">EN</button>
+<div class="site-nav-actions">
+<a class="hidden md:inline-flex btn-primary nav-quote px-4 py-2 rounded-sm no-underline" href="contacto.html" data-i18n="nav.quote">Cotizar</a>
+<button type="button" id="theme-toggle" class="nav-icon-btn" aria-label="Cambiar tema"><span class="material-symbols-outlined text-[20px] t-icon-moon">dark_mode</span><span class="material-symbols-outlined text-[20px] t-icon-sun">light_mode</span></button>
+<button class="nav-icon-btn lang-btn" id="lang-toggle" type="button">EN</button>
 </div>
 </nav>
-<main class="pt-24 pb-20 px-8 max-w-3xl mx-auto">
-<a class="inline-flex items-center gap-2 text-primary font-bold text-sm mb-8 link-hover" href="tienda.html" data-i18n="product.back">← Volver a la tienda</a>
+<div id="mobile-menu" class="mobile-menu hidden">
+<a class="mobile-menu-link" href="index.html" data-i18n="nav.home">Inicio</a>
+<a class="mobile-menu-link" href="servicios.html" data-i18n="nav.services">Servicios</a>
+<a class="mobile-menu-link" href="galeria.html" data-i18n="nav.gallery">Galería</a>
+<a class="mobile-menu-link nav-link-active" href="tienda.html" data-i18n="nav.shop">Tienda</a>
+<a class="mobile-menu-link" href="nosotros.html" data-i18n="nav.about">Nosotros</a>
+<a class="mobile-menu-link" href="contacto.html" data-i18n="nav.contact">Contacto</a>
+</div>
+</header>
 
-<p id="product-loading" class="text-secondary" data-i18n="product.loading">Cargando producto...</p>
+<main class="pt-[4.5rem] pb-20">
+<div class="max-w-7xl mx-auto px-[var(--content-x)]">
+<a class="inline-flex items-center gap-2 text-primary font-bold text-sm mb-10 link-hover no-underline uppercase tracking-widest" href="tienda.html" data-i18n="product.back">← Volver a la tienda</a>
+
+<p id="product-loading" class="text-secondary py-12" data-i18n="product.loading">Cargando producto...</p>
 
 <div id="product-detail" class="hidden">
-<img id="product-image" class="w-full max-h-[520px] object-cover object-right bg-surface-container-low mb-8 border border-slate-200/80 card-surface" src="" alt=""/>
-<h1 id="product-title" class="font-headline text-3xl md:text-4xl font-extrabold text-on-surface mb-2"></h1>
-<p id="product-price" class="font-headline text-2xl font-bold text-primary mb-4"></p>
-<a id="product-whatsapp-btn" class="inline-flex mb-8 px-6 py-3 btn-whatsapp font-bold rounded-sm" href="#" target="_blank" rel="noopener noreferrer" data-i18n="product.whatsapp">Consultar por WhatsApp</a>
-<p id="product-desc" class="text-secondary text-lg leading-relaxed mb-10"></p>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<div class="lg:col-span-7">
+<img id="product-image" class="w-full aspect-square object-cover border border-black/10 bg-surface-container-low" src="" alt=""/>
+</div>
+<div class="lg:col-span-5 flex flex-col justify-center">
+<h1 id="product-title" class="font-headline font-black display-3 text-on-surface mb-3"></h1>
+<p id="product-price" class="font-headline text-3xl font-bold text-primary mb-6"></p>
+<a id="product-whatsapp-btn" class="inline-flex mb-8 px-8 py-4 btn-whatsapp font-bold rounded-sm no-underline w-fit text-sm tracking-widest uppercase" href="#" target="_blank" rel="noopener noreferrer" data-i18n="product.whatsapp">Consultar por WhatsApp</a>
+<p id="product-desc" class="text-secondary text-base leading-relaxed border-t border-black/10 pt-6"></p>
+</div>
+</div>
 
-<section id="product-3d-section" class="hidden border-t border-slate-200 pt-10 scroll-mt-28">
-<h2 class="font-headline text-2xl font-extrabold text-on-surface mb-2" data-i18n="product.modelTitle">Modelo en 3D</h2>
-<p class="text-secondary text-sm mb-4" data-i18n="product.modelHint">Arrastra para rotar; en movil puedes pellizcar para acercar o alejar.</p>
+<section id="product-3d-section" class="hidden mt-16 pt-12 border-t border-black/10 scroll-mt-28">
+<h2 class="font-headline font-black display-3 text-on-surface mb-2" data-i18n="product.modelTitle">Modelo en 3D</h2>
+<p class="text-secondary text-sm mb-6" data-i18n="product.modelHint">Arrastra para rotar; en móvil puedes pellizcar para acercar o alejar.</p>
 <p class="sr-only" data-i18n="shop.models.loading" id="mv-i18n-loading">Cargando modelo...</p>
 <p class="sr-only" data-i18n="shop.models.error" id="mv-i18n-error">No se pudo cargar este modelo.</p>
-<div class="relative rounded-sm overflow-hidden bg-slate-100 border border-slate-200/80 aspect-[4/3] min-h-[280px] md:min-h-[360px]">
+<div class="relative overflow-hidden bg-surface-container-low border border-black/10 aspect-[4/3] min-h-[280px] md:min-h-[360px]">
 <div id="product-model-slot" class="w-full h-full min-h-[280px]"></div>
-<div id="product-model-overlay" class="absolute inset-0 z-10 hidden pointer-events-none flex items-center justify-center bg-slate-100/90 text-secondary text-sm font-medium" aria-live="polite"></div>
+<div id="product-model-overlay" class="absolute inset-0 z-10 hidden pointer-events-none flex items-center justify-center bg-surface-container-low/90 text-secondary text-sm font-medium" aria-live="polite"></div>
 </div>
 </section>
 </div>
 
-<div id="product-not-found" class="hidden text-center py-16">
-<p class="font-headline text-2xl font-bold text-on-surface mb-2" data-i18n="product.notFoundTitle">Producto no encontrado</p>
-<p class="text-secondary mb-8" data-i18n="product.notFoundDesc">Comprueba el enlace o vuelve al catalogo.</p>
-<a class="inline-flex px-8 py-3 btn-primary font-bold rounded-sm" href="tienda.html" data-i18n="product.ctaTienda">Ir a la tienda</a>
+<div id="product-not-found" class="hidden text-center py-20">
+<p class="font-headline font-black display-3 text-on-surface mb-3" data-i18n="product.notFoundTitle">Producto no encontrado</p>
+<p class="text-secondary mb-8" data-i18n="product.notFoundDesc">Comprueba el enlace o vuelve al catálogo.</p>
+<a class="inline-flex px-8 py-4 btn-primary font-bold rounded-sm no-underline" href="tienda.html" data-i18n="product.ctaTienda">Ir a la tienda</a>
+</div>
 </div>
 </main>
-<footer class="w-full px-12 py-12 bg-slate-900 text-white text-center text-sm text-slate-400">
-<a class="text-slate-300 hover:text-white" href="tienda.html" data-i18n="nav.shop">Tienda</a>
-<span class="mx-2">·</span>
-<span data-i18n="shop.footer.copy">© 2024 BOOTIK Monterrey.</span>
+
+<footer class="site-footer py-10">
+<div class="max-w-7xl mx-auto px-[var(--content-x)] flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
+<a class="text-white/60 hover:text-white no-underline" href="tienda.html" data-i18n="nav.shop">Tienda</a>
+<span class="text-white/40" data-i18n="shop.footer.copy">© 2024 BOOTIK Monterrey.</span>
+</div>
 </footer>
 <script src="assets/js/bootik-config.js"></script>
 <script src="assets/js/main.js" defer></script>
+<script src="assets/js/interactions.js" defer></script>
 <script type="module" src="assets/js/product-page.js"></script>
 </body></html>

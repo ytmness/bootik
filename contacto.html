@@ -2,85 +2,112 @@
 <html lang="es"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<title>BOOTIK | Contacto</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Big+Shoulders+Display:wght@600;700;800;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script src="assets/js/tailwind.config.js"></script>
 <link href="assets/css/main.css" rel="stylesheet"/>
 <link href="assets/css/theme-dark.css" rel="stylesheet"/>
 <script src="assets/js/theme.js"></script>
 </head>
-<body class="bg-surface text-on-surface font-body selection:bg-primary/20">
-<nav class="fixed top-0 w-full z-50 flex items-center px-4 md:px-8 py-3 max-w-full bg-white/85 dark:bg-slate-900/85 backdrop-blur-md border-b border-slate-200/60 dark:border-slate-700/60">
-<a class="inline-flex items-center shrink-0" href="index.html">
-<img alt="BOOTIK" class="h-12 w-auto md:h-14" src="assets/Concretos Estampados (1).pdf (1).png"/>
-</a>
-<div class="hidden lg:flex flex-1 items-center justify-center gap-12 xl:gap-16 px-16">
-<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-slate-900 dark:hover:text-white link-hover" href="index.html" data-i18n="nav.home">Home</a>
-<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-slate-900 dark:hover:text-white link-hover" href="servicios.html" data-i18n="nav.services">Services</a>
-<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-slate-900 dark:hover:text-white link-hover" href="galeria.html" data-i18n="nav.gallery">Gallery</a>
-<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-slate-900 dark:hover:text-white link-hover" href="tienda.html" data-i18n="nav.shop">Shop</a>
-<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-slate-900 dark:hover:text-white link-hover" href="nosotros.html" data-i18n="nav.about">About</a>
-<a class="nav-link-active link-hover" href="contacto.html" data-i18n="nav.contact">Contact</a>
+<body class="bg-surface text-on-surface font-body selection:bg-primary selection:text-white">
+<header class="site-header">
+<nav class="site-nav">
+<a class="inline-flex items-center shrink-0" href="index.html"><img alt="BOOTIK" class="h-11 w-auto md:h-12" src="assets/Concretos Estampados (1).pdf (1).png"/></a>
+<button type="button" id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú"><span class="material-symbols-outlined text-[22px]">menu</span></button>
+<div class="site-nav-links">
+<a class="site-nav-link" href="index.html" data-i18n="nav.home">Inicio</a>
+<a class="site-nav-link" href="servicios.html" data-i18n="nav.services">Servicios</a>
+<a class="site-nav-link" href="galeria.html" data-i18n="nav.gallery">Galería</a>
+<a class="site-nav-link" href="tienda.html" data-i18n="nav.shop">Tienda</a>
+<a class="site-nav-link" href="nosotros.html" data-i18n="nav.about">Nosotros</a>
+<a class="site-nav-link nav-link-active" href="contacto.html" data-i18n="nav.contact">Contacto</a>
 </div>
-<div class="ml-12 xl:ml-20 flex items-center gap-4 md:gap-6 shrink-0 border-l border-slate-300/70 dark:border-slate-600/70 pl-8 md:pl-12">
-<button class="hidden md:inline-flex btn-primary nav-quote px-5 py-2 font-bold rounded-sm" data-i18n="nav.quote">Cotizar</button>
-<button type="button" id="theme-toggle" class="inline-flex items-center justify-center border border-slate-400 dark:border-slate-500 bg-white/70 dark:bg-slate-800/70 w-9 h-9 text-slate-700 dark:text-amber-100 shrink-0" aria-label="Cambiar tema">
-<span class="material-symbols-outlined text-[20px] t-icon-moon" aria-hidden="true">dark_mode</span>
-<span class="material-symbols-outlined text-[20px] t-icon-sun" aria-hidden="true">light_mode</span>
-</button>
-<button class="border border-slate-400 dark:border-slate-500 bg-white/70 dark:bg-slate-800/70 px-3 py-1 text-xs font-bold text-slate-700 dark:text-slate-200" id="lang-toggle" type="button">EN</button>
+<div class="site-nav-actions">
+<a class="hidden md:inline-flex btn-primary nav-quote px-4 py-2 rounded-sm no-underline" href="contacto.html" data-i18n="nav.quote">Cotizar</a>
+<button type="button" id="theme-toggle" class="nav-icon-btn" aria-label="Cambiar tema"><span class="material-symbols-outlined text-[20px] t-icon-moon">dark_mode</span><span class="material-symbols-outlined text-[20px] t-icon-sun">light_mode</span></button>
+<button class="nav-icon-btn lang-btn" id="lang-toggle" type="button">EN</button>
 </div>
 </nav>
-<main class="pt-24 min-h-[100dvh]">
-<section class="relative px-8 md:px-24 py-16 flex flex-col md:flex-row gap-12 overflow-hidden">
-<div class="z-10 md:w-1/2">
-<h1 class="font-headline text-5xl md:text-6xl font-extrabold text-on-background leading-tight mb-8"><span data-i18n="contact.title1">Let's Build Your</span> <br/> <span class="text-primary" data-i18n="contact.title2">Legacy in Concrete.</span></h1>
-<p class="text-secondary max-w-md text-lg leading-relaxed" data-i18n="contact.hero.desc">Based in Monterrey, we transform industrial spaces and high-end residences.</p>
+<div id="mobile-menu" class="mobile-menu hidden">
+<a class="mobile-menu-link" href="index.html" data-i18n="nav.home">Inicio</a>
+<a class="mobile-menu-link" href="servicios.html" data-i18n="nav.services">Servicios</a>
+<a class="mobile-menu-link" href="galeria.html" data-i18n="nav.gallery">Galería</a>
+<a class="mobile-menu-link" href="tienda.html" data-i18n="nav.shop">Tienda</a>
+<a class="mobile-menu-link" href="nosotros.html" data-i18n="nav.about">Nosotros</a>
+<a class="mobile-menu-link nav-link-active" href="contacto.html" data-i18n="nav.contact">Contacto</a>
+<a class="inline-flex btn-primary nav-quote px-6 py-3 rounded-sm mt-6 no-underline justify-center" href="contacto.html" data-i18n="nav.quote">Cotizar</a>
 </div>
-<div class="relative md:w-1/2 h-[400px] md:h-[600px]">
-<div class="absolute inset-0 bg-surface-container-low translate-x-8 translate-y-8"></div>
-<img class="absolute inset-0 w-full h-full object-cover grayscale img-tone card-surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeu6exSiOug7UTlwUd-FwCTx3E5YT6ilumtHg-TTG8Q7bRFesDOOhDlc1I5_kEsGnYcsu6N6Td29IOdJMTiQAEqtJ015-taUf80yju7pvS6XTKsxUq9ucyegEguPNPOe1Msz7mHCqZAoj0Q4fh1lJ-9rLplVp_koUWKCCSFaSpMi5Jd2qrW4n2V6K8r-4SbribmvkgEf5cRe9HprGOFzOxqchRb-pISEC7hhTSPy4TQL9YE9PksJYKiQk3BaIpsmkhE2546SaSSw"/>
+</header>
+
+<main class="pt-[4.5rem]">
+<section class="section-shell pb-8">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div data-reveal>
+<span class="font-headline text-sm font-bold tracking-[0.2em] uppercase text-primary mb-4 block" data-i18n="contact.badge">Permanencia en cada detalle</span>
+<h1 class="font-headline font-black display-1 leading-none mb-8"><span data-i18n="contact.title1">Construyamos tu</span> <span class="text-primary" data-i18n="contact.title2">legado en concreto.</span></h1>
+<p class="text-secondary text-lg leading-relaxed max-w-md" data-i18n="contact.hero.desc">Desde Monterrey transformamos espacios industriales y residenciales de alto nivel.</p>
+</div>
+<div class="relative" data-reveal data-reveal-delay="1">
+<div class="aspect-[4/5] md:aspect-[5/6] overflow-hidden border border-black/10 translate-x-4 translate-y-4 relative z-10"><img class="w-full h-full object-cover img-tone" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeu6exSiOug7UTlwUd-FwCTx3E5YT6ilumtHg-TTG8Q7bRFesDOOhDlc1I5_kEsGnYcsu6N6Td29IOdJMTiQAEqtJ015-taUf80yju7pvS6XTKsxUq9ucyegEguPNPOe1Msz7mHCqZAoj0Q4fh1lJ-9rLplVp_koUWKCCSFaSpMi5Jd2qrW4n2V6K8r-4SbribmvkgEf5cRe9HprGOFzOxqchRb-pISEC7hhTSPy4TQL9YE9PksJYKiQk3BaIpsmkhE2546SaSSw" alt="Proyecto de contacto"/></div>
+<div class="absolute inset-0 bg-primary/20 -translate-x-2 -translate-y-2"></div>
+</div>
 </div>
 </section>
-<section class="px-8 md:px-24 py-24 grid grid-cols-1 lg:grid-cols-12 gap-20 bg-surface-container-lowest relative">
-<div class="lg:col-span-5 flex flex-col space-y-12 z-10">
-<div><h2 class="font-headline text-3xl font-bold mb-6" data-i18n="contact.details.title">Contact Details</h2><div class="space-y-6"><div data-i18n="contact.details.address">Av. Constitución, Monterrey, NL, México</div><div>proyectos@bootik.mx</div><div>+52 81 1234 5678</div></div></div>
+
+<section class="section-shell pt-0 bg-surface-container-low section-rule">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
+<div class="lg:col-span-5 space-y-10" data-reveal>
+<div>
+<h2 class="font-headline font-black display-3 mb-6" data-i18n="contact.details.title">Datos de contacto</h2>
+<ul class="space-y-4 text-secondary">
+<li class="flex gap-3"><span class="material-symbols-outlined text-primary text-xl">location_on</span><span data-i18n="contact.details.address">Av. Constitución, Monterrey, NL, México</span></li>
+<li class="flex gap-3"><span class="material-symbols-outlined text-primary text-xl">mail</span><span>proyectos@bootik.mx</span></li>
+<li class="flex gap-3"><span class="material-symbols-outlined text-primary text-xl">call</span><span>+52 81 1234 5678</span></li>
+</ul>
 </div>
-<div class="lg:col-span-7 z-10">
-<form class="space-y-8 bg-surface p-1 md:p-12">
+</div>
+<div class="lg:col-span-7" data-reveal data-reveal-delay="1">
+<form class="form-industrial industrial-block p-8 md:p-12 space-y-8">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-<input class="bg-transparent border-b-2 border-outline/40 focus:border-primary outline-none py-3 font-medium transition-colors focus:ring-0 placeholder:text-secondary/80" data-i18n-placeholder="contact.form.name" placeholder="John Doe" type="text"/>
-<input class="bg-transparent border-b-2 border-outline/40 focus:border-primary outline-none py-3 font-medium transition-colors focus:ring-0 placeholder:text-secondary/80" data-i18n-placeholder="contact.form.email" placeholder="john@example.com" type="email"/>
+<div><label for="contact-name" data-i18n="contact.form.name">Nombre</label><input id="contact-name" type="text" data-i18n-placeholder="contact.form.name" placeholder="Nombre"/></div>
+<div><label for="contact-email" data-i18n="contact.form.email">Correo electrónico</label><input id="contact-email" type="email" data-i18n-placeholder="contact.form.email" placeholder="Correo"/></div>
 </div>
-<div class="flex flex-col">
-<textarea class="bg-transparent border-b-2 border-outline/40 focus:border-primary outline-none py-3 font-medium transition-colors focus:ring-0 resize-none placeholder:text-secondary/80" data-i18n-placeholder="contact.form.message" placeholder="Describe your vision..." rows="4"></textarea>
-</div>
-<button class="w-full md:w-auto btn-primary px-12 py-5 font-black text-lg uppercase rounded-sm" type="submit" data-i18n="contact.form.submit">Send Inquiry</button>
+<div><label for="contact-message" data-i18n="contact.form.message">Mensaje</label><textarea id="contact-message" rows="4" data-i18n-placeholder="contact.form.message" placeholder="Describe tu proyecto..."></textarea></div>
+<button class="btn-primary px-10 py-4 font-black text-sm tracking-widest uppercase rounded-sm" type="submit" data-i18n="contact.form.submit">Enviar solicitud</button>
 </form>
 </div>
-</section>
-<section class="px-8 md:px-24 pb-24">
-<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-<div class="lg:col-span-2 h-[500px] bg-secondary-fixed relative group overflow-hidden">
-<img class="w-full h-full object-cover grayscale opacity-60" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzSbF82reDH2iKVIdT3zTpES8NEHNvdqLYRaXfuGOe328ac7fF8P3vxLqpBdBHcueIFE-iT_XSuZ5uijIiqrzRmM5UiMW3B_Ey8G5ESEe2Ff7KPv38ad8_QCbHR-joo8g5y61Lsp16NnR5233k3rUOUcKL6POH_yQbffNdkQc0pqr7kmg3DhEXixz9k7JMhfE1Oy-ijIQdpGQpgDLE54aFycn1UYFadF-W3t-MqHRpYc86iFIE8N_rHQAQ_nty6fNphQqi-GILhw"/>
-<div class="absolute bottom-8 left-8 bg-surface p-6 card-surface border border-slate-200/80"><h4 class="font-headline font-bold text-lg mb-1" data-i18n="contact.map.title">Serving North Mexico</h4><p class="text-secondary text-sm" data-i18n="contact.map.subtitle">Main Office: Monterrey, Nuevo León</p></div>
 </div>
-<div class="bg-inverse-surface p-12 flex flex-col justify-center text-surface">
-<h3 class="font-headline text-3xl font-bold mb-6" data-i18n="contact.map.sideTitle">Local Presence. Industrial Standards.</h3>
-<p class="text-surface-variant leading-relaxed" data-i18n="contact.map.sideDesc">Desplegamos cuadrillas en toda el area metropolitana para proyectos residenciales y comerciales.</p>
+</section>
+
+<section class="section-shell">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-px bg-black/10 border border-black/10" data-reveal>
+<div class="lg:col-span-2 relative min-h-[28rem] overflow-hidden">
+<img class="w-full h-full absolute inset-0 object-cover img-tone grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzSbF82reDH2iKVIdT3zTpES8NEHNvdqLYRaXfuGOe328ac7fF8P3vxLqpBdBHcueIFE-iT_XSuZ5uijIiqrzRmM5UiMW3B_Ey8G5ESEe2Ff7KPv38ad8_QCbHR-joo8g5y61Lsp16NnR5233k3rUOUcKL6POH_yQbffNdkQc0pqr7kmg3DhEXixz9k7JMhfE1Oy-ijIQdpGQpgDLE54aFycn1UYFadF-W3t-MqHRpYc86iFIE8N_rHQAQ_nty6fNphQqi-GILhw" alt="Mapa de cobertura"/>
+<div class="absolute bottom-6 left-6 industrial-block p-6 max-w-xs">
+<h4 class="font-headline font-bold text-lg mb-1" data-i18n="contact.map.title">Cobertura en el norte de México</h4>
+<p class="text-secondary text-sm" data-i18n="contact.map.subtitle">Oficina principal: Monterrey, Nuevo León</p>
+</div>
+</div>
+<div class="industrial-block-dark p-10 flex flex-col justify-center">
+<h3 class="font-headline font-black display-3 mb-6" data-i18n="contact.map.sideTitle">Presencia local. Estándares industriales.</h3>
+<p class="text-white/70 leading-relaxed" data-i18n="contact.map.sideDesc">Desplegamos cuadrillas en toda el área metropolitana para proyectos residenciales y comerciales.</p>
 </div>
 </div>
 </section>
 </main>
-<footer class="w-full px-12 py-16 grid grid-cols-1 md:grid-cols-4 gap-12 bg-slate-900 dark:bg-black">
-<div class="flex flex-col space-y-4"><div class="text-xl font-black text-white font-headline">BOOTIK</div><p class="text-slate-400 text-sm leading-relaxed" data-i18n="contact.footer.desc">Monterrey's premier stamped concrete specialists.</p></div>
-<div><h4 class="text-white font-bold mb-6" data-i18n="contact.footer.explore">Explore</h4><ul class="space-y-3"><li><a class="text-slate-400 hover:text-white" href="servicios.html" data-i18n="contact.footer.residential">Residential Projects</a></li><li><a class="text-slate-400 hover:text-white" href="tienda.html" data-i18n="contact.footer.flooring">Industrial Flooring</a></li></ul></div>
-<div><h4 class="text-white font-bold mb-6" data-i18n="contact.footer.contactTitle">Contact</h4><ul class="space-y-3"><li class="text-slate-400" data-i18n="contact.footer.city">Monterrey, NL</li><li class="text-slate-400">info@bootik.mx</li><li class="text-slate-400">+52 81 1234 5678</li></ul></div>
-<div class="text-slate-500 text-xs" data-i18n="contact.footer.copy">© 2024 BOOTIK Monterrey.</div>
+
+<footer class="site-footer">
+<div class="max-w-7xl mx-auto site-footer-grid">
+<div><div class="site-footer-brand mb-4">BOOTIK</div><p class="text-sm text-white/60" data-i18n="contact.footer.desc">Especialistas en concreto estampado en Monterrey.</p></div>
+<div><h5 class="site-footer-heading footer-accent" data-i18n="contact.footer.explore">Explorar</h5><ul class="space-y-3"><li><a href="servicios.html" data-i18n="contact.footer.residential">Proyectos residenciales</a></li><li><a href="tienda.html" data-i18n="contact.footer.flooring">Pisos industriales</a></li></ul></div>
+<div><h5 class="site-footer-heading footer-accent" data-i18n="contact.footer.contactTitle">Contacto</h5><ul class="space-y-3"><li class="text-white/60 text-sm" data-i18n="contact.footer.city">Monterrey, NL</li><li class="text-white/60 text-sm">info@bootik.mx</li></ul></div>
+<div class="site-footer-bottom !mt-0 !pt-0 !border-0"><p data-i18n="contact.footer.copy">© 2024 BOOTIK Monterrey.</p></div>
+</div>
 </footer>
-<a class="fixed bottom-8 right-8 btn-whatsapp p-4 fab-whatsapp z-50 inline-flex items-center justify-center" href="https://wa.me/528112345678">
-<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">chat</span>
-</a>
+
+<a class="fixed bottom-8 right-8 btn-whatsapp p-4 fab-whatsapp z-40 inline-flex items-center justify-center no-underline" href="https://wa.me/528112345678" aria-label="WhatsApp"><span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">chat</span></a>
 <script src="assets/js/main.js" defer></script>
+<script src="assets/js/interactions.js" defer></script>
 </body></html>

@@ -88,7 +88,7 @@ function setupViewer(p) {
   showOverlay("load");
 
   const mv = document.createElement("model-viewer");
-  mv.className = "w-full h-full block bg-slate-100";
+  mv.className = "w-full h-full block bg-surface-container-low";
   mv.style.minHeight = "320px";
   mv.setAttribute("camera-controls", "");
   mv.setAttribute("touch-action", "pan-y");

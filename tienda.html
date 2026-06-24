@@ -3,8 +3,8 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>BOOTIK | Moldes de Concreto Estampado</title>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Big+Shoulders+Display:wght@600;700;800;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script src="assets/js/tailwind.config.js"></script>
 <link href="assets/css/main.css" rel="stylesheet"/>
@@ -12,52 +12,69 @@
 <script src="assets/js/theme.js"></script>
 </head>
 <body class="bg-background text-on-background font-body selection:bg-primary selection:text-white">
-<nav class="fixed top-0 w-full z-50 flex items-center px-4 md:px-8 py-3 max-w-full bg-white/85 dark:bg-slate-900/85 backdrop-blur-md border-b border-slate-200/60 dark:border-slate-700/60">
-<a class="inline-flex items-center shrink-0" href="index.html">
-<img alt="BOOTIK" class="h-12 w-auto md:h-14" src="assets/Concretos Estampados (1).pdf (1).png"/>
-</a>
-<div class="hidden lg:flex flex-1 items-center justify-center gap-12 xl:gap-16 px-16">
-<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-slate-900 dark:hover:text-white link-hover" href="index.html" data-i18n="nav.home">Home</a>
-<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-slate-900 dark:hover:text-white link-hover" href="servicios.html" data-i18n="nav.services">Services</a>
-<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-slate-900 dark:hover:text-white link-hover" href="galeria.html" data-i18n="nav.gallery">Gallery</a>
-<a class="nav-link-active link-hover" href="tienda.html" data-i18n="nav.shop">Shop</a>
-<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-slate-900 dark:hover:text-white link-hover" href="nosotros.html" data-i18n="nav.about">About</a>
-<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-slate-900 dark:hover:text-white link-hover" href="contacto.html" data-i18n="nav.contact">Contact</a>
+<header class="site-header">
+<nav class="site-nav">
+<a class="inline-flex items-center shrink-0" href="index.html"><img alt="BOOTIK" class="h-11 w-auto md:h-12" src="assets/Concretos Estampados (1).pdf (1).png"/></a>
+<button type="button" id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú"><span class="material-symbols-outlined text-[22px]">menu</span></button>
+<div class="site-nav-links">
+<a class="site-nav-link" href="index.html" data-i18n="nav.home">Inicio</a>
+<a class="site-nav-link" href="servicios.html" data-i18n="nav.services">Servicios</a>
+<a class="site-nav-link" href="galeria.html" data-i18n="nav.gallery">Galería</a>
+<a class="site-nav-link nav-link-active" href="tienda.html" data-i18n="nav.shop">Tienda</a>
+<a class="site-nav-link" href="nosotros.html" data-i18n="nav.about">Nosotros</a>
+<a class="site-nav-link" href="contacto.html" data-i18n="nav.contact">Contacto</a>
 </div>
-<div class="ml-12 xl:ml-20 flex items-center gap-4 md:gap-6 shrink-0 border-l border-slate-300/70 dark:border-slate-600/70 pl-8 md:pl-12">
-<button class="hidden md:inline-flex btn-primary nav-quote px-5 py-2 font-bold rounded-sm" data-i18n="nav.quote">Cotizar</button>
-<button type="button" id="theme-toggle" class="inline-flex items-center justify-center border border-slate-400 dark:border-slate-500 bg-white/70 dark:bg-slate-800/70 w-9 h-9 text-slate-700 dark:text-amber-100 shrink-0" aria-label="Cambiar tema">
-<span class="material-symbols-outlined text-[20px] t-icon-moon" aria-hidden="true">dark_mode</span>
-<span class="material-symbols-outlined text-[20px] t-icon-sun" aria-hidden="true">light_mode</span>
-</button>
-<button class="border border-slate-400 dark:border-slate-500 bg-white/70 dark:bg-slate-800/70 px-3 py-1 text-xs font-bold text-slate-700 dark:text-slate-200" id="lang-toggle" type="button">EN</button>
+<div class="site-nav-actions">
+<a class="hidden md:inline-flex btn-primary nav-quote px-4 py-2 rounded-sm no-underline" href="contacto.html" data-i18n="nav.quote">Cotizar</a>
+<button type="button" id="theme-toggle" class="nav-icon-btn" aria-label="Cambiar tema"><span class="material-symbols-outlined text-[20px] t-icon-moon">dark_mode</span><span class="material-symbols-outlined text-[20px] t-icon-sun">light_mode</span></button>
+<button class="nav-icon-btn lang-btn" id="lang-toggle" type="button">EN</button>
 </div>
 </nav>
-<main class="pt-24 pb-20 px-8 max-w-7xl mx-auto">
-<section class="mb-16 relative">
-<h1 class="font-headline text-5xl md:text-6xl font-extrabold text-on-surface mb-4"><span data-i18n="shop.title1">MOLDES</span> <span class="text-primary" data-i18n="shop.title2">PROFESIONALES</span></h1>
-<p class="text-secondary text-lg max-w-2xl leading-relaxed" data-i18n="shop.desc">Herramientas de grado industrial para acabados arquitectónicos de alta precisión.</p>
-<p class="text-xs text-secondary mt-4 max-w-2xl" data-i18n="shop.catalogNote">El catalogo usa Supabase si rellenas assets/js/bootik-config.js; si no, assets/data/products.json.</p>
+<div id="mobile-menu" class="mobile-menu hidden">
+<a class="mobile-menu-link" href="index.html" data-i18n="nav.home">Inicio</a>
+<a class="mobile-menu-link" href="servicios.html" data-i18n="nav.services">Servicios</a>
+<a class="mobile-menu-link" href="galeria.html" data-i18n="nav.gallery">Galería</a>
+<a class="mobile-menu-link nav-link-active" href="tienda.html" data-i18n="nav.shop">Tienda</a>
+<a class="mobile-menu-link" href="nosotros.html" data-i18n="nav.about">Nosotros</a>
+<a class="mobile-menu-link" href="contacto.html" data-i18n="nav.contact">Contacto</a>
+<a class="inline-flex btn-primary nav-quote px-6 py-3 rounded-sm mt-6 no-underline justify-center" href="contacto.html" data-i18n="nav.quote">Cotizar</a>
+</div>
+</header>
+
+<main class="pt-[4.5rem] pb-20">
+<section class="section-shell pb-10">
+<div class="max-w-7xl mx-auto" data-reveal>
+<span class="font-headline text-7xl md:text-9xl font-black text-primary/15 leading-none block mb-4">01</span>
+<h1 class="font-headline font-black display-1 leading-none mb-6"><span data-i18n="shop.title1">MATERIALES Y</span> <span class="text-primary" data-i18n="shop.title2">MOLDES PROFESIONALES</span></h1>
+<p class="text-secondary text-lg max-w-2xl leading-relaxed mb-4" data-i18n="shop.desc">Herramientas de grado industrial para acabados arquitectónicos de alta precisión.</p>
+<p class="text-xs text-secondary max-w-2xl" data-i18n="shop.catalogNote">El catálogo usa Supabase si rellenas assets/js/bootik-config.js; si no, assets/data/products.json.</p>
+</div>
 </section>
-<div id="shop-catalog-root" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12"></div>
+<section class="px-[var(--content-x)] max-w-7xl mx-auto">
+<div id="shop-catalog-root" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-black/10 border border-black/10"></div>
+</section>
 </main>
-<section class="bg-secondary-container py-24 relative overflow-hidden">
-<div class="max-w-7xl mx-auto px-8 relative z-10 flex flex-col items-center text-center">
-<h2 class="font-headline text-4xl font-extrabold text-on-surface mb-6" data-i18n="shop.cta.title">NECESITAS UN DISENO ESPECIAL?</h2>
-<p class="text-secondary mb-8 max-w-xl" data-i18n="shop.cta.desc">Fabricamos moldes personalizados para proyectos comerciales y residenciales.</p>
-<a class="px-10 py-4 btn-primary font-bold tracking-widest uppercase text-sm inline-flex items-center gap-3 rounded-sm" href="contacto.html" data-i18n="shop.cta.button">Hablar con un experto</a>
+
+<section class="cta-band section-shell">
+<div class="max-w-3xl mx-auto text-center relative z-10" data-reveal>
+<h2 class="font-headline font-black display-2 text-white mb-6" data-i18n="shop.cta.title">NECESITAS UN DISEÑO ESPECIAL?</h2>
+<p class="text-white/85 mb-8 max-w-xl mx-auto" data-i18n="shop.cta.desc">Fabricamos moldes personalizados para proyectos comerciales y residenciales.</p>
+<a class="inline-block bg-white text-primary px-10 py-4 font-black text-sm tracking-widest uppercase rounded-sm no-underline" href="contacto.html" data-i18n="shop.cta.button">Hablar con un experto</a>
 </div>
 </section>
-<footer class="w-full px-12 py-16 grid grid-cols-1 md:grid-cols-4 gap-12 bg-slate-900 text-white">
-<div class="col-span-1"><div class="text-xl font-black text-white mb-6">BOOTIK</div><p class="text-slate-400 text-sm leading-relaxed mb-6" data-i18n="shop.footer.desc">Expertos en moldes y herramientas para concreto estampado.</p></div>
-<div><h4 class="font-headline font-bold mb-6 text-slate-200" data-i18n="shop.footer.menu">Menu</h4><ul class="space-y-3"><li><a class="text-slate-400 hover:text-white text-sm" href="index.html" data-i18n="nav.home">Inicio</a></li><li><a class="text-slate-400 hover:text-white text-sm" href="galeria.html" data-i18n="nav.gallery">Galeria</a></li></ul></div>
-<div><h4 class="font-headline font-bold mb-6 text-slate-200" data-i18n="shop.footer.contact">Contacto</h4><p class="text-slate-400 text-sm mb-2" data-i18n="shop.footer.address">Av. Industrias 405, Monterrey, NL</p><p class="text-slate-400 text-sm mb-4">info@bootik.mx</p></div>
-<div class="text-slate-500 text-xs" data-i18n="shop.footer.copy">© 2024 BOOTIK Monterrey.</div>
-</footer>
-<div class="fixed bottom-8 right-8 z-50">
-<a class="btn-whatsapp p-4 fab-whatsapp flex items-center justify-center" href="https://wa.me/528100000000"><span class="material-symbols-outlined text-2xl">chat</span></a>
+
+<footer class="site-footer">
+<div class="max-w-7xl mx-auto site-footer-grid">
+<div><div class="site-footer-brand mb-4">BOOTIK</div><p class="text-sm text-white/60" data-i18n="shop.footer.desc">Expertos en moldes y herramientas para concreto estampado.</p></div>
+<div><h5 class="site-footer-heading footer-accent" data-i18n="shop.footer.menu">Menú</h5><ul class="space-y-3"><li><a href="index.html" data-i18n="nav.home">Inicio</a></li><li><a href="galeria.html" data-i18n="nav.gallery">Galería</a></li></ul></div>
+<div><h5 class="site-footer-heading footer-accent" data-i18n="shop.footer.contact">Contacto</h5><p class="text-white/60 text-sm mb-1" data-i18n="shop.footer.address">Av. Industrias 405, Monterrey, NL</p><p class="text-white/60 text-sm">info@bootik.mx</p></div>
+<div class="site-footer-bottom !mt-0 !pt-0 !border-0"><p data-i18n="shop.footer.copy">© 2024 BOOTIK Monterrey.</p></div>
 </div>
+</footer>
+
+<a class="fixed bottom-8 right-8 btn-whatsapp p-4 fab-whatsapp z-40 flex items-center justify-center no-underline" href="https://wa.me/528100000000" aria-label="WhatsApp"><span class="material-symbols-outlined text-2xl">chat</span></a>
 <script src="assets/js/bootik-config.js"></script>
 <script src="assets/js/main.js" defer></script>
+<script src="assets/js/interactions.js" defer></script>
 <script type="module" src="assets/js/tienda-catalog.js"></script>
 </body></html>
