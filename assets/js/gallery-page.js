@@ -27,9 +27,9 @@ function renderGrid() {
     art.className = "gallery-item";
     art.dataset.id = item.id;
     art.innerHTML = `
-      <button type="button" class="gallery-trigger group w-full text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-lg">
-        <span class="block aspect-[4/5] overflow-hidden rounded-lg border border-slate-200/90 bg-surface-container-low shadow-sm transition duration-300 group-hover:shadow-md group-hover:border-slate-300">
-          <img class="h-full w-full object-cover transition duration-500 ease-out group-hover:scale-[1.03]" src="${escapeAttr(item.imageUrl)}" alt="${escapeAttr(t)}" loading="lazy"/>
+      <button type="button" class="gallery-trigger group w-full text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-sm">
+        <span class="block aspect-[4/5] overflow-hidden rounded-sm border border-slate-200/80 bg-surface-container-low transition-[transform,border-color] duration-200 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:border-slate-300">
+          <img class="h-full w-full object-cover img-hover-zoom" src="${escapeAttr(item.imageUrl)}" alt="${escapeAttr(t)}" loading="lazy"/>
         </span>
         <span class="gallery-item-title mt-2 block text-sm font-semibold text-on-surface">${escapeHtml(t)}</span>
         <span class="gallery-item-subtitle block text-xs text-secondary">${escapeHtml(s)}</span>

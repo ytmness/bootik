@@ -48,14 +48,16 @@ tailwind.config = {
         error: "#ba1a1a",
         "on-secondary-fixed-variant": "#394951",
         "on-tertiary-fixed": "#001551",
-        "on-surface-variant": "#5e3f3a",
+        "on-surface-variant": "#445662",
         "tertiary-fixed": "#dce1ff"
       },
       borderRadius: {
         DEFAULT: "0.125rem",
-        lg: "0.25rem",
+        sm: "0.125rem",
+        md: "0.25rem",
+        lg: "0.375rem",
         xl: "0.5rem",
-        full: "0.75rem"
+        full: "9999px"
       },
       fontFamily: {
         headline: ["Plus Jakarta Sans", "sans-serif"],

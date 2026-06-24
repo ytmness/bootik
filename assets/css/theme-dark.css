@@ -64,6 +64,29 @@ html.dark a.text-slate-600:hover {
   color: #f8fafc !important;
 }
 
+html.dark .nav-link-active {
+  color: #fca5a5 !important;
+  border-bottom-color: #fca5a5 !important;
+}
+
+html.dark .text-secondary,
+html.dark .text-on-surface-variant {
+  color: #94a3b8 !important;
+}
+
+html.dark .footer-accent {
+  color: #fca5a5 !important;
+}
+
+html.dark .btn-primary {
+  background-color: #cc0000 !important;
+  color: #ffffff !important;
+}
+
+html.dark .btn-primary:hover {
+  background-color: #9e0000 !important;
+}
+
 /* Panel admin (slate) y utilidades comunes */
 html.dark .bg-slate-50 {
   background-color: #0c1520 !important;

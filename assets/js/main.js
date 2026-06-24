@@ -507,7 +507,7 @@ function bindTestimonialRotator(slotEl, pool, periodMs, phaseMs) {
       }
       renderItem(order[pos]);
       anim.classList.remove("is-exiting");
-    }, 450);
+    }, 200);
   }
 
   renderItem(order[pos]);

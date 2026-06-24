@@ -10,6 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script src="assets/js/tailwind.config.js"></script>
+<link href="assets/css/main.css" rel="stylesheet"/>
 <link href="assets/css/theme-dark.css" rel="stylesheet"/>
 <script src="assets/js/theme.js"></script>
 <style>
@@ -18,20 +19,20 @@
 </style>
 </head>
 <body class="bg-background text-on-background font-body selection:bg-primary selection:text-white">
-<nav class="fixed top-0 w-full z-50 flex items-center px-4 md:px-8 py-3 max-w-full bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl shadow-sm">
+<nav class="fixed top-0 w-full z-50 flex items-center px-4 md:px-8 py-3 max-w-full bg-white/85 dark:bg-slate-900/85 backdrop-blur-md border-b border-slate-200/60 dark:border-slate-700/60">
 <a class="inline-flex items-center shrink-0" href="index.html">
 <img alt="BOOTIK" class="h-12 w-auto md:h-14" src="assets/Concretos Estampados (1).pdf (1).png"/>
 </a>
 <div class="hidden lg:flex flex-1 items-center justify-center gap-12 xl:gap-16 px-16">
-<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-slate-900 dark:hover:text-white transition-colors" href="index.html" data-i18n="nav.home">Home</a>
-<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-slate-900 dark:hover:text-white transition-colors" href="servicios.html" data-i18n="nav.services">Services</a>
-<a class="text-red-700 dark:text-red-500 font-bold border-b-2 border-red-700 dark:border-red-500 pb-1" href="galeria.html" data-i18n="nav.gallery">Gallery</a>
-<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-slate-900 dark:hover:text-white transition-colors" href="tienda.html" data-i18n="nav.shop">Shop</a>
-<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-slate-900 dark:hover:text-white transition-colors" href="nosotros.html" data-i18n="nav.about">About</a>
-<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-slate-900 dark:hover:text-white transition-colors" href="contacto.html" data-i18n="nav.contact">Contact</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-slate-900 dark:hover:text-white link-hover" href="index.html" data-i18n="nav.home">Home</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-slate-900 dark:hover:text-white link-hover" href="servicios.html" data-i18n="nav.services">Services</a>
+<a class="nav-link-active link-hover" href="galeria.html" data-i18n="nav.gallery">Gallery</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-slate-900 dark:hover:text-white link-hover" href="tienda.html" data-i18n="nav.shop">Shop</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-slate-900 dark:hover:text-white link-hover" href="nosotros.html" data-i18n="nav.about">About</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-slate-900 dark:hover:text-white link-hover" href="contacto.html" data-i18n="nav.contact">Contact</a>
 </div>
-<div class="ml-12 xl:ml-20 flex items-center gap-4 md:gap-6 shrink-0 border-l border-slate-300/70 pl-8 md:pl-12">
-<button class="hidden md:inline-flex bg-primary-container text-on-primary-container px-5 py-2 font-bold hover:bg-primary transition-all active:scale-95" data-i18n="nav.quote">Cotizar</button>
+<div class="ml-12 xl:ml-20 flex items-center gap-4 md:gap-6 shrink-0 border-l border-slate-300/70 dark:border-slate-600/70 pl-8 md:pl-12">
+<button class="hidden md:inline-flex btn-primary nav-quote px-5 py-2 font-bold rounded-sm" data-i18n="nav.quote">Cotizar</button>
 <button type="button" id="theme-toggle" class="inline-flex items-center justify-center border border-slate-400 dark:border-slate-500 bg-white/70 dark:bg-slate-800/70 w-9 h-9 text-slate-700 dark:text-amber-100 shrink-0" aria-label="Cambiar tema">
 <span class="material-symbols-outlined text-[20px] t-icon-moon" aria-hidden="true">dark_mode</span>
 <span class="material-symbols-outlined text-[20px] t-icon-sun" aria-hidden="true">light_mode</span>
@@ -42,8 +43,7 @@
 
 <main class="pt-24 pb-20 px-6 md:px-10 max-w-7xl mx-auto">
 <header class="mb-10 md:mb-14">
-<span class="text-primary font-bold uppercase tracking-widest text-xs mb-3 block" data-i18n="gallery.badge">Excelencia en concreto</span>
-<h1 class="font-headline text-4xl md:text-6xl font-extrabold text-on-surface tracking-tighter leading-[0.95] mb-4">
+<h1 class="font-headline text-4xl md:text-5xl font-extrabold text-on-surface leading-[0.98] mb-4">
   <span data-i18n="gallery.title">GALERIA</span>
 </h1>
 <p class="text-secondary max-w-2xl text-base md:text-lg leading-relaxed" data-i18n="gallery.desc">Explora nuestro portafolio de proyectos arquitectonicos de concreto.</p>
@@ -55,12 +55,12 @@
 <section class="mt-16 md:mt-20">
 <div class="bg-inverse-surface px-8 py-12 md:px-14 md:py-16 flex flex-col md:flex-row md:items-center md:justify-between gap-10 rounded-sm border border-slate-700/30">
 <div class="max-w-xl">
-<h2 class="text-white font-headline text-3xl md:text-4xl font-extrabold mb-4 leading-tight tracking-tight" data-i18n="gallery.cta.title">LISTO PARA DEJAR HUELLA?</h2>
+<h2 class="text-white font-headline text-3xl md:text-4xl font-extrabold mb-4 leading-tight" data-i18n="gallery.cta.title">LISTO PARA DEJAR HUELLA?</h2>
 <p class="text-slate-400 text-base leading-relaxed" data-i18n="gallery.cta.desc">Agenda una visita y recibe una cotizacion personalizada para tu proyecto.</p>
 </div>
 <div class="flex flex-col sm:flex-row gap-3 w-full md:w-auto shrink-0">
-<a class="inline-flex justify-center items-center px-8 py-4 bg-primary text-white font-bold text-sm uppercase tracking-widest hover:opacity-95 transition-opacity text-center" href="contacto.html" data-i18n="gallery.cta.primary">Solicitar Cotizacion</a>
-<a class="inline-flex justify-center items-center px-8 py-4 border border-white/30 text-white font-bold text-sm uppercase tracking-widest hover:bg-white hover:text-inverse-surface transition-colors text-center" href="contacto.html" data-i18n="gallery.cta.secondary">Contactar Ventas</a>
+<a class="inline-flex justify-center items-center px-8 py-4 btn-primary font-bold text-sm uppercase tracking-widest text-center rounded-sm" href="contacto.html" data-i18n="gallery.cta.primary">Solicitar Cotizacion</a>
+<a class="inline-flex justify-center items-center px-8 py-4 btn-secondary border border-white/30 text-white font-bold text-sm uppercase tracking-widest hover:bg-white hover:text-inverse-surface text-center rounded-sm" href="contacto.html" data-i18n="gallery.cta.secondary">Contactar Ventas</a>
 </div>
 </div>
 </section>
@@ -77,12 +77,12 @@
 
 <footer class="w-full px-12 py-16 grid grid-cols-1 md:grid-cols-4 gap-12 bg-slate-900 text-white">
 <div><div class="text-xl font-black mb-4 font-headline">BOOTIK</div><p class="text-slate-400 text-sm" data-i18n="gallery.footer.desc">Soluciones premium de concreto estampado en Monterrey.</p></div>
-<div><h4 class="font-headline font-bold mb-4 text-red-500 text-sm uppercase tracking-widest" data-i18n="gallery.footer.contactInfo">Contacto</h4><ul class="space-y-2 text-sm text-slate-400"><li>ventas@bootik.mx</li><li>+52 (81) 1234-5678</li></ul></div>
-<div><h4 class="font-headline font-bold mb-4 text-red-500 text-sm uppercase tracking-widest" data-i18n="gallery.footer.navigation">Navegacion</h4><ul class="space-y-2 text-sm"><li><a class="text-slate-400 hover:text-white" href="index.html" data-i18n="nav.home">Home</a></li><li><a class="text-white underline" href="galeria.html" data-i18n="nav.gallery">Gallery</a></li></ul></div>
+<div><h4 class="font-headline font-bold mb-4 footer-accent text-sm uppercase tracking-widest" data-i18n="gallery.footer.contactInfo">Contacto</h4><ul class="space-y-2 text-sm text-slate-400"><li>ventas@bootik.mx</li><li>+52 (81) 1234-5678</li></ul></div>
+<div><h4 class="font-headline font-bold mb-4 footer-accent text-sm uppercase tracking-widest" data-i18n="gallery.footer.navigation">Navegacion</h4><ul class="space-y-2 text-sm"><li><a class="text-slate-400 hover:text-white link-hover" href="index.html" data-i18n="nav.home">Home</a></li><li><a class="text-white underline link-hover" href="galeria.html" data-i18n="nav.gallery">Gallery</a></li></ul></div>
 <div class="text-slate-500 text-xs md:col-span-1" data-i18n="gallery.footer.copy">© 2024 BOOTIK Monterrey.</div>
 </footer>
 <div class="fixed bottom-8 right-8 z-50">
-<a class="bg-[#25D366] text-white p-4 rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-90 transition-all" href="https://wa.me/528100000000" aria-label="WhatsApp"><span class="material-symbols-outlined text-2xl">chat</span></a>
+<a class="btn-whatsapp p-4 fab-whatsapp flex items-center justify-center" href="https://wa.me/528100000000" aria-label="WhatsApp"><span class="material-symbols-outlined text-2xl">chat</span></a>
 </div>
 <script src="assets/js/bootik-config.js"></script>
 <script src="assets/js/main.js" defer></script>

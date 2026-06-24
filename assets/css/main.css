@@ -1,10 +1,23 @@
+:root {
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --motion-fast: 160ms;
+  --motion-ui: 200ms;
+  --primary: #9e0000;
+  --primary-hover: #7a0000;
+  --whatsapp: #25d366;
+  --whatsapp-hover: #1fb855;
+  --body-muted: #445662;
+}
+
 .material-symbols-outlined {
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
 }
 
 .stamped-texture {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-  opacity: 0.05;
+  opacity: 0.025;
+  pointer-events: none;
 }
 
 html {
@@ -16,28 +29,180 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+  letter-spacing: -0.025em;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+.text-secondary,
+.text-on-surface-variant {
+  color: var(--body-muted);
+}
+
 a:focus-visible,
 button:focus-visible,
-input:focus-visible {
-  outline: 2px solid #9e0000;
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--primary);
   outline-offset: 2px;
 }
 
+.nav-link-active {
+  color: var(--primary) !important;
+  font-weight: 700;
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 0.25rem;
+}
+
+html.dark .nav-link-active {
+  color: #fca5a5 !important;
+  border-bottom-color: #fca5a5;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: #ffffff;
+  transition:
+    background-color var(--motion-ui) var(--ease-out),
+    transform var(--motion-fast) var(--ease-out),
+    opacity var(--motion-ui) var(--ease-out);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+.btn-primary:active {
+  transform: scale(0.97);
+}
+
+.btn-secondary {
+  transition:
+    background-color var(--motion-ui) var(--ease-out),
+    color var(--motion-ui) var(--ease-out),
+    border-color var(--motion-ui) var(--ease-out),
+    transform var(--motion-fast) var(--ease-out);
+}
+
+.btn-secondary:active {
+  transform: scale(0.97);
+}
+
+.btn-whatsapp {
+  background-color: var(--whatsapp);
+  color: #ffffff;
+  transition: transform var(--motion-ui) var(--ease-out), background-color var(--motion-ui) var(--ease-out);
+}
+
+.btn-whatsapp:hover {
+  background-color: var(--whatsapp-hover);
+}
+
+.btn-whatsapp:active {
+  transform: scale(0.97);
+}
+
+.interactive-press:active {
+  transform: scale(0.97);
+}
+
+.nav-quote {
+  transition:
+    background-color var(--motion-ui) var(--ease-out),
+    transform var(--motion-fast) var(--ease-out);
+}
+
+.link-hover {
+  transition: color var(--motion-ui) var(--ease-out);
+}
+
+.footer-accent {
+  color: #fca5a5;
+}
+
+.card-surface {
+  border-radius: 0.125rem;
+}
+
+.img-tone {
+  transition:
+    filter var(--motion-ui) var(--ease-out),
+    transform var(--motion-ui) var(--ease-out);
+}
+
+.fab-whatsapp {
+  border-radius: 9999px;
+  box-shadow: 0 12px 32px rgba(37, 211, 102, 0.28);
+  transition: transform var(--motion-ui) var(--ease-out);
+}
+
 .testimonial-anim {
-  transition: opacity 0.45s ease, transform 0.45s ease;
+  transition:
+    opacity var(--motion-ui) var(--ease-out),
+    transform var(--motion-ui) var(--ease-out);
 }
 
 .testimonial-anim.is-exiting {
   opacity: 0;
-  transform: translateY(10px);
+  transform: translateY(8px);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .btn-primary:hover {
+    transform: translateY(-1px);
+  }
+
+  .btn-primary:active {
+    transform: scale(0.97);
+  }
+
+  .img-hover-zoom img,
+  .img-hover-zoom {
+    transition: transform 280ms var(--ease-out), filter 280ms var(--ease-out);
+  }
+
+  .group:hover .img-hover-zoom,
+  .group:hover img.img-hover-zoom,
+  img.img-hover-zoom:hover {
+    transform: scale(1.03);
+  }
+
+  .img-tone:hover {
+    filter: grayscale(0);
+  }
+
+  .fab-whatsapp:hover {
+    transform: scale(1.05);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   .testimonial-anim {
     transition: none;
   }
 
   .testimonial-anim.is-exiting {
     transform: none;
+  }
+
+  .btn-primary:hover,
+  .fab-whatsapp:hover {
+    transform: none;
+  }
+
+  .img-hover-zoom img,
+  .img-hover-zoom,
+  .img-tone {
+    transition: none;
   }
 }
