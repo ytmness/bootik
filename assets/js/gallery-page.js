@@ -20,15 +20,15 @@ function renderGrid() {
     return;
   }
   const l = currentLang();
-  items.forEach((item) => {
+  items.forEach((item, index) => {
     const t = l === "en" ? item.titleEn : item.titleEs;
     const s = l === "en" ? item.subtitleEn : item.subtitleEs;
     const art = document.createElement("article");
-    art.className = "gallery-item";
+    art.className = `gallery-item ${index === 0 ? "gallery-item--featured" : ""}`;
     art.dataset.id = item.id;
     art.innerHTML = `
       <button type="button" class="gallery-trigger group w-full text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 bg-white dark:bg-[#1c1b19]">
-        <span class="block aspect-[4/5] overflow-hidden bg-surface-container-low border-b border-black/10 transition-[border-color] duration-200 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:border-primary/40">
+        <span class="gallery-image-frame block overflow-hidden bg-surface-container-low border-b border-black/10 transition-[border-color] duration-200 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:border-primary/40">
           <img class="h-full w-full object-cover img-hover-zoom img-tone" src="${escapeAttr(item.imageUrl)}" alt="${escapeAttr(t)}" loading="lazy"/>
         </span>
         <span class="gallery-item-title block px-4 pt-4 text-sm font-headline font-bold text-on-surface uppercase tracking-wide">${escapeHtml(t)}</span>
