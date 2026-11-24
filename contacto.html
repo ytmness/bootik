@@ -2,11 +2,27 @@
 <html lang="es"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>BOOTIK | Contacto</title>
+<title>Contacto | Concretos Estampados BOOTIK</title>
+<meta name="description" content="Cotiza concreto estampado en Guadalupe, N.L. WhatsApp 81 8460 6667 o gerardo.concretosestampados@gmail.com."/>
+<link rel="canonical" href="https://concretosestampados.com/contacto.html"/>
+<meta property="og:title" content="Contacto | Concretos Estampados BOOTIK"/>
+<meta property="og:description" content="Cotiza concreto estampado en Guadalupe, N.L. WhatsApp 81 8460 6667 o gerardo.concretosestampados@gmail.com."/>
+<meta property="og:url" content="https://concretosestampados.com/contacto.html"/>
+<link rel="icon" href="favicon.ico" sizes="any"/>
+<link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png"/>
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png"/>
+<meta property="og:type" content="website"/>
+<meta property="og:locale" content="es_MX"/>
+<meta property="og:image" content="https://concretosestampados.com/assets/banners/hero.webp"/>
+<meta property="og:site_name" content="Concretos Estampados BOOTIK"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"Concretos Estampados BOOTIK","image":"https://concretosestampados.com/assets/banners/hero.webp","url":"https://concretosestampados.com/","telephone":"+528184606667","email":"gerardo.concretosestampados@gmail.com","address":{"@type":"PostalAddress","streetAddress":"Josefa Ortiz de Domínguez 220 Nte","addressLocality":"Guadalupe","addressRegion":"Nuevo León","addressCountry":"MX"},"areaServed":"Área metropolitana de Monterrey","priceRange":"$$"}
+</script>
+
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Big+Shoulders+Display:wght@600;700;800;900&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script src="assets/js/tailwind.config.js"></script>
+<link href="assets/css/tailwind.css" rel="stylesheet"/>
 <link href="assets/css/main.css" rel="stylesheet"/>
 <link href="assets/css/theme-dark.css" rel="stylesheet"/>
 <script src="assets/js/theme.js"></script>
@@ -50,7 +66,7 @@
 <p class="text-secondary text-lg leading-relaxed max-w-md" data-i18n="contact.hero.desc">Desde Monterrey transformamos espacios industriales y residenciales de alto nivel.</p>
 </div>
 <div class="relative" data-reveal data-reveal-delay="1">
-<div class="aspect-[4/5] md:aspect-[5/6] overflow-hidden border border-black/10 translate-x-4 translate-y-4 relative z-10"><img class="w-full h-full object-cover img-tone" src="assets/projects/quinta-camino-dia.webp" alt="Camino residencial de concreto estampado BOOTIK"/></div>
+<div class="aspect-[4/5] md:aspect-[5/6] overflow-hidden border border-black/10 translate-x-4 translate-y-4 relative z-10"><img class="w-full h-full object-cover" src="assets/projects/quinta-camino-dia.webp" alt="Camino residencial de concreto estampado BOOTIK"/></div>
 <div class="absolute inset-0 bg-primary/20 -translate-x-2 -translate-y-2"></div>
 </div>
 </div>
@@ -62,20 +78,21 @@
 <div>
 <h2 class="font-headline font-black display-3 mb-6" data-i18n="contact.details.title">Datos de contacto</h2>
 <ul class="space-y-4 text-secondary">
-<li class="flex gap-3"><span class="material-symbols-outlined text-primary text-xl">location_on</span><span data-i18n="contact.details.address">Av. Constitución, Monterrey, NL, México</span></li>
-<li class="flex gap-3"><span class="material-symbols-outlined text-primary text-xl">mail</span><span>proyectos@bootik.mx</span></li>
-<li class="flex gap-3"><span class="material-symbols-outlined text-primary text-xl">call</span><span>+52 81 1234 5678</span></li>
+<li class="flex gap-3"><span class="material-symbols-outlined text-primary text-xl">location_on</span><a href="https://maps.google.com/?q=Josefa+Ortiz+de+Dom%C3%ADnguez+220+Nte,+Centro,+Guadalupe,+N.L." data-contact="address">Josefa Ortiz de Domínguez 220 Nte, Centro, Guadalupe, N.L.</a></li>
+<li class="flex gap-3"><span class="material-symbols-outlined text-primary text-xl">mail</span><a href="mailto:gerardo.concretosestampados@gmail.com" data-contact="email">gerardo.concretosestampados@gmail.com</a></li>
+<li class="flex gap-3"><span class="material-symbols-outlined text-primary text-xl">call</span><a href="tel:+528184606667" data-contact="phone">+52 81 8460 6667</a></li>
 </ul>
 </div>
 </div>
 <div class="lg:col-span-7" data-reveal data-reveal-delay="1">
-<form class="form-industrial industrial-block p-8 md:p-12 space-y-8">
+<form id="contact-form" class="form-industrial industrial-block p-8 md:p-12 space-y-8">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 <div><label for="contact-name" data-i18n="contact.form.name">Nombre</label><input id="contact-name" type="text" data-i18n-placeholder="contact.form.name" placeholder="Nombre"/></div>
 <div><label for="contact-email" data-i18n="contact.form.email">Correo electrónico</label><input id="contact-email" type="email" data-i18n-placeholder="contact.form.email" placeholder="Correo"/></div>
 </div>
 <div><label for="contact-message" data-i18n="contact.form.message">Mensaje</label><textarea id="contact-message" rows="4" data-i18n-placeholder="contact.form.message" placeholder="Describe tu proyecto..."></textarea></div>
-<button class="btn-primary px-10 py-4 font-black text-sm tracking-widest uppercase rounded-sm" type="submit" data-i18n="contact.form.submit">Enviar solicitud</button>
+<button class="btn-primary px-10 py-4 font-black text-sm tracking-widest uppercase rounded-sm" type="submit" data-i18n="contact.form.submit">Enviar por WhatsApp</button>
+<p class="text-xs text-secondary">Al enviar se abre WhatsApp con tu mensaje. Si no se abre, puedes escribir a <a href="mailto:gerardo.concretosestampados@gmail.com" data-contact="email">gerardo.concretosestampados@gmail.com</a>.</p>
 </form>
 </div>
 </div>
@@ -84,7 +101,8 @@
 <section class="section-shell">
 <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-px bg-black/10 border border-black/10" data-reveal>
 <div class="lg:col-span-2 relative min-h-[28rem] overflow-hidden">
-<img class="w-full h-full absolute inset-0 object-cover img-tone grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzSbF82reDH2iKVIdT3zTpES8NEHNvdqLYRaXfuGOe328ac7fF8P3vxLqpBdBHcueIFE-iT_XSuZ5uijIiqrzRmM5UiMW3B_Ey8G5ESEe2Ff7KPv38ad8_QCbHR-joo8g5y61Lsp16NnR5233k3rUOUcKL6POH_yQbffNdkQc0pqr7kmg3DhEXixz9k7JMhfE1Oy-ijIQdpGQpgDLE54aFycn1UYFadF-W3t-MqHRpYc86iFIE8N_rHQAQ_nty6fNphQqi-GILhw" alt="Mapa de cobertura"/>
+<img src="assets/banners/contacto.webp" alt="Concreto estampado en Guadalupe, N.L." class="w-full h-full absolute inset-0 object-cover"/>
+<a class="absolute bottom-6 right-6 z-20 btn-primary px-4 py-2 text-xs font-bold uppercase tracking-widest no-underline" href="https://maps.google.com/?q=Josefa+Ortiz+de+Dom%C3%ADnguez+220+Nte,+Centro,+Guadalupe,+N.L." target="_blank" rel="noopener noreferrer">Abrir en Google Maps</a>
 <div class="absolute bottom-6 left-6 industrial-block p-6 max-w-xs">
 <h4 class="font-headline font-bold text-lg mb-1" data-i18n="contact.map.title">Cobertura en el norte de México</h4>
 <p class="text-secondary text-sm" data-i18n="contact.map.subtitle">Oficina principal: Monterrey, Nuevo León</p>
@@ -102,12 +120,14 @@
 <div class="max-w-7xl mx-auto site-footer-grid">
 <div><div class="site-footer-brand mb-4">BOOTIK</div><p class="text-sm text-white/60" data-i18n="contact.footer.desc">Especialistas en concreto estampado en Monterrey.</p></div>
 <div><h5 class="site-footer-heading footer-accent" data-i18n="contact.footer.explore">Explorar</h5><ul class="space-y-3"><li><a href="servicios.html" data-i18n="contact.footer.residential">Proyectos residenciales</a></li><li><a href="tienda.html" data-i18n="contact.footer.flooring">Pisos industriales</a></li></ul></div>
-<div><h5 class="site-footer-heading footer-accent" data-i18n="contact.footer.contactTitle">Contacto</h5><ul class="space-y-3"><li class="text-white/60 text-sm" data-i18n="contact.footer.city">Monterrey, NL</li><li class="text-white/60 text-sm">info@bootik.mx</li></ul></div>
-<div class="site-footer-bottom !mt-0 !pt-0 !border-0"><p data-i18n="contact.footer.copy">© 2024 BOOTIK Monterrey.</p></div>
+<div><h5 class="site-footer-heading footer-accent" data-i18n="contact.footer.contactTitle">Contacto</h5><ul class="space-y-3"><li class="text-white/60 text-sm" data-i18n="contact.footer.city">Monterrey, NL</li><li class="text-white/60 text-sm"><a href="mailto:gerardo.concretosestampados@gmail.com" data-contact="email">gerardo.concretosestampados@gmail.com</a></li></ul></div>
+<div class="site-footer-bottom !mt-0 !pt-0 !border-0"><p data-i18n="contact.footer.copy">© 2026 Concretos Estampados BOOTIK.</p></div>
 </div>
 </footer>
 
-<a class="fixed bottom-8 right-8 btn-whatsapp p-4 fab-whatsapp z-40 inline-flex items-center justify-center no-underline" href="https://wa.me/528112345678" aria-label="WhatsApp"><span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">chat</span></a>
+<a class="fixed bottom-8 right-8 btn-whatsapp p-4 fab-whatsapp z-40 inline-flex items-center justify-center no-underline" href="https://wa.me/528184606667?text=Hola%2C%20me%20interesa%20una%20cotizaci%C3%B3n%20de%20concreto%20estampado." aria-label="WhatsApp"><span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">chat</span></a>
+<script src="assets/js/bootik-contact.js"></script>
 <script src="assets/js/main.js" defer></script>
 <script src="assets/js/interactions.js" defer></script>
+<script src="assets/js/contact-form.js" defer></script>
 </body></html>

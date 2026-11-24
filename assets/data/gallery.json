@@ -1,0 +1,84 @@
+{
+  "items": [
+    {
+      "id": "sergio-plaza-arbol",
+      "imageUrl": "assets/projects/sergio-plaza-arbol.webp",
+      "thumbUrl": "assets/projects/thumbs/sergio-plaza-arbol.webp",
+      "category": "plazas",
+      "titleEs": "Plaza residencial con árbol",
+      "titleEn": "Residential plaza with tree",
+      "subtitleEs": "Plaza de concreto estampado con cajete de árbol, Guadalupe / Monterrey",
+      "subtitleEn": "Stamped-concrete plaza with a tree well in Monterrey"
+    },
+    {
+      "id": "quinta-acceso-dia",
+      "imageUrl": "assets/projects/quinta-acceso-dia.webp",
+      "thumbUrl": "assets/projects/thumbs/quinta-acceso-dia.webp",
+      "category": "accesos",
+      "titleEs": "Acceso residencial",
+      "titleEn": "Residential driveway",
+      "subtitleEs": "Acceso de concreto estampado en quinta residencial",
+      "subtitleEn": "Stamped-concrete driveway at a country house"
+    },
+    {
+      "id": "quinta-camino-dia",
+      "imageUrl": "assets/projects/quinta-camino-dia.webp",
+      "thumbUrl": "assets/projects/thumbs/quinta-camino-dia.webp",
+      "category": "accesos",
+      "titleEs": "Camino curvo",
+      "titleEn": "Curved path",
+      "subtitleEs": "Camino residencial de concreto estampado",
+      "subtitleEn": "Residential stamped-concrete path"
+    },
+    {
+      "id": "quinta-hero",
+      "imageUrl": "assets/projects/quinta-hero.webp",
+      "thumbUrl": "assets/projects/thumbs/quinta-hero.webp",
+      "category": "accesos",
+      "titleEs": "Acceso panorámico",
+      "titleEn": "Panoramic driveway",
+      "subtitleEs": "Acceso de concreto estampado con vista a la sierra",
+      "subtitleEn": "Stamped-concrete driveway with mountain view"
+    },
+    {
+      "id": "quinta-patio-atardecer",
+      "imageUrl": "assets/projects/quinta-patio-atardecer.webp",
+      "thumbUrl": "assets/projects/thumbs/quinta-patio-atardecer.webp",
+      "category": "plazas",
+      "titleEs": "Plaza al atardecer",
+      "titleEn": "Plaza at dusk",
+      "subtitleEs": "Plaza de concreto estampado al atardecer",
+      "subtitleEn": "Stamped-concrete plaza at dusk"
+    },
+    {
+      "id": "quinta-patio-vertical",
+      "imageUrl": "assets/projects/quinta-patio-vertical.webp",
+      "thumbUrl": "assets/projects/thumbs/quinta-patio-vertical.webp",
+      "category": "terrazas",
+      "titleEs": "Terraza residencial",
+      "titleEn": "Residential terrace",
+      "subtitleEs": "Terraza de concreto estampado integrada al jardín",
+      "subtitleEn": "Stamped-concrete terrace by the garden"
+    },
+    {
+      "id": "proceso-vaciado",
+      "imageUrl": "assets/projects/proceso-vaciado.webp",
+      "thumbUrl": "assets/projects/thumbs/proceso-vaciado.webp",
+      "category": "proceso",
+      "titleEs": "Vaciado de concreto",
+      "titleEn": "Concrete pour",
+      "subtitleEs": "Revolvedora vaciando concreto en obra",
+      "subtitleEn": "Ready-mix truck pouring concrete on site"
+    },
+    {
+      "id": "proceso-plaza-terminada",
+      "imageUrl": "assets/projects/proceso-plaza-terminada.webp",
+      "thumbUrl": "assets/projects/thumbs/proceso-plaza-terminada.webp",
+      "category": "plazas",
+      "titleEs": "Plaza terminada",
+      "titleEn": "Finished plaza",
+      "subtitleEs": "Plaza de concreto estampado recién terminada",
+      "subtitleEn": "Freshly finished stamped-concrete plaza"
+    }
+  ]
+}

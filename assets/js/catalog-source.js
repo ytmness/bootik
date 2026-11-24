@@ -46,41 +46,21 @@ export async function loadFromJson() {
   return Array.isArray(data.products) ? data.products : [];
 }
 
+async function withTimeout(promise, ms) {
+  let t;
+  const timeout = new Promise((_, rej) => { t = setTimeout(() => rej(new Error("timeout")), ms); });
+  try { return await Promise.race([promise, timeout]); }
+  finally { clearTimeout(t); }
+}
+
 export async function loadPublishedCatalog() {
-  if (supabaseConfigured()) {
-    const sb = await createBootikClient();
-    if (sb) {
-      const { data, error } = await sb
-        .from("products")
-        .select("*")
-        .eq("published", true)
-        .order("sort_order", { ascending: true })
-        .order("id", { ascending: true });
-      if (error) {
-        console.warn("[BOOTIK] Supabase catalogo:", error.message);
-        return loadFromJson();
-      }
-      return (data || []).map(rowToProduct);
-    }
-  }
+  // El catálogo público vive en products.json (precios de los flyers).
+  // No se deja que un catálogo viejo en Supabase lo reemplace.
   return loadFromJson();
 }
 
 export async function loadPublishedProductById(id) {
   if (!id) return null;
-  if (supabaseConfigured()) {
-    const sb = await createBootikClient();
-    if (sb) {
-      const { data, error } = await sb
-        .from("products")
-        .select("*")
-        .eq("id", id)
-        .eq("published", true)
-        .maybeSingle();
-      if (!error && data) return rowToProduct(data);
-      if (error) console.warn("[BOOTIK] Supabase producto:", error.message);
-    }
-  }
   const list = await loadFromJson();
   return list.find((p) => p.id === id) || null;
 }

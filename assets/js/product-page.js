@@ -1,7 +1,4 @@
-import "https://unpkg.com/@google/model-viewer@3.5.0/dist/model-viewer.min.js";
 import { loadPublishedProductById } from "./catalog-source.js";
-
-await customElements.whenDefined("model-viewer");
 
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
@@ -19,7 +16,7 @@ const slot3d = document.getElementById("product-model-slot");
 const overlay3d = document.getElementById("product-model-overlay");
 const loadingText = document.getElementById("mv-i18n-loading");
 const errorText = document.getElementById("mv-i18n-error");
-const DEFAULT_WHATSAPP_REF_LINK = "https://wa.me/528100000000";
+const DEFAULT_WHATSAPP_REF_LINK = "https://wa.me/528184606667";
 
 function lang() {
   return document.documentElement.lang === "en" ? "en" : "es";
@@ -86,6 +83,9 @@ function setupViewer(p) {
   section3d.classList.remove("hidden");
   teardownViewer();
   showOverlay("load");
+
+  // Los productos actuales no traen GLB; se carga el visor solo si hace falta.
+  import("https://unpkg.com/@google/model-viewer@3.5.0/dist/model-viewer.min.js").catch(() => {});
 
   const mv = document.createElement("model-viewer");
   mv.className = "w-full h-full block bg-surface-container-low";

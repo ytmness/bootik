@@ -21,9 +21,8 @@ if (root) {
     if (!catalog.length) return;
 
     catalog.forEach((p) => {
-      const a = document.createElement("a");
-      a.href = `producto.html?id=${encodeURIComponent(p.id)}`;
-      a.className = "catalog-card group overflow-hidden";
+      const a = document.createElement("article");
+      a.className = "catalog-card group overflow-hidden flex flex-col";
 
       const imgWrap = document.createElement("div");
       imgWrap.className = "aspect-square overflow-hidden bg-surface-container-low relative border-b border-black/10";
@@ -34,12 +33,16 @@ if (root) {
         badge.textContent = "3D";
         imgWrap.appendChild(badge);
       }
+      const imgLink = document.createElement("a");
+      imgLink.href = `producto.html?id=${encodeURIComponent(p.id)}`;
+      imgLink.className = "block w-full h-full";
       const img = document.createElement("img");
-      img.className = "w-full h-full object-cover img-hover-zoom img-tone";
+      img.className = "w-full h-full object-cover img-hover-zoom";
       img.alt = nameOf(p);
       img.loading = "lazy";
       img.src = p.image;
-      imgWrap.appendChild(img);
+      imgLink.appendChild(img);
+      imgWrap.appendChild(imgLink);
 
       const body = document.createElement("div");
       body.className = "p-5 flex-grow flex flex-col";
@@ -47,7 +50,11 @@ if (root) {
       row.className = "flex justify-between items-start mb-2 gap-3";
       const h3 = document.createElement("h3");
       h3.className = "font-headline text-lg font-bold text-on-surface leading-tight";
-      h3.textContent = nameOf(p);
+      const titleLink = document.createElement("a");
+      titleLink.href = `producto.html?id=${encodeURIComponent(p.id)}`;
+      titleLink.className = "no-underline text-inherit";
+      titleLink.textContent = nameOf(p);
+      h3.appendChild(titleLink);
       const price = document.createElement("span");
       price.className = "font-headline text-xl font-bold text-primary shrink-0";
       price.textContent = p.price;
@@ -58,6 +65,14 @@ if (root) {
       desc.textContent = descOf(p);
       body.appendChild(row);
       body.appendChild(desc);
+
+      const wa = document.createElement("a");
+      wa.className = "mt-4 inline-flex items-center justify-center btn-whatsapp px-4 py-2 text-xs font-bold uppercase tracking-widest no-underline rounded-sm";
+      wa.href = p.whatsappLink || (window.bootikWaUrl ? window.bootikWaUrl("Hola, quiero cotizar " + nameOf(p) + ".") : "https://wa.me/528184606667");
+      wa.target = "_blank";
+      wa.rel = "noopener noreferrer";
+      wa.textContent = lang() === "en" ? "Order on WhatsApp" : "Pedir por WhatsApp";
+      body.appendChild(wa);
 
       a.appendChild(imgWrap);
       a.appendChild(body);

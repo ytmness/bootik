@@ -3,11 +3,24 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>BOOTIK | Galería</title>
+<title>Galería de obras | Concretos Estampados BOOTIK</title>
+<meta name="description" content="Fotos reales de accesos, plazas, terrazas y el proceso de obra en concreto estampado en el área de Monterrey."/>
+<link rel="canonical" href="https://concretosestampados.com/galeria.html"/>
+<meta property="og:title" content="Galería de obras | Concretos Estampados BOOTIK"/>
+<meta property="og:description" content="Fotos reales de accesos, plazas, terrazas y el proceso de obra en concreto estampado en el área de Monterrey."/>
+<meta property="og:url" content="https://concretosestampados.com/galeria.html"/>
+<link rel="icon" href="favicon.ico" sizes="any"/>
+<link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png"/>
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png"/>
+<meta property="og:type" content="website"/>
+<meta property="og:locale" content="es_MX"/>
+<meta property="og:image" content="https://concretosestampados.com/assets/banners/hero.webp"/>
+<meta property="og:site_name" content="Concretos Estampados BOOTIK"/>
+<meta name="twitter:card" content="summary_large_image"/>
+
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Big+Shoulders+Display:wght@600;700;800;900&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script src="assets/js/tailwind.config.js"></script>
+<link href="assets/css/tailwind.css" rel="stylesheet"/>
 <link href="assets/css/main.css" rel="stylesheet"/>
 <link href="assets/css/theme-dark.css" rel="stylesheet"/>
 <script src="assets/js/theme.js"></script>
@@ -49,19 +62,20 @@
 <section class="section-shell pb-8">
 <header class="max-w-7xl mx-auto" data-reveal>
 <span class="font-headline text-7xl md:text-9xl font-black text-primary/15 leading-none block mb-4">01</span>
-<h1 class="font-headline font-black display-1 leading-none mb-4" data-i18n="gallery.title">GALERÍA</h1>
+<h1 class="font-headline font-black display-1 leading-none mb-4" data-i18n="gallery.title">Galería</h1>
 <p class="text-secondary max-w-2xl text-lg leading-relaxed" data-i18n="gallery.desc">Explora nuestro portafolio de proyectos arquitectónicos de concreto.</p>
 </header>
 </section>
 
 <section class="px-[var(--content-x)] max-w-7xl mx-auto">
+<div id="gallery-filters" class="mb-8" role="tablist" aria-label="Filtros de galería"></div>
 <div id="public-gallery-root" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-black/10 border border-black/10" aria-live="polite"></div>
 </section>
 
 <section class="section-shell">
 <div class="max-w-7xl mx-auto industrial-block-dark p-10 md:p-14 flex flex-col md:flex-row md:items-center md:justify-between gap-10" data-reveal>
 <div class="max-w-xl">
-<h2 class="font-headline font-black display-3 text-white mb-4" data-i18n="gallery.cta.title">LISTO PARA DEJAR HUELLA?</h2>
+<h2 class="font-headline font-black display-3 text-white mb-4" data-i18n="gallery.cta.title">¿Listo para dejar huella?</h2>
 <p class="text-white/65 leading-relaxed" data-i18n="gallery.cta.desc">Agenda una visita y recibe una cotización personalizada para tu proyecto.</p>
 </div>
 <div class="flex flex-col sm:flex-row gap-3 shrink-0">
@@ -84,14 +98,15 @@
 <footer class="site-footer">
 <div class="max-w-7xl mx-auto site-footer-grid">
 <div><div class="site-footer-brand mb-4">BOOTIK</div><p class="text-sm text-white/60" data-i18n="gallery.footer.desc">Soluciones premium de concreto estampado en Monterrey.</p></div>
-<div><h5 class="site-footer-heading footer-accent" data-i18n="gallery.footer.contactInfo">Contacto</h5><ul class="space-y-2 text-sm text-white/60"><li>ventas@bootik.mx</li><li>+52 (81) 1234-5678</li></ul></div>
+<div><h5 class="site-footer-heading footer-accent" data-i18n="gallery.footer.contactInfo">Contacto</h5><ul class="space-y-2 text-sm text-white/60"><li><a href="mailto:gerardo.concretosestampados@gmail.com" data-contact="email">gerardo.concretosestampados@gmail.com</a></li><li><a href="tel:+528184606667" data-contact="phone">+52 81 8460 6667</a></li></ul></div>
 <div><h5 class="site-footer-heading footer-accent" data-i18n="gallery.footer.navigation">Navegación</h5><ul class="space-y-3"><li><a href="index.html" data-i18n="nav.home">Inicio</a></li><li><a href="galeria.html" data-i18n="nav.gallery">Galería</a></li></ul></div>
-<div class="site-footer-bottom !mt-0 !pt-0 !border-0"><p data-i18n="gallery.footer.copy">© 2024 BOOTIK Monterrey.</p></div>
+<div class="site-footer-bottom !mt-0 !pt-0 !border-0"><p data-i18n="gallery.footer.copy">© 2026 Concretos Estampados BOOTIK.</p></div>
 </div>
 </footer>
 
-<a class="fixed bottom-8 right-8 btn-whatsapp p-4 fab-whatsapp z-40 flex items-center justify-center no-underline" href="https://wa.me/528100000000" aria-label="WhatsApp"><span class="material-symbols-outlined text-2xl">chat</span></a>
+<a class="fixed bottom-8 right-8 btn-whatsapp p-4 fab-whatsapp z-40 flex items-center justify-center no-underline" href="https://wa.me/528184606667?text=Hola%2C%20me%20interesa%20una%20cotizaci%C3%B3n%20de%20concreto%20estampado." aria-label="WhatsApp"><span class="material-symbols-outlined text-2xl">chat</span></a>
 <script src="assets/js/bootik-config.js"></script>
+<script src="assets/js/bootik-contact.js"></script>
 <script src="assets/js/main.js" defer></script>
 <script src="assets/js/interactions.js" defer></script>
 <script type="module" src="assets/js/gallery-page.js"></script>

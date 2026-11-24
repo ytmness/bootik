@@ -366,7 +366,7 @@ html.dark .industrial-block {
 }
 
 .img-tone {
-  filter: grayscale(0.35);
+  filter: none;
   transition:
     filter var(--motion-ui) var(--ease-out),
     transform var(--motion-ui) var(--ease-out);
@@ -400,7 +400,7 @@ html.dark .industrial-block {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.78;
+  opacity: 1;
 }
 
 .hero-industrial__media .hero-bg {
@@ -414,9 +414,9 @@ html.dark .industrial-block {
   inset: 0;
   background: linear-gradient(
     to top,
-    rgba(22, 21, 20, 0.84) 0%,
-    rgba(22, 21, 20, 0.42) 45%,
-    rgba(22, 21, 20, 0.14) 100%
+    rgba(22, 21, 20, 0.52) 0%,
+    rgba(22, 21, 20, 0.16) 48%,
+    rgba(22, 21, 20, 0.04) 100%
   );
 }
 
@@ -911,4 +911,76 @@ html.dark .catalog-card {
   .img-tone {
     transition: none;
   }
+}
+
+
+/* Gallery filters */
+#gallery-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0 0 1.75rem;
+}
+.gallery-filter {
+  border: 1px solid rgba(22, 21, 20, 0.18);
+  background: transparent;
+  color: inherit;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.55rem 0.9rem;
+  border-radius: 0.125rem;
+  cursor: pointer;
+}
+.gallery-filter:hover,
+.gallery-filter.is-active {
+  background: #C8102E;
+  border-color: #C8102E;
+  color: #fff;
+}
+.dark .gallery-filter {
+  border-color: rgba(255,255,255,0.25);
+}
+
+/* Home project preview */
+.home-preview-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1px;
+  background: rgba(0,0,0,0.1);
+  border: 1px solid rgba(0,0,0,0.1);
+}
+@media (min-width: 768px) {
+  .home-preview-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (min-width: 1024px) {
+  .home-preview-grid { grid-template-columns: 1.4fr 1fr 1fr 1fr; }
+}
+.home-preview-card {
+  position: relative;
+  min-height: 16rem;
+  overflow: hidden;
+  background: #ddd;
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+.home-preview-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  min-height: 16rem;
+}
+.home-preview-card span {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  color: #fff;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.55);
+  font-size: 0.85rem;
 }

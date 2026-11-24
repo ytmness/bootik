@@ -1,67 +1,37 @@
 {
   "products": [
     {
-      "id": "meshy-beige-stone-block",
-      "nameEs": "Muro / bloque piedra beige",
-      "nameEn": "Beige stone block wall",
-      "price": "Consultar",
-      "image": "assets/Gemini_Generated_Image_gxuvgigxuvgigxuv.png",
-      "descriptionEs": "Render Meshy: bloque de piedra beige. Inspecciona el modelo 3D en la ficha.",
-      "descriptionEn": "Meshy render: beige stone block. Inspect the 3D model on the product page.",
-      "modelGlb": "assets/models/Meshy_AI_Beige_Stone_Block_Wal_0416004320_texture.glb",
-      "modelOrientation": "0deg 0deg 0deg",
-      "whatsappLink": "https://wa.me/528100000000"
+      "id": "color-endurecedor",
+      "nameEs": "Color endurecedor",
+      "nameEn": "Color hardener",
+      "price": "$320 MXN",
+      "image": "assets/products/color-endurecedor.webp",
+      "descriptionEs": "Saco de 20 kg. Primera capa de resistencia y color, con acabado uniforme. Colores: gris Oxford, gris plata, charcoal, café, terracota, arena, hueso, negro y rojo óxido. Envíos a toda la República.",
+      "descriptionEn": "20 kg bag. Wear-resistant color hardener for a uniform finish. Colors: Oxford grey, silver grey, charcoal, brown, terracotta, sand, bone, black and oxide red. We ship nationwide in Mexico.",
+      "modelGlb": null,
+      "whatsappLink": "https://wa.me/528184606667?text=Hola%2C%20quiero%20cotizar%20color%20endurecedor%20de%2020%20kg%20%28%24320%29."
     },
     {
-      "id": "meshy-crimson-arc-tile",
-      "nameEs": "Mosaico arco / loseta carmesi",
-      "nameEn": "Crimson arc tile mosaic",
-      "price": "Consultar",
-      "image": "assets/Gemini_Generated_Image_eeysieeeysieeeys.png",
-      "descriptionEs": "Render Meshy: mosaico en arco tono carmesi.",
-      "descriptionEn": "Meshy render: crimson arc tile mosaic.",
-      "modelGlb": "assets/models/Meshy_AI_Crimson_Arc_Tile_Mosa_0416004434_texture.glb",
-      "modelOrientation": "0deg 0deg 0deg",
-      "whatsappLink": "https://wa.me/528100000000"
+      "id": "desmoldante",
+      "nameEs": "Desmoldante",
+      "nameEn": "Release agent",
+      "price": "$750 MXN",
+      "image": "assets/products/desmoldante.webp",
+      "descriptionEs": "Presentación de 10 kg. Evita que el molde se adhiera al concreto y permite un desmolde limpio, sin dañar el acabado.",
+      "descriptionEn": "10 kg presentation. Keeps the stamp from sticking and allows a clean release without damaging the finish.",
+      "modelGlb": null,
+      "whatsappLink": "https://wa.me/528184606667?text=Hola%2C%20quiero%20cotizar%20desmoldante%20de%2010%20kg%20%28%24750%29."
     },
     {
-      "id": "meshy-stone-wall",
-      "nameEs": "Molde muro de piedra",
-      "nameEn": "Stone wall mold",
-      "price": "Consultar",
-      "image": "assets/Gemini_Generated_Image_97cbm397cbm397cb.png",
-      "descriptionEs": "Render Meshy: muro de piedra.",
-      "descriptionEn": "Meshy render: stone wall mold.",
-      "modelGlb": "assets/models/Meshy_AI_stone_wall_mold_0416004348_texture.glb",
-      "modelOrientation": "0deg 0deg 0deg",
-      "whatsappLink": "https://wa.me/528100000000"
-    },
-    {
-      "id": "meshy-yellow-mosaic",
-      "nameEs": "Mosaico piedra amarilla",
-      "nameEn": "Yellow stone mosaic",
-      "price": "Consultar",
-      "image": "assets/Gemini_Generated_Image_xo1uc1xo1uc1xo1u.png",
-      "descriptionEs": "Render Meshy: mosaico piedra amarilla.",
-      "descriptionEn": "Meshy render: yellow stone mosaic.",
-      "modelGlb": "assets/models/Meshy_AI_Yellow_Stone_Mosaic_0416004410_texture.glb",
-      "modelOrientation": "0deg 0deg 0deg",
-      "whatsappLink": "https://wa.me/528100000000"
-    },
-    {
-      "id": "meshy-stone-flower",
-      "nameEs": "Piedra floral / mandala",
-      "nameEn": "Stone flower / mandala",
-      "price": "Consultar",
-      "image": "assets/Gemini_Generated_Image_2b5ga52b5ga52b5g.png",
-      "descriptionEs": "Render Meshy: patron floral en piedra.",
-      "descriptionEn": "Meshy render: floral stone pattern.",
-      "modelGlb": "assets/models/Meshy_AI_Stone_Flower_0416011051_texture.glb",
-      "modelOrientation": "0deg 0deg 0deg",
-      "whatsappLink": "https://wa.me/528100000000"
+      "id": "sellador-acrilico",
+      "nameEs": "Sellador acrílico",
+      "nameEn": "Acrylic sealer",
+      "price": "$3,200 MXN",
+      "image": "assets/products/flyer-sellador.webp",
+      "descriptionEs": "Cubeta de 19 litros, base solvente. Protege, realza el color y da brillo. Rendimiento aproximado de 80 a 100 m². Dos cubetas por $6,000. También sirve para concreto pulido, barro, cerámico, cantera y piedra laja. Envíos a toda la República.",
+      "descriptionEn": "19-liter solvent-based pail. Protects, enriches color and adds sheen. Coverage about 80–100 m². Two pails for $6,000. Ships nationwide in Mexico.",
+      "modelGlb": null,
+      "whatsappLink": "https://wa.me/528184606667?text=Hola%2C%20quiero%20cotizar%20sellador%20acr%C3%ADlico%20de%2019%20L%20%28%243%2C200%2C%20o%202%20cubetas%20por%20%246%2C000%29."
     }
-  ],
-  "_meta": {
-    "note": "Fuente estatica. Con Supabase: mismo shape por fila (id, nameEs, nameEn, price, image, descriptionEs, descriptionEn, modelGlb, modelOrientation). modelGlb null = sin visor 3D en ficha."
-  }
+  ]
 }
