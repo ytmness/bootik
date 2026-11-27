@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /api/
+Disallow: /carrito.html
+Disallow: /pedido.html
+Sitemap: https://concretosestampados.com/sitemap.xml

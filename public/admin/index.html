@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Admin · BOOTIK</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="/favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Big+Shoulders+Display:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css?v=2">
+<link rel="stylesheet" href="/admin/admin.css?v=2">
+<script src="/admin/admin.js?v=2" defer></script>
+</head>
+<body class="admin">
+<header class="a-top"><div class="wrap"><a class="brand" href="/" target="_blank" rel="noopener"><img src="/assets/img/puno.png" alt="" width="24" height="40"><span>BOOTIK <small>Panel de administración</small></span></a>
+<span id="who" class="note"></span><button class="btn btn-ghost btn-sm" id="logout" hidden>Salir</button></div></header>
+
+<section id="login" class="wrap a-login" hidden>
+<form class="card" id="login-form">
+<h1>Entrar</h1>
+<div class="field"><label for="l-user">Usuario</label><input id="l-user" name="user" autocomplete="username" required></div>
+<div class="field"><label for="l-pass">Contraseña</label><input id="l-pass" name="password" type="password" autocomplete="current-password" required></div>
+<p class="err" id="login-err" role="alert"></p>
+<button class="btn btn-red btn-block">Entrar</button>
+</form>
+</section>
+
+<section id="app" hidden>
+<nav class="a-tabs wrap" role="tablist">
+<button role="tab" data-tab="pedidos" aria-selected="true">Pedidos</button>
+<button role="tab" data-tab="productos">Productos</button>
+<button role="tab" data-tab="galeria">Galería</button>
+<button role="tab" data-tab="sitio">Textos y contacto</button>
+<button role="tab" data-tab="cuenta">Cuenta y pagos</button>
+</nav>
+<div class="wrap a-main">
+<div class="a-panel" id="tab-pedidos"><div class="a-head"><h2>Pedidos</h2><select id="o-filter"><option value="">Todos</option><option value="pagado">Pagados</option><option value="pendiente_pago">Pendientes de pago</option><option value="preparando">Preparando</option><option value="enviado">Enviados</option><option value="entregado">Entregados</option><option value="demo_sin_pago">Pruebas (sin pago)</option></select></div><div id="orders"></div></div>
+
+<div class="a-panel" id="tab-productos" hidden><div class="a-head"><h2>Productos y precios</h2><div><button class="btn btn-dark btn-sm" id="p-add">+ Producto</button> <button class="btn btn-red btn-sm" id="p-save">Guardar cambios</button></div></div>
+<p class="note">Si dejas el precio vacío, el producto sale como “Precio por confirmar” y solo se puede cotizar por WhatsApp. Variantes: sepáralas con comas (ej. colores).</p>
+<div id="products-ed"></div></div>
+
+<div class="a-panel" id="tab-galeria" hidden><div class="a-head"><h2>Galería de obras</h2><div><label class="btn btn-dark btn-sm" for="g-files">+ Subir fotos</label><input type="file" id="g-files" accept="image/jpeg,image/png,image/webp" multiple hidden> <button class="btn btn-red btn-sm" id="g-save">Guardar cambios</button></div></div>
+<p class="note">Sube fotos reales de obra (las del celular están bien). Se reducen solas antes de subir. “Destacada” = sale en el inicio (las primeras 6).</p>
+<div id="gallery-ed" class="g-grid"></div></div>
+
+<div class="a-panel" id="tab-sitio" hidden><div class="a-head"><h2>Textos y contacto</h2><button class="btn btn-red btn-sm" id="s-save">Guardar cambios</button></div>
+<form id="site-form" class="card form-grid two"></form>
+<h3 style="margin:1.4rem 0 .6rem">Fotos de la portada (elige 3, en orden)</h3><div id="hero-pick" class="hero-pick"></div>
+<h3 style="margin:1.4rem 0 .6rem">Colores del color endurecedor</h3><div id="colors-ed"></div><button class="btn btn-ghost btn-sm" id="c-add" type="button">+ Color</button>
+</div>
+
+<div class="a-panel" id="tab-cuenta" hidden><h2>Cuenta y pagos</h2>
+<div class="card" style="margin-top:1rem"><h3>Mercado Pago</h3><p id="mp-status" class="note"></p></div>
+<form class="card form-grid" id="pw-form" style="margin-top:1rem;max-width:460px"><h3>Cambiar contraseña</h3>
+<div class="field"><label for="pw-cur">Contraseña actual</label><input id="pw-cur" type="password" autocomplete="current-password" required></div>
+<div class="field"><label for="pw-new">Nueva (mín. 10 caracteres)</label><input id="pw-new" type="password" autocomplete="new-password" minlength="10" required></div>
+<p class="err" id="pw-err"></p><button class="btn btn-dark">Cambiar</button></form>
+</div>
+</div>
+</section>
+<div class="toast" role="status"></div>
+</body></html>

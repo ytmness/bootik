@@ -1,0 +1,218 @@
+# Genera las páginas HTML públicas con encabezado/pie compartidos.  python3 tools/build_pages.py
+import pathlib
+OUT = pathlib.Path(__file__).resolve().parent.parent / "public"
+SITE = "https://concretosestampados.com"
+
+ICONS = """<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="i-wa" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.2.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.4-.3Z"/></symbol>
+<symbol id="i-cart" viewBox="0 0 24 24"><path d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4ZM5.2 4l.6 3H21l-2.2 8.3a2 2 0 0 1-1.9 1.5H8.1a2 2 0 0 1-2-1.6L3.6 4H1V2h4l.2 2Zm1 5 1.6 6h9.1l1.6-6H6.2Z"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></symbol>
+<symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></symbol>
+<symbol id="i-mail" viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"/></symbol>
+<symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></symbol>
+<symbol id="i-truck" viewBox="0 0 24 24"><path d="M20 8h-3V4H3a2 2 0 0 0-2 2v11h2a3 3 0 0 0 6 0h6a3 3 0 0 0 6 0h2v-5l-3-4ZM6 18.5A1.5 1.5 0 1 1 6 15.5a1.5 1.5 0 0 1 0 3Zm13.5-9 2 2.5H17V9.5h2.5ZM18 18.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Z"/></symbol>
+<symbol id="i-fb" viewBox="0 0 24 24"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H8v4h2v8h4v-8h3l1-4h-4V8Z"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm1 10.4V7h-2v6.2l4.6 2.8 1-1.7-3.6-2.1Z"/></symbol>
+</svg>"""
+
+def head(title, desc, path, extra=""):
+    return f"""<!doctype html>
+<html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{title}</title>
+<meta name="description" content="{desc}">
+<link rel="canonical" href="{SITE}{path}">
+<meta property="og:title" content="{title}"><meta property="og:description" content="{desc}">
+<meta property="og:type" content="website"><meta property="og:locale" content="es_MX"><meta property="og:url" content="{SITE}{path}">
+<meta property="og:image" content="{SITE}/assets/img/obras/plaza-arbol-guadalupe.webp">
+<meta name="theme-color" content="#161514">
+<link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png"><link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Big+Shoulders+Display:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css?v=2">
+{extra}<script src="/assets/js/site.js?v=2" defer></script>
+</head>"""
+
+def header(active):
+    def a(href, label, key):
+        cur = ' aria-current="page"' if key == active else ""
+        return f'<a href="{href}"{cur}>{label}</a>'
+    links = [("/#trabajos", "Trabajos", "trabajos"), ("/galeria.html", "Galería", "galeria"), ("/#servicios", "Servicios", "servicios"), ("/tienda.html", "Tienda", "tienda"), ("/contacto.html", "Contacto", "contacto")]
+    nav = "".join(a(*l) for l in links)
+    return f"""<body class="has-mbar">
+{ICONS}
+<a class="sr" href="#main">Saltar al contenido</a>
+<div class="topbar" data-site="announcement">Instalación en Monterrey y área metropolitana · Envío de materiales a toda la República</div>
+<header class="header"><div class="wrap">
+<a class="brand" href="/" aria-label="Concretos Estampados BOOTIK, inicio"><img src="/assets/img/puno.png" alt="" width="70" height="114"><span>Concretos<br>Estampados <small>BOOTIK · Guadalupe, N.L.</small></span></a>
+<nav class="nav" aria-label="Principal">{nav}</nav>
+<a class="btn btn-wa btn-sm head-wa" data-wa="Hola, quiero cotizar concreto estampado." href="https://wa.me/528184606667" target="_blank" rel="noopener"><svg class="ico"><use href="#i-wa"/></svg>81 8460 6667</a>
+<a class="cart-btn" href="/carrito.html" data-open-cart aria-label="Carrito"><svg class="ico"><use href="#i-cart"/></svg><span class="cart-count" data-n="0">0</span></a>
+<button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menú"><svg class="ico"><use href="#i-menu"/></svg></button>
+</div>
+<nav class="mobile-menu" id="mobile-menu" aria-label="Menú móvil">{nav}<a href="https://wa.me/528184606667" data-wa="Hola, quiero cotizar concreto estampado." target="_blank" rel="noopener">WhatsApp 81 8460 6667</a></nav>
+</header>
+<main id="main">"""
+
+FOOTER = """</main>
+<footer class="footer"><div class="wrap">
+<div><div class="foot-brand"><img src="/assets/img/puno.png" alt="" width="32" height="52"><b>Concretos Estampados<br>BOOTIK</b></div>
+<p style="margin:.9rem 0 0;max-width:42ch">Instalación de concreto estampado en Monterrey y área metropolitana. Venta de color endurecedor, desmoldante y sellador con envío a toda la República.</p></div>
+<div><h4>Contacto</h4><ul>
+<li><a data-wa href="https://wa.me/528184606667" target="_blank" rel="noopener">WhatsApp <span data-site="phoneDisplay">81 8460 6667</span></a></li>
+<li><a data-mail href="mailto:gerardo.concretosestampados@gmail.com">gerardo.concretosestampados@gmail.com</a></li>
+<li><a data-maps href="#" target="_blank" rel="noopener"><span data-site="address">Josefa Ortiz de Domínguez 220 Nte, Guadalupe, N.L.</span></a></li>
+<li><a data-fb href="https://www.facebook.com/concretosestampados.com.mx" target="_blank" rel="noopener">Facebook</a></li>
+<li><a data-ig href="#" target="_blank" rel="noopener">Instagram</a></li>
+</ul></div>
+<div><h4>Sitio</h4><ul><li><a href="/galeria.html">Galería de obras</a></li><li><a href="/#servicios">Servicios</a></li><li><a href="/tienda.html">Tienda de materiales</a></li><li><a href="/carrito.html">Carrito</a></li><li><a href="/contacto.html">Contacto</a></li></ul></div>
+<div class="copy">© <span id="year">2026</span> Concretos Estampados BOOTIK · Guadalupe, Nuevo León</div>
+</div></footer>
+<div class="mbar"><a class="btn btn-dark" href="/tienda.html">Tienda</a><a class="btn btn-wa" data-wa="Hola, quiero cotizar concreto estampado." href="https://wa.me/528184606667" target="_blank" rel="noopener"><svg class="ico"><use href="#i-wa"/></svg>Cotizar</a></div>
+<div class="drawer-bg" data-close-cart></div>
+<aside class="drawer" id="drawer" aria-label="Carrito"><div class="drawer-head"><h2>Tu carrito</h2><button class="x" data-close-cart aria-label="Cerrar">×</button></div>
+<div class="drawer-body" id="drawer-body"></div>
+<div class="drawer-foot"><div class="totals"><span>Total productos</span><strong id="drawer-total">$0</strong></div><button class="btn btn-red btn-block" id="drawer-go">Continuar al pago</button><p class="note" style="margin:.6rem 0 0">Pago seguro con Mercado Pago: tarjeta de crédito/débito, OXXO y más.</p></div></aside>
+</body></html>"""
+
+CONTACT = """<section class="section dark" id="contacto"><div class="wrap contact">
+<div><span class="kicker">Cotiza sin compromiso</span><h2 style="margin-top:.6rem">Mándanos fotos y medidas de tu espacio</h2>
+<p class="lead" style="margin-top:1rem">Con unas fotos del área y las medidas aproximadas te damos una idea del precio. Si te late, vamos a medir.</p>
+<ul class="contact-list">
+<li><a data-wa href="https://wa.me/528184606667" target="_blank" rel="noopener"><svg class="ico"><use href="#i-wa"/></svg><span data-site="phoneDisplay">81 8460 6667</span>&nbsp;(WhatsApp)</a></li>
+<li><a data-tel href="tel:+528184606667"><svg class="ico"><use href="#i-phone"/></svg>Llamar</a></li>
+<li><a data-mail href="mailto:gerardo.concretosestampados@gmail.com"><svg class="ico"><use href="#i-mail"/></svg><span>gerardo.concretosestampados@gmail.com</span></a></li>
+<li><a data-maps href="#" target="_blank" rel="noopener"><svg class="ico"><use href="#i-pin"/></svg><span data-site="address">Josefa Ortiz de Domínguez 220 Nte, Guadalupe, N.L.</span></a></li>
+<li data-hide-wrap><span><svg class="ico"><use href="#i-clock"/></svg><span data-site="hours" data-hide-empty></span></span></li>
+</ul>
+<p style="margin-top:1.4rem"><a class="btn btn-wa" data-wa="Hola, quiero cotizar concreto estampado. Les mando fotos y medidas." href="https://wa.me/528184606667" target="_blank" rel="noopener"><svg class="ico"><use href="#i-wa"/></svg>Escribir por WhatsApp</a></p>
+</div>
+<div class="contact-photo"><img loading="lazy" src="/assets/img/obras/terraza-porche.webp" alt="Terraza de concreto estampado bajo porche" width="1200" height="1600"></div>
+</div></section>"""
+
+def page(name, title, desc, path, active, body, extra=""):
+    (OUT / name).write_text(head(title, desc, path, extra) + "\n" + header(active) + "\n" + body + "\n" + FOOTER, encoding="utf-8")
+
+LD = """<script type="application/ld+json">{"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"Concretos Estampados BOOTIK","image":"https://concretosestampados.com/assets/img/obras/plaza-arbol-guadalupe.webp","url":"https://concretosestampados.com/","telephone":"+528184606667","email":"gerardo.concretosestampados@gmail.com","address":{"@type":"PostalAddress","streetAddress":"Josefa Ortiz de Domínguez 220 Nte","addressLocality":"Guadalupe","addressRegion":"Nuevo León","addressCountry":"MX"},"areaServed":"Área metropolitana de Monterrey"}</script>
+"""
+
+page("index.html", "Concreto estampado en Guadalupe y Monterrey | BOOTIK",
+     "Instalamos concreto estampado en cocheras, accesos, terrazas, banquetas y plazas en Monterrey. Vendemos color endurecedor, desmoldante y sellador. WhatsApp 81 8460 6667.",
+     "/", "inicio", """
+<section class="hero tex"><div class="wrap hero-grid">
+<div>
+<span class="kicker" data-site="heroKicker">Guadalupe y Monterrey, N.L.</span>
+<h1 style="margin-top:.7rem" data-site="heroTitle">Concreto estampado que aguanta el uso diario</h1>
+<p class="lead" data-site="heroText">Cocheras, accesos, terrazas, banquetas y plazas. Hacemos la instalación completa y también vendemos el material: color endurecedor, desmoldante y sellador.</p>
+<div class="hero-ctas">
+<a class="btn btn-red" data-wa="Hola, quiero cotizar concreto estampado." href="https://wa.me/528184606667" target="_blank" rel="noopener"><svg class="ico"><use href="#i-wa"/></svg>Cotizar por WhatsApp</a>
+<a class="btn btn-ghost" href="#trabajos">Ver trabajos reales</a>
+</div>
+<ul class="hero-facts">
+<li><svg class="ico"><use href="#i-check"/></svg>Instalación completa</li>
+<li><svg class="ico"><use href="#i-check"/></svg>9 colores</li>
+<li><svg class="ico"><use href="#i-truck"/></svg>Material con envío a todo México</li>
+</ul>
+</div>
+<div class="snaps" id="snaps" aria-label="Fotos de obras">
+<figure class="snap s1"><img src="/assets/img/obras/plaza-arbol-guadalupe.webp" alt="Plaza de concreto estampado con árbol" fetchpriority="high"><figcaption>Plaza con árbol</figcaption></figure>
+</div>
+</div></section>
+
+<div class="band"><ul><li>Cocheras</li><li>Accesos</li><li>Terrazas</li><li>Banquetas</li><li>Plazas</li><li>Venta de material</li></ul></div>
+
+<section class="section" id="trabajos"><div class="wrap">
+<div class="section-head"><div><span class="kicker">Obras nuestras</span><h2 style="margin-top:.5rem">Trabajos recientes</h2><p class="lead">Fotos tomadas en obra, tal cual. Sin renders.</p></div><a class="btn btn-dark" href="/galeria.html">Ver galería completa</a></div>
+<div class="works" id="works"></div>
+</div></section>
+
+<section class="section tex" id="servicios" style="padding-top:20px"><div class="wrap">
+<div class="section-head"><div><span class="kicker">Qué hacemos</span><h2 style="margin-top:.5rem">Servicios</h2></div></div>
+<div class="services">
+<a class="service" href="/galeria.html"><img loading="lazy" src="/assets/img/obras/cochera-herringbone-bolsa-sm.webp" alt="Cochera de concreto estampado en espiga"><div><h3>Cocheras y accesos</h3><p>Aguanta el peso de los carros y no se ve como concreto liso.</p></div></a>
+<a class="service" href="/galeria.html"><img loading="lazy" src="/assets/img/obras/terraza-porche-sm.webp" alt="Terraza de concreto estampado"><div><h3>Patios y terrazas</h3><p>Textura de piedra o laja, con el color que combine con tu casa.</p></div></a>
+<a class="service" href="/galeria.html"><img loading="lazy" src="/assets/img/obras/andador-espiga-sm.webp" alt="Andador de concreto estampado"><div><h3>Banquetas y andadores</h3><p>Caminos, andadores y banquetas con acabado antiderrapante.</p></div></a>
+<a class="service" href="/galeria.html"><img loading="lazy" src="/assets/img/obras/plaza-arbol-camioneta-sm.webp" alt="Plaza de concreto estampado"><div><h3>Plazas y áreas grandes</h3><p>Plazas, quintas y áreas comerciales, con cajetes para árboles.</p></div></a>
+</div>
+</div></section>
+
+<section class="section dark" id="proceso"><div class="wrap">
+<div class="section-head"><div><span class="kicker">Cómo trabajamos</span><h2 style="margin-top:.5rem">De la visita al sellado</h2></div></div>
+<ol class="steps">
+<li class="step"><img loading="lazy" src="/assets/img/obras/plaza-arbol-camioneta-sm.webp" alt=""><div><h3>Visita y medición</h3><p>Vemos el área, el nivel y el uso que le vas a dar. Te pasamos precio por m².</p></div></li>
+<li class="step"><img loading="lazy" src="/assets/img/obras/vaciado-revolvedora-sm.webp" alt=""><div><h3>Colado</h3><p>Preparamos base y cimbra y colamos el concreto premezclado.</p></div></li>
+<li class="step"><img loading="lazy" src="/assets/img/obras/camino-espiga-obra-sm.webp" alt=""><div><h3>Color y estampado</h3><p>Aplicamos color endurecedor y desmoldante y estampamos con molde.</p></div></li>
+<li class="step"><img loading="lazy" src="/assets/img/obras/piso-interior-sellado-sm.webp" alt=""><div><h3>Sellado</h3><p>Lavamos y sellamos con sellador acrílico para proteger y avivar el color.</p></div></li>
+</ol>
+</div></section>
+
+<section class="section" id="tienda"><div class="wrap">
+<div class="section-head"><div><span class="kicker">Tienda</span><h2 style="margin-top:.5rem">Material para concreto estampado</h2><p class="lead">El mismo material que usamos en obra. Compra en línea con Mercado Pago o recoge en Guadalupe.</p></div><a class="btn btn-dark" href="/tienda.html">Ver toda la tienda</a></div>
+<div class="products" id="products" data-limit="3"></div>
+</div></section>
+
+<section class="section tex" id="colores" style="padding-top:10px"><div class="wrap">
+<div class="section-head"><div><span class="kicker">Color endurecedor</span><h2 style="margin-top:.5rem">Colores disponibles</h2><p class="lead">El tono real cambia un poco según el concreto, la luz y el sellador. Pide muestra por WhatsApp.</p></div></div>
+<ul class="swatches" id="swatches"></ul>
+</div></section>
+""" + CONTACT, extra=LD)
+
+page("galeria.html", "Galería de obras de concreto estampado | BOOTIK",
+     "Fotos reales de cocheras, accesos, terrazas y plazas de concreto estampado hechas por BOOTIK en Monterrey y Guadalupe.",
+     "/galeria.html", "galeria", """
+<section class="page-hero tex"><div class="wrap"><span class="kicker">Galería</span><h1 style="margin-top:.6rem">Obras reales</h1><p class="lead" style="margin-top:.8rem">Fotos de nuestras obras tomadas con celular en el lugar. Toca una foto para verla grande.</p></div></section>
+<section class="section" style="padding-top:24px"><div class="wrap"><div class="filters" id="filters"></div><div class="masonry" id="gallery"></div>
+<p style="margin-top:2rem"><a class="btn btn-red" data-wa="Hola, vi su galería y quiero cotizar." href="https://wa.me/528184606667" target="_blank" rel="noopener"><svg class="ico"><use href="#i-wa"/></svg>Quiero algo así</a></p></div></section>
+""")
+
+page("tienda.html", "Tienda: color endurecedor, desmoldante y sellador | BOOTIK",
+     "Compra color endurecedor, desmoldante y sellador acrílico para concreto estampado. Pago con Mercado Pago. Envío a toda la República o recoge en Guadalupe, N.L.",
+     "/tienda.html", "tienda", """
+<section class="page-hero tex"><div class="wrap"><span class="kicker">Tienda en línea</span><h1 style="margin-top:.6rem">Materiales para concreto estampado</h1><p class="lead" style="margin-top:.8rem">Elige producto, color y cantidad. Pagas con tarjeta, OXXO o saldo de Mercado Pago. Recoge en Guadalupe o pide envío (el costo de envío se confirma por WhatsApp).</p>
+<p class="demo-banner" id="pay-mode" hidden style="margin-top:1rem">Modo prueba: el pago en línea todavía no está conectado. Puedes armar tu pedido y mandarlo por WhatsApp.</p></div></section>
+<section class="section" style="padding-top:24px"><div class="wrap"><div class="products" id="products"></div>
+<div class="card" style="margin-top:24px;display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between"><div><b>¿Compras por mayoreo o necesitas otro producto?</b><p class="note" style="margin:.2rem 0 0">Te cotizamos volumen, moldes y envío por WhatsApp.</p></div><a class="btn btn-wa" data-wa="Hola, quiero cotizar material por mayoreo." href="https://wa.me/528184606667" target="_blank" rel="noopener"><svg class="ico"><use href="#i-wa"/></svg>Cotizar mayoreo</a></div>
+</div></section>
+<section class="section tex" style="padding-top:10px"><div class="wrap"><div class="section-head"><div><span class="kicker">Color endurecedor</span><h2 style="margin-top:.5rem">Colores</h2></div></div><ul class="swatches" id="swatches"></ul></div></section>
+""")
+
+page("carrito.html", "Carrito y pago | BOOTIK", "Revisa tu pedido y paga con Mercado Pago.", "/carrito.html", "tienda", """
+<section class="page-hero tex"><div class="wrap"><span class="kicker">Paso final</span><h1 style="margin-top:.6rem">Tu pedido</h1></div></section>
+<section class="section" style="padding-top:20px"><div class="wrap checkout">
+<form class="card" id="checkout" novalidate>
+<h3 style="margin-bottom:1rem">Tus datos</h3>
+<div class="form-grid two">
+<div class="field"><label for="f-name">Nombre</label><input id="f-name" name="name" autocomplete="name" required></div>
+<div class="field"><label for="f-phone">WhatsApp / teléfono</label><input id="f-phone" name="phone" inputmode="tel" autocomplete="tel" required placeholder="81 1234 5678"></div>
+<div class="field" style="grid-column:1/-1"><label for="f-email">Correo (para tu recibo)</label><input id="f-email" name="email" type="email" autocomplete="email"></div>
+</div>
+<h3 style="margin:1.4rem 0 .8rem">Entrega</h3>
+<div class="radio-cards">
+<label><input type="radio" name="delivery" value="recoger" checked><span><b>Recoger en Guadalupe, N.L.</b><br><span class="note" data-site="address">Josefa Ortiz de Domínguez 220 Nte</span></span></label>
+<label><input type="radio" name="delivery" value="envio"><span><b>Envío a domicilio</b><br><span class="note">Monterrey o cualquier parte de México. El costo del envío se confirma por WhatsApp y se paga aparte.</span></span></label>
+</div>
+<div class="field" id="addr-wrap" hidden style="margin-top:12px"><label for="f-addr">Dirección completa (calle, número, colonia, ciudad, CP)</label><textarea id="f-addr" name="address" rows="3" autocomplete="street-address"></textarea></div>
+<div class="field" style="margin-top:12px"><label for="f-notes">Notas (opcional)</label><textarea id="f-notes" name="notes" rows="2"></textarea></div>
+<p class="demo-banner" id="pay-mode" hidden style="margin-top:14px">Modo prueba: Mercado Pago aún no está conectado, el pedido se registra sin cobrar.</p>
+<p class="err" id="co-err" role="alert"></p>
+<button class="btn btn-red btn-block" id="co-pay" style="margin-top:.4rem">Pagar con Mercado Pago</button>
+<div class="pay-logos" style="margin-top:.8rem"><span class="pill">Visa</span><span class="pill">Mastercard</span><span class="pill">American Express</span><span class="pill">Débito</span><span class="pill">OXXO</span><span>Pagas en la página segura de Mercado Pago. Nosotros no vemos ni guardamos tu tarjeta.</span></div>
+</form>
+<aside class="card"><h3 style="margin-bottom:.4rem">Resumen</h3><div id="co-lines"></div><div class="totals" style="margin-top:14px"><span>Total productos</span><strong id="co-total">$0</strong></div><p class="note" data-site="shippingNote">Puedes recoger en Guadalupe, N.L. o pedir envío.</p><a href="/tienda.html">← Seguir comprando</a></aside>
+</div></section>
+""")
+
+page("pedido.html", "Estado de tu pedido | BOOTIK", "Estado de tu pedido en Concretos Estampados BOOTIK.", "/pedido.html", "tienda", """
+<section class="section tex"><div class="wrap"><div class="status-box" id="order-status"><p>Cargando…</p></div></div></section>
+""", extra='<meta name="robots" content="noindex">\n')
+
+page("contacto.html", "Contacto y cotizaciones | BOOTIK", "Cotiza tu concreto estampado por WhatsApp al 81 8460 6667. Guadalupe, Nuevo León.", "/contacto.html", "contacto",
+     """<section class="page-hero tex"><div class="wrap"><span class="kicker">Contacto</span><h1 style="margin-top:.6rem">Hablemos de tu obra</h1></div></section>""" + CONTACT)
+
+for old, dest in {"servicios.html": "/#servicios", "nosotros.html": "/#proceso", "producto.html": "/tienda.html"}.items():
+    (OUT / old).write_text(f'<!doctype html><html lang="es"><head><meta charset="utf-8"><title>BOOTIK</title><link rel="canonical" href="{SITE}{dest}"><meta http-equiv="refresh" content="0;url={dest}"><meta name="robots" content="noindex"></head><body><a href="{dest}">Continuar</a></body></html>', encoding="utf-8")
+
+(OUT / "robots.txt").write_text(f"User-agent: *\nDisallow: /admin/\nDisallow: /api/\nDisallow: /carrito.html\nDisallow: /pedido.html\nSitemap: {SITE}/sitemap.xml\n")
+(OUT / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + "".join(f"<url><loc>{SITE}{p}</loc></url>" for p in ["/", "/galeria.html", "/tienda.html", "/contacto.html"]) + "</urlset>\n")
+print("ok")

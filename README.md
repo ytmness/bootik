@@ -1,34 +1,19 @@
-# BOOTIK - Landing Page
+# Concretos Estampados BOOTIK — sitio v2 (tienda + admin)
 
-Sitio web estatico para BOOTIK, enfocado en servicios de concreto estampado en Monterrey.
+- `public/` — sitio estático (lo sirve nginx). Páginas: inicio, galería, tienda, carrito, pedido, contacto, y `/admin/`.
+- `server/` — API en Node 20+ sin dependencias: admin (login, productos, galería, textos, pedidos, subida de fotos) y checkout con Mercado Pago (Checkout Pro).
+- `data/` — (no va en git) contenido editable, pedidos, hash de la contraseña y fotos subidas. En el servidor: `/var/lib/bootik`.
+- `tools/build_pages.py` — regenera los HTML públicos (encabezado/pie compartidos).
 
-## Estructura
-
-```text
-BOOTIK/
-  index.html
-  assets/
-    css/
-      main.css
-    js/
-      tailwind.config.js
-      main.js
-```
-
-## Desarrollo local
-
-1. Abrir `index.html` directamente en navegador, o
-2. Levantar un servidor estatico (recomendado para pruebas):
-
+## Local
 ```bash
-python -m http.server 5500
+npm run set-password          # crea usuario y contraseña del admin (entrada oculta; guarda solo el hash)
+PORT=8796 npm start           # http://localhost:8796  y  http://localhost:8796/admin/
 ```
+Sin `MP_ACCESS_TOKEN` la tienda trabaja en **modo demo**: registra el pedido y no cobra.
 
-Luego entrar a `http://localhost:5500`.
+## Mercado Pago
+Variables en `server/.env` (copiar de `server/.env.example`): `MP_ACCESS_TOKEN`, `MP_WEBHOOK_SECRET`.
+Flujo: carrito → `POST /api/checkout` (el servidor recalcula precios desde `products`) → preferencia de Checkout Pro → el cliente paga en Mercado Pago → regresa a `/pedido.html` → webhook `/api/mp/webhook` consulta el pago y marca el pedido como pagado.
 
-## Antes de publicar
-
-- Reemplazar los numeros de WhatsApp en `index.html`.
-- Configurar dominio/canonical y metadatos sociales si se requiere.
-- Comprimir imagenes (si se migran a archivos locales).
-- Publicar en Netlify, Vercel o servidor estatico equivalente.
+Ver `deploy/DEPLOY.md` para subirlo al VPS.

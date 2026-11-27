@@ -1,0 +1,11 @@
+{
+  "name": "bootik-concretos",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "start": "node server/server.mjs",
+    "dev": "node --watch server/server.mjs",
+    "set-password": "node server/set-password.mjs"
+  }
+}

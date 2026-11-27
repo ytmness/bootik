@@ -1,0 +1,54 @@
+body.admin{background:#ece9e3;padding-bottom:40px}
+.a-top{background:var(--ink);color:#fff}
+.a-top .wrap{display:flex;align-items:center;gap:1rem;height:58px}
+.a-top .brand span small{color:#a8a29e}
+.a-top .brand img{height:34px}
+.a-top .btn-ghost{color:#fff;border-color:#fff}
+.a-login{max-width:420px;padding-top:60px}
+.a-login form{display:grid;gap:12px}
+.a-login h1{font-size:2.6rem}
+.a-tabs{display:flex;gap:.3rem;overflow-x:auto;padding-top:14px;padding-bottom:2px;-webkit-overflow-scrolling:touch}
+.a-tabs button{border:0;background:transparent;padding:.7rem 1rem;font-weight:700;border-radius:6px 6px 0 0;white-space:nowrap;color:var(--muted)}
+.a-tabs button[aria-selected="true"]{background:#fff;color:var(--ink);box-shadow:inset 0 3px 0 var(--red)}
+.a-main{background:#fff;border-radius:0 8px 8px 8px;padding:18px;min-height:60vh}
+@media(max-width:600px){.a-main{padding:12px;border-radius:0}.wrap.a-main{padding-left:12px;padding-right:12px}}
+.a-head{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:space-between;align-items:center;margin-bottom:10px;position:sticky;top:0;background:#fff;z-index:5;padding:6px 0}
+.a-head h2{font-size:2.1rem}
+.a-head select{width:auto}
+.ed{display:grid;grid-template-columns:120px 1fr;gap:14px;border:1px solid var(--line);border-radius:8px;padding:12px;margin-bottom:12px;background:#faf9f7}
+.ed.off{opacity:.6}
+.ed .thumb{width:120px;height:120px;border-radius:6px;background:#1d1c1b;display:grid;place-items:center;overflow:hidden;color:#999;font-size:.75rem;text-align:center}
+.ed .thumb img{width:100%;height:100%;object-fit:contain}
+.ed .fields{display:grid;gap:10px;grid-template-columns:1fr 1fr}
+.ed .fields .full{grid-column:1/-1}
+.ed .tools{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;grid-column:1/-1}
+.ed .tools label.chk{display:inline-flex;gap:.35rem;align-items:center;font-weight:600;font-size:.9rem;margin-right:.6rem}
+.ed .tools input[type=checkbox]{width:auto;accent-color:var(--red)}
+@media(max-width:640px){.ed{grid-template-columns:1fr}.ed .thumb{width:100%;height:170px}.ed .fields{grid-template-columns:1fr}}
+.mini{background:#fff;border:1px solid var(--line);border-radius:5px;padding:.35rem .6rem;font-size:.85rem;font-weight:600}
+.mini.danger{color:#b3001b;border-color:#e7b3bb}
+.g-grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}
+.g-card{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#faf9f7;display:flex;flex-direction:column}
+.g-card.off{opacity:.55}
+.g-card img{width:100%;height:170px;object-fit:cover}
+.g-card .b{padding:10px;display:grid;gap:7px}
+.g-card input,.g-card select{padding:.45rem .55rem;font-size:.9rem}
+.g-card .row{display:flex;gap:.35rem;flex-wrap:wrap;align-items:center}
+.g-card label.chk{display:inline-flex;gap:.3rem;align-items:center;font-size:.85rem;font-weight:600}
+.g-card input[type=checkbox]{width:auto;accent-color:var(--red)}
+.order{border:1px solid var(--line);border-radius:8px;padding:12px;margin-bottom:10px;display:grid;gap:8px;background:#faf9f7}
+.order-top{display:flex;flex-wrap:wrap;gap:.5rem 1rem;justify-content:space-between;align-items:center}
+.order-top b{font-size:1.05rem}
+.st{display:inline-block;padding:.2rem .55rem;border-radius:20px;font-size:.78rem;font-weight:700;background:#e8e5df}
+.st.pagado,.st.entregado{background:#d7f2df;color:#135c2a}.st.pendiente_pago,.st.en_revision{background:#fff1c7;color:#6b5200}.st.rechazado,.st.cancelado,.st.revisar_monto{background:#ffd9de;color:#8a0018}.st.demo_sin_pago{background:#e3e8ff;color:#22307a}
+.order ul{margin:0;padding-left:1.1rem;font-size:.92rem}
+.order .row{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center}
+.order select{width:auto}
+.hero-pick{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:8px}
+.hero-pick label{position:relative;cursor:pointer;border-radius:6px;overflow:hidden;border:3px solid transparent}
+.hero-pick label.on{border-color:var(--red)}
+.hero-pick img{width:100%;height:100px;object-fit:cover}
+.hero-pick input{position:absolute;opacity:0}
+.hero-pick .n{position:absolute;top:4px;left:4px;background:var(--red);color:#fff;border-radius:50%;width:22px;height:22px;display:grid;place-items:center;font-weight:800;font-size:.8rem}
+.color-row{display:flex;gap:.5rem;align-items:center;margin-bottom:6px;max-width:420px}
+.color-row input[type=color]{width:46px;height:40px;padding:2px}

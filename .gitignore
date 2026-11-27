@@ -1,1 +1,5 @@
-stitch_ref/
+data/
+server/.env
+_old/
+node_modules/
+*.tmp
