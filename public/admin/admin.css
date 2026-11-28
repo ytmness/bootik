@@ -1,3 +1,4 @@
+[hidden]{display:none!important}
 body.admin{background:#ece9e3;padding-bottom:40px}
 .a-top{background:var(--ink);color:#fff}
 .a-top .wrap{display:flex;align-items:center;gap:1rem;height:58px}
