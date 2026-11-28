@@ -379,7 +379,9 @@ async function route(req, res) {
   return send(res, 404, { error: "No encontrado" });
 }
 
-if (process.argv[1] === fileURLToPath(import.meta.url)) {
+const thisFile = fileURLToPath(import.meta.url);
+const startedAsMain = process.argv[1] && path.resolve(process.argv[1]) === thisFile;
+if (startedAsMain || process.env.pm_id !== undefined) {
   http.createServer((req, res) => {
     route(req, res).catch((e) => {
       if (!e.status) console.error(e);
